@@ -8,11 +8,17 @@ dependencies {
     implementation 'org.json:json:20210307'
 }
 
+// if (MyChoiceParameter == 'Option 1') {
+//     return "task1"
+// } else if (MyChoiceParameter == 'Option 2') {
+//     return "task2"
+// }
+
 task runJava(type: JavaExec) {
     main = 'Export' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
 }
-task runJava(type: JavaExec) {
+task runJavas(type: JavaExec) {
     main = 'UploadImport' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
 }
