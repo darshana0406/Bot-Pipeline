@@ -1,0 +1,14 @@
+apply plugin: 'java'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    implementation 'org.json:json:20210307'
+}
+
+task runJava(type: JavaExec) {
+    main = 'UploadImport' // Replace 'HelloWorld' with the name of your main class if different
+    classpath = sourceSets.main.runtimeClasspath
+}
