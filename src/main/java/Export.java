@@ -141,16 +141,16 @@ public class Export {
         String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
 
-        Git commands
+        // Git commands
         String gitAdd = "git add .";
         String gitCommit = "git commit -m \"" + commitMessage + "\"";
         String gitPush = "git push origin gradle-main";
 
-        Execute Git commands
+        // Execute Git commands
         try {
             executeCommand(gitRepoPath, gitAdd);
             executeCommand(gitRepoPath, gitCommit);
-            // executeCommand(gitRepoPath, gitPush);
+            executeCommand(gitRepoPath, gitPush);
             System.out.println("Changes added, committed, and pushed successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
