@@ -78,7 +78,7 @@ public class Export {
 
                 // Unzip the files
                 String zipFilePath = "fullexport.zip";
-                String destDir = "./ExportBot";
+                String destDir = "ExportBot";
                 unzip(zipFilePath, destDir);
                 System.out.println("Files unzipped to " + destDir);
 
@@ -98,7 +98,7 @@ public class Export {
         try (InputStream in = url.openStream()) {
             // If the file needs to be copied to specific path, create custom path and
             // provide
-            Path path = Paths.get("./ExportBot");
+            Path path = Paths.get("ExportBot");
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         }
     }
