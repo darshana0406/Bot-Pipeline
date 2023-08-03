@@ -158,15 +158,15 @@ public class Export {
         // }
     }
 
-    private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
-        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
-        processBuilder.directory(new java.io.File(workingDir));
-        Process process = processBuilder.start();
-        int exitCode = process.waitFor();
-        if (exitCode != 0) {
-            throw new RuntimeException("Failed to execute command: " + command);
-        }
-    }
+    // private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
+    //     ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+    //     processBuilder.directory(new java.io.File(workingDir));
+    //     Process process = processBuilder.start();
+    //     int exitCode = process.waitFor();
+    //     if (exitCode != 0) {
+    //         throw new RuntimeException("Failed to execute command: " + command);
+    //     }
+    // }
  
     }
 
