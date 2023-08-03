@@ -138,24 +138,24 @@ public class Export {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // String gitRepoPath = "."; // Replace this with the actual path to your Git repository
-        // String commitMessage = "changes for gradle";
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String commitMessage = "changes for gradle";
 
-        // // Git commands
-        // String gitAdd = "git add .";
-        // String gitCommit = "git commit -m \"" + commitMessage + "\"";
+        // Git commands
+        String gitAdd = "git add .";
+        String gitCommit = "git commit -m \"" + commitMessage + "\"";
         // String gitPush = "git push origin gradle-main";
 
-        // // Execute Git commands
-        // try {
-        //     executeCommand(gitRepoPath, gitAdd);
-        //     executeCommand(gitRepoPath, gitCommit);
-        //     executeCommand(gitRepoPath, gitPush);
-        //     System.out.println("Changes added, committed, and pushed successfully.");
-        // } catch (IOException | InterruptedException e) {
-        //     e.printStackTrace();
-        //     System.err.println("Failed to add, commit, and push changes.");
-        // }
+        // Execute Git commands
+        try {
+            executeCommand(gitRepoPath, gitAdd);
+            executeCommand(gitRepoPath, gitCommit);
+            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed, and pushed successfully.");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.err.println("Failed to add, commit, and push changes.");
+        }
     }
 
     private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
