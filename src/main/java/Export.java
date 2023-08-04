@@ -138,6 +138,29 @@ public class Export {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            // Set user email
+            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
+            Process emailProcess = setEmail.start();
+            int emailExitCode = emailProcess.waitFor();
+            if (emailExitCode == 0) {
+                System.out.println("User email set successfully.");
+            } else {
+                System.out.println("Error setting user email.");
+            }
+
+            // Set user name
+            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "darshana");
+            Process nameProcess = setName.start();
+            int nameExitCode = nameProcess.waitFor();
+            if (nameExitCode == 0) {
+                System.out.println("User name set successfully.");
+            } else {
+                System.out.println("Error setting user name.");
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
         // String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         // String commitMessage = "changes for gradle";
 
