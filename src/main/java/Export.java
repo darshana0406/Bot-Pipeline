@@ -138,7 +138,7 @@ public class Export {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "https://github.com/darshana0406/BotExportFiles.git"; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
 
         // Git commands
