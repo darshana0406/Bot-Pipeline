@@ -167,13 +167,13 @@ public class Export {
         // Git commands
         String gitAdd = "git add .";
         String gitCommit = "git commit -m \"" + commitMessage + "\"";
-        String gitPush = "git push origin main";
+        // String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
             executeCommand(gitRepoPath, gitAdd);
             executeCommand(gitRepoPath, gitCommit);
-            executeCommand(gitRepoPath, gitPush);
+            // executeCommand(gitRepoPath, gitPush);
             System.out.println("Changes added, committed, and pushed successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
