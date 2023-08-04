@@ -154,7 +154,7 @@ public class Export {
             System.out.println("Changes added, committed, and pushed successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
-            System.err.println("Failed to add, commit, and push changes.");
+            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
         }
     }
 
