@@ -3540,42 +3540,6 @@
     "taskDgParamMaps": [],
     "sentences": [
         {
-            "_id": "64cb7ed34db3904b3f09f422",
-            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
-            "sentence": "tag1 -test",
-            "taskName": "Test",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        },
-        {
-            "_id": "64ccfd77e9b7624ff273a230",
-            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
-            "sentence": "tag2",
-            "taskName": "Test",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        },
-        {
-            "_id": "64ccfd77e9b7624ff273a231",
-            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
-            "sentence": "tag3",
-            "taskName": "Test",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        },
-        {
-            "_id": "64ccfd77e9b7624ff273a232",
-            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
-            "sentence": "tag4",
-            "taskName": "Test",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        },
-        {
             "_id": "6493f59f756f69f89fd19964",
             "taskId": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
             "sentence": "welcome to bot",
@@ -3798,5 +3762,5 @@
     "feedbackSurveys": [],
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "571702f966e3d86476a97e913403711e"
+    "encryptedHash": "8ee5a2190fc437431f1baea841f9a53f"
 }
