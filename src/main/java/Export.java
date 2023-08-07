@@ -168,7 +168,7 @@ public class Export {
         
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
-        String gitPush = "git push origin main";
+        // String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
@@ -176,9 +176,9 @@ public class Export {
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
-            System.out.println("Executing: " + gitPush);
-            executeCommand(gitRepoPath, gitPush);
-            System.out.println("Changes added, committed successfully.");
+            // System.out.println("Executing: " + gitPush);
+            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed and push successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             System.err.println("Failed to add, commit, and push changes." + e.getMessage());
