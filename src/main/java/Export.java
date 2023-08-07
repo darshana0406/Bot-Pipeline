@@ -163,11 +163,12 @@ public class Export {
         }
         String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
+        String workingDir ="C:\\Users\\gg\\Documents\\Darshana-infy\\BotExportFiles";
 
          // Git commands
-         String workingDir ="./BOTEXPORTFILES";
+        
         String gitAdd = "git add .";
-       String gitCommit = "git commit -m \"" + commitMessage + "\"";
+        String gitCommit = "git commit -m \"" + commitMessage + "\"";
         String gitPush = "git push origin main";
 
         // Execute Git commands
