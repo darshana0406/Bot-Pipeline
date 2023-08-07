@@ -162,12 +162,12 @@ public class Export {
             e.printStackTrace();
         }
         String gitRepoPath = "."; // Replace this with the actual path to your Git repository
-        String commitMessage = "changes for gradle";
+        // String commitMessage = "changes for gradle";
 
          // Git commands
         
         String gitAdd = "git add .";
-        String gitCommit = "git commit -m \"jenkins checkin\"";
+        String gitCommit = "git commit -m 'test'";
         String gitPush = "git push origin main";
         String tmp = "pwd";
 
