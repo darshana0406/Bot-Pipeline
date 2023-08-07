@@ -177,8 +177,8 @@ public class Export {
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
             System.out.println("Executing: " + gitPush);
-            // executeCommand(gitRepoPath, gitPush);
-            System.out.println("Changes added, committed, and pushed successfully.");
+            executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
             System.err.println("Failed to add, commit, and push changes." + e.getMessage());
