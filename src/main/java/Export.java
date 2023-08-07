@@ -161,39 +161,39 @@ public class Export {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        // String gitRepoPath = "."; // Replace this with the actual path to your Git repository
-        // String commitMessage = "changes for gradle";
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String commitMessage = "changes for gradle";
 
-        //  // Git commands
+         // Git commands
         
-        // String gitAdd = "git add .";
-        // String gitCommit = "git commit -m \"" + commitMessage + "\"";
-        // String gitPush = "git push origin main";
+        String gitAdd = "git add .";
+        String gitCommit = "git commit -m \"" + commitMessage + "\"";
+        String gitPush = "git push origin main";
 
         // Execute Git commands
-        // try {
-        //     System.out.println("Executing: " + gitAdd);
-        //     executeCommand(gitRepoPath, gitAdd);
-        //     System.out.println("Executing: " + gitCommit);
-        //     executeCommand(gitRepoPath, gitCommit);
-        //     System.out.println("Executing: " + gitPush);
-        //     executeCommand(gitRepoPath, gitPush);
-        //     System.out.println("Changes added, committed, and pushed successfully.");
-        // } catch (IOException | InterruptedException e) {
-        //     e.printStackTrace();
-        //     System.err.println("Failed to add, commit, and push changes." + e.getMessage());
-        // }
+        try {
+            System.out.println("Executing: " + gitAdd);
+            executeCommand(gitRepoPath, gitAdd);
+            System.out.println("Executing: " + gitCommit);
+            executeCommand(gitRepoPath, gitCommit);
+            System.out.println("Executing: " + gitPush);
+            executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed, and pushed successfully.");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
+        }
     }
 
-    // private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
-    //     ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
-    //     processBuilder.directory(new java.io.File(workingDir));
-    //     Process process = processBuilder.start();
-    //     int exitCode = process.waitFor();
-    //     if (exitCode != 0) {
-    //         throw new RuntimeException("Failed to execute command: " + command); 
-    //     }
-    // }
+    private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
+        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+        processBuilder.directory(new java.io.File(workingDir));
+        Process process = processBuilder.start();
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new RuntimeException("Failed to execute command: " + command); 
+        }
+    }
  
     }
 

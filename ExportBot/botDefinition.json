@@ -1533,6 +1533,9 @@
             "entityFields": {
                 "cityAdvanced": []
             },
+            "timeOutError": {
+                "closeConversation": true
+            },
             "serviceAPITimeout": 20,
             "spellcorrectThreshold": 0,
             "preConditions": [],
@@ -3798,5 +3801,5 @@
     "feedbackSurveys": [],
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "ba9c5cff5d98f6e883b798831976288f"
+    "encryptedHash": "5c3ba74d175b2d94ecec7d748eb0ff2f"
 }
