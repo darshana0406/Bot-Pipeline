@@ -164,17 +164,19 @@ public class Export {
         String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
         String workingDir ="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\C_Export";
+        String gitExecutable = "C:\\Program Files\\Git\\bin\\git.exe"; 
 
          // Git commands
         
-        String gitAdd = "git add .";
+        // String gitAdd = "git add .";
+        String[] gitAddCommand = { gitExecutable, "add", "." };
         String gitCommit = "git commit -m \"" + commitMessage + "\"";
         String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
-            System.out.println("Executing: " + gitAdd);
-            executeCommand(gitRepoPath, gitAdd);
+            System.out.println("Executing: " + gitAddCommand);
+            executeCommand(gitRepoPath, gitAddCommand);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
             System.out.println("Executing: " + gitPush);
@@ -186,7 +188,7 @@ public class Export {
         }
     }
 
-    private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
+    private static void executeCommand(String workingDir, String... command) throws IOException, InterruptedException {
         ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.directory(new java.io.File(workingDir));
         Process process = processBuilder.start();
