@@ -161,7 +161,7 @@ public class Export {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "/var/lib/jenkins/workspace/C_Export/"; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
 
          // Git commands
