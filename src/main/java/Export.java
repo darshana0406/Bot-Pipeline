@@ -161,12 +161,12 @@ public class Export {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\C_Export\\"; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
 
          // Git commands
         
-        String gitAdd = "git add *";
+        String gitAdd = "git add .";
         String gitCommit = "git commit -m \"jenkins checkin\"";
         String gitPush = "git push origin main";
         String tmp = "pwd";
