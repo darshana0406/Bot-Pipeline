@@ -163,7 +163,7 @@ public class Export {
         }
         String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         String commitMessage = "changes for gradle";
-        String workingDir ="C:\\Users\\gg\\Documents\\Darshana-infy\\BotExportFiles";
+        String workingDir ="C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\C_Export";
 
          // Git commands
         
