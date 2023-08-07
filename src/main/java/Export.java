@@ -167,7 +167,7 @@ public class Export {
          // Git commands
         
         String gitAdd = "git add .";
-        String gitCommit = "git commit -m 'jenkins checkin'";
+        String gitCommit = "git commit -m \"jenkins checkin\"";
         String gitPush = "git push origin main";
         String tmp = "pwd";
 
