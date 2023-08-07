@@ -169,10 +169,11 @@ public class Export {
         String gitAdd = "git add .";
         String gitCommit = "git commit -m \"" + commitMessage + "\"";
         String gitPush = "git push origin main";
+        String tmp = "pwd";
 
         // Execute Git commands
         try {
-            System.out.println("Executing: " + gitAdd);
+            executeCommand(gitRepoPath, tmp);
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
