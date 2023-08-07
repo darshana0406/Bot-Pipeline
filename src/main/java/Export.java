@@ -165,6 +165,7 @@ public class Export {
         String commitMessage = "changes for gradle";
 
          // Git commands
+         String workingDir ="./BOTEXPORTFILES";
         String gitAdd = "git add .";
        String gitCommit = "git commit -m \"" + commitMessage + "\"";
         String gitPush = "git push origin main";
@@ -185,7 +186,7 @@ public class Export {
     }
 
     private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
-        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
         processBuilder.directory(new java.io.File(workingDir));
         Process process = processBuilder.start();
         int exitCode = process.waitFor();
