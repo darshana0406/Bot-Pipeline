@@ -167,7 +167,7 @@ public class Export {
          // Git commands
         
         String gitAdd = "git add .";
-        String gitCommit = "git commit -m 'ChangesUpdated'";
+        String gitCommit = "git commit -m 'Updated'";
         String gitPush = "git push origin main";
 
         // Execute Git commands
