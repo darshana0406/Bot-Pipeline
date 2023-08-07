@@ -173,7 +173,7 @@ public class Export {
 
         // Execute Git commands
         try {
-            executeCommand(gitRepoPath, tmp);
+            // executeCommand(gitRepoPath, tmp);
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
