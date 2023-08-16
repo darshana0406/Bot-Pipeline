@@ -22,6 +22,14 @@ task runJava(type: JavaExec) {
         def selectedEnv = project.hasProperty('env') ? project.property('env') : 'asdff'
         def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
+        if (selectedExportType == 'FullExport') {
+           println "Selected Option: $selectedExportType"
+        } else if (selectedExportType == 'ExportWithoutSetting') {
+           println "Selected Option: $selectedExportType"
+        } else {
+           println "Selected Option: nothing"
+        }
+
         println "Selected Option: $selectedEnv"
         println "Selected Option: $selectedExportType"
         args '$selectedEnv', '$selectedExportType'
