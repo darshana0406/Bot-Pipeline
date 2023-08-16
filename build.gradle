@@ -21,18 +21,15 @@ task runJava(type: JavaExec) {
     doLast {
         def selectedEnv = project.hasProperty('env') ? project.property('env') : 'asdff'
         
-        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'default_option'
+        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
-        if (selectedExportType == 'FullExport') {
-           println "Selected Option: $selectedExportType"
-        } else if (selectedExportType == 'ExportWithoutSetting') {
-           println "Selected Option: $selectedExportType"
-        } else {
-           println "Selected Option: nothing"
-        }
+        def selectedExportType1 = project.hasProperty('exportType') ? project.property('exportType') : 'ExportWithoutSetting'
+        def selectedExportType2 = project.hasProperty('exportType') ? project.property('exportType') : 'ExportTask'
 
-        // println "Selected Option: $selectedEnv"
-        // println "Selected Option: $selectedExportType"
+        println "Selected Option: $selectedEnv"
+        println "Selected Option: $selectedExportType"
+        println "Selected Option: $selectedExportType1"
+        println "Selected Option: $selectedExportType2"
         args '$selectedEnv', '$selectedExportType'
        
     }
