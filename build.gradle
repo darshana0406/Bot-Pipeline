@@ -19,18 +19,13 @@ task runJava(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
    
     doLast {
-        def selectedEnv = project.hasProperty('env') ? project.property('env') : 'asdff'
+        def selectedEnv = project.hasProperty('env') ? project.property('env') : 'dev'
         
-        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
-
-        def selectedExportType1 = project.hasProperty('exportType') ? project.property('exportType') : 'ExportWithoutSetting'
-        def selectedExportType2 = project.hasProperty('exportType') ? project.property('exportType') : 'ExportTask'
+        def exportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
         println "Selected Option: $selectedEnv"
-        println "Selected Option: $selectedExportType"
-        println "Selected Option: $selectedExportType1"
-        println "Selected Option: $selectedExportType2"
-        args '$selectedEnv', '$selectedExportType'
+        println "Selected Option: $exportType"
+        args '$selectedEnv', '$exportType'
        
     }
 }
