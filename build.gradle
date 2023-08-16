@@ -16,7 +16,7 @@ dependencies {
 
 ext {
     // Define a custom property named 'selectedValue'
-    selectedExportType = project.findProperty('exportType') ?: 'default'
+    selectedExportType = project.findProperty('exportType') ?: '$exportType'
 }
 
 task runJava(type: JavaExec) {
