@@ -17,15 +17,14 @@ dependencies {
 task runJava(type: JavaExec) {
     main = 'Export' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
-   
+    
     doLast {
-        // def env = project.hasProperty('env') ? project.property('env') : 'dev'
-        
-        def selectedOption = project.hasProperty('selectedOption') ? project.property('selectedOption') : 'default_option'
+        def selectedOption = project.hasProperty('env') ? project.property('env') : 'dev'
+        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
-        // println "Selected Option: $env"
         println "Selected Option: $selectedOption"
-        args '$env', '$selectedOption'
+        println "Selected Option: $selectedExportType"
+        args '$selectedOption', '$selectedExportType'
        
     }
 }
