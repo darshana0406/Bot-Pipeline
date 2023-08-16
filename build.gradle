@@ -19,7 +19,7 @@ task runJava(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
    
     doLast {
-        def selectedEnv = project.hasProperty('env') ? project.property('env') : 'dev'
+        def selectedEnv = project.hasProperty('env') ? project.property('env') : 'asdff'
         def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
         println "Selected Option: $selectedEnv"
