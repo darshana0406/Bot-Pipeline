@@ -17,6 +17,16 @@ dependencies {
 task runJava(type: JavaExec) {
     main = 'Export' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
+   
+    doLast {
+        def selectedEnv = project.hasProperty('env') ? project.property('env') : 'dev'
+        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
+
+        println "Selected Option: $selectedEnv"
+        println "Selected Option: $selectedExportType"
+        args '$selectedEnv', '$selectedExportType'
+       
+    }
 }
 task runJavaI(type: JavaExec) {
     main = 'UploadImport' // Replace 'HelloWorld' with the name of your main class if different
