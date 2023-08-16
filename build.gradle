@@ -14,10 +14,6 @@ dependencies {
 //     return "task2"
 // }
 
-ext {
-    // Define a custom property named 'selectedValue'
-    selectedExportType = project.findProperty('exportType') ?: '$exportType'
-}
 
 task runJava(type: JavaExec) {
     main = 'Export' // Replace 'HelloWorld' with the name of your main class if different
@@ -25,7 +21,7 @@ task runJava(type: JavaExec) {
     
     doLast {
         def selectedOption = project.hasProperty('env') ? project.property('env') : 'dev'
-        // def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
+        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
         println "Selected Option: $selectedOption"
         println "Selected Option: $selectedExportType"
