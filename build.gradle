@@ -30,8 +30,8 @@ task runJava(type: JavaExec) {
            println "Selected Option: nothing"
         }
 
-        println "Selected Option: $selectedEnv"
-        println "Selected Option: $selectedExportType"
+        // println "Selected Option: $selectedEnv"
+        // println "Selected Option: $selectedExportType"
         args '$selectedEnv', '$selectedExportType'
        
     }
