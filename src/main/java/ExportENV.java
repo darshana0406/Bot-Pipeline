@@ -27,7 +27,7 @@ public class ExportENV {
         
         // Call the method to set environment variables
         ExportEVariable.setEnvironmentVariables();
-         if (args.length > 0 && args[0] == "ExportTask" ) {
+         if (args[0] == "ExportTask" ) {
                 String exportType = args[0];
                 System.out.println("Chosen Value: " + exportType);
                 try {
