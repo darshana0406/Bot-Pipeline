@@ -27,20 +27,15 @@ public class ExportENV {
         
         // Call the method to set environment variables
         ExportEVariable.setEnvironmentVariables();
-        
-        try {
+         if (args.length > 0 && args[0] == "ExportTask" ) {
+                String exportType = args[0];
+                System.out.println("Chosen Value: " + exportType);
+                try {
             // Access the environment variable
             String export = System.getProperty("Export_JWT");
             String exportStatusAuth = System.getProperty("Export_JWT");
             String exportUrl = System.getProperty("Export_URL");
-            String exportType = args[0];
-            if (args.length > 0 && exportType == "ExportTask" ) {                
-                System.out.println("Chosen Value: " + exportType);
-                String exportBody = System.getProperty("Export_Body_Without_Task");                
-            } else {
-                System.out.println("No chosen value provided.");
-            }
-            
+            String exportBody = System.getProperty("Export_Body");           
 
             // Export API Call
             URL exportUrlObj = new URL(exportUrl);
@@ -95,11 +90,15 @@ public class ExportENV {
                 InputStream exportStatusInputStream = exportStatusConnection.getErrorStream();
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            exportStatusConnection.disconnect();
-        }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                } finally {
+                    exportStatusConnection.disconnect();
+                }              
+            } else {
+                System.out.println("No chosen value provided.");
+            }
+        
 
         
 
