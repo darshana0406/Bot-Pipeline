@@ -27,14 +27,7 @@ public class ExportENV {
         
         // Call the method to set environment variables
         ExportEVariable.setEnvironmentVariables();
-        if (args.length > 0) {
-            String env = args[0];
-            System.out.println("Chosen Value: " + env);
-
-            // Your application logic here
-        } else {
-            System.out.println("No chosen value provided.");
-        }
+        
         
         try {
             // Access the environment variable
@@ -100,6 +93,15 @@ public class ExportENV {
             e.printStackTrace();
         } finally {
             exportStatusConnection.disconnect();
+        }
+
+        if (args.length > 0) {
+            String env = args[0];
+            System.out.println("Chosen Value: " + env);
+
+            // Your application logic here
+        } else {
+            System.out.println("No chosen value provided.");
         }
 
     }
