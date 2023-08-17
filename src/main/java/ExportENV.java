@@ -27,21 +27,13 @@ public class ExportENV {
         
         // Call the method to set environment variables
         ExportEVariable.setEnvironmentVariables();
-        // if (args.length > 0) {
-        //     String env = args[0];
-        //     System.out.println("Chosen Value: " + env);
-
-        //     // Your application logic here
-        // } else {
-        //     System.out.println("No chosen value provided.");
-        // }
         
         try {
             // Access the environment variable
             String export = System.getProperty("Export_JWT");
             String exportStatusAuth = System.getProperty("Export_JWT");
             String exportUrl = System.getProperty("Export_URL");
-            String exportBody = System.getProperty("Export_Body");
+            String exportBody = System.getProperty("Export_Body_Without_Task");
 
             // Export API Call
             URL exportUrlObj = new URL(exportUrl);
