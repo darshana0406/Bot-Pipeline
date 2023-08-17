@@ -22,12 +22,17 @@ task runJava(type: JavaExec) {
     doLast {
         // def selectedValue = project.properties['selectedValue']
         // println "Selected value: ${selectedValue}"
-        def selectedOption = project.hasProperty('env') ? project.property('env') : 'dev'
-        def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
+        // def selectedOption = project.hasProperty('env') ? project.property('env') : 'dev'
+        // def selectedExportType = project.hasProperty('exportType') ? project.property('exportType') : 'FullExport'
 
-        println "Selected Option: $selectedOption"
-        println "Selected Option: $selectedExportType"
-        args '$selectedOption', '$selectedExportType'
+        // println "Selected Option: $selectedOption"
+        // println "Selected Option: $selectedExportType"
+        // args '$selectedOption', '$selectedExportType'
+
+         
+        def exportType = project.getProperty('exportType')
+        println "Chosen Value: $exportType"
+  
        
     }
     // ext{
