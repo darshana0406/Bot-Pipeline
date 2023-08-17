@@ -33,7 +33,7 @@ public class ExportENV {
             String export = System.getProperty("Export_JWT");
             String exportStatusAuth = System.getProperty("Export_JWT");
             String exportUrl = System.getProperty("Export_URL");
-            String exportBody = System.getProperty("Export_Body");
+            String exportBody = System.getProperty("Export_Body_Without_Task");
 
             // Export API Call
             URL exportUrlObj = new URL(exportUrl);
