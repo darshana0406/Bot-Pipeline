@@ -25,7 +25,7 @@ task runJava(type: JavaExec) {
         def exportType = project.getProperty('exportType')
         println "Chosen Value of ENV : $env"
         println "Chosen Value of Export Type : $exportType"
-        // args '$env', '$exportType'
+        args '$env', '$exportType'
        
     }
     
