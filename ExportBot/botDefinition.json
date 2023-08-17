@@ -19,7 +19,7 @@
             "isSmalltalkMigrated": true,
             "description": "Use this option when none of the predefined purposes match your bot’s purpose.",
             "nlMeta": {
-                "mlUtterances": 19,
+                "mlUtterances": 20,
                 "patterns": 0,
                 "synonyms": 708
             },
@@ -1407,7 +1407,7 @@
     ],
     "scenes": [
         {
-            "_id": "sn-3544f19e-682e-5c06-9960-09c6225bb18f",
+            "_id": "sn-d56d458b-58bf-59e2-87df-70f87ceb7837",
             "botstoreInfo": [
                 {
                     "type": "interactive",
@@ -1416,7 +1416,7 @@
                 }
             ],
             "components": {
-                "snc-f192cba7-8cd1-5034-ad8e-e963f9325fa2": {
+                "snc-37ecbe53-10d5-5ed5-8389-763dfc44a029": {
                     "childs": [],
                     "parentId": null,
                     "seqId": "Id1"
@@ -1425,7 +1425,7 @@
             "currentSeqId": 1,
             "description": "",
             "dialogLinks": {
-                "snc-f192cba7-8cd1-5034-ad8e-e963f9325fa2": {
+                "snc-37ecbe53-10d5-5ed5-8389-763dfc44a029": {
                     "dialogRefId": "83f04e93-fbc8-511e-8056-c74dce398c09"
                 }
             },
@@ -1802,7 +1802,7 @@
             "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
         },
         {
-            "_id": "snc-f192cba7-8cd1-5034-ad8e-e963f9325fa2",
+            "_id": "snc-37ecbe53-10d5-5ed5-8389-763dfc44a029",
             "state": 0,
             "msg": {
                 "type": "text",
@@ -1813,7 +1813,7 @@
             "type": "note",
             "refId": "9b65a832-df59-5698-b8a3-fc35f15fa4a0",
             "comments": [],
-            "sceneId": "sn-3544f19e-682e-5c06-9960-09c6225bb18f",
+            "sceneId": "sn-d56d458b-58bf-59e2-87df-70f87ceb7837",
             "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
         }
     ],
@@ -1923,5 +1923,5 @@
     },
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "2f46b5539eb98e09bbc4c23535f41692"
+    "encryptedHash": "d3aa1af72e66921a0bdce72a4379dfcc"
 }
