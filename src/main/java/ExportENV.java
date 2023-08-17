@@ -41,10 +41,7 @@ public class ExportENV {
             String export = System.getProperty("Export_JWT");
             String exportStatusAuth = System.getProperty("Export_JWT");
             String exportUrl = System.getProperty("Export_URL");
-            String exportBody = System.getProperty("Export_Body_Without_Task");
-            
-            
-            
+            String exportBody = System.getProperty("Export_Body");
 
             // Export API Call
             URL exportUrlObj = new URL(exportUrl);
@@ -55,6 +52,7 @@ public class ExportENV {
             exportConnection.setDoOutput(true);
 
             OutputStream exportOutputStream = exportConnection.getOutputStream();
+
             exportOutputStream.write(exportBody.getBytes());
             exportOutputStream.flush();
             exportOutputStream.close();

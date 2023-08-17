@@ -10,11 +10,11 @@ public class ExportEVariable {
         System.out.println("Importing FullExport");
         }
         else if(exportType.equals("ExportWithoutSetting")){
-        System.setProperty("Export_Body_Without_Setting", "{\"exportType\": \"published\",\"exportOptions\": {\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"],\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}");
+        System.setProperty("Export_Body", "{\"exportType\": \"published\",\"exportOptions\": {\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"],\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}");
         System.out.println("Importing WithOutSetting");
         }
         else if(exportType.equals("ExportTask")){
-        System.setProperty("Export_Body_Without_Task", "{\"exportType\": \"published\",\"exportOptions\": {\"nlpData\": [\"bot_synonyms\",\"defaultDialog\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}");
+        System.setProperty("Export_Body", "{\"exportType\": \"published\",\"exportOptions\": {\"nlpData\": [\"bot_synonyms\",\"defaultDialog\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}");
         System.out.println("Importing ExportTask");
         }
         else{
