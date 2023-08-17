@@ -16,7 +16,7 @@ dependencies {
 
 
 task runJava(type: JavaExec) {
-    main = 'Export' // Replace 'HelloWorld' with the name of your main class if different
+    main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
     
     doLast {
