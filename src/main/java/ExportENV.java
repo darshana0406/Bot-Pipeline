@@ -16,7 +16,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
 import org.json.JSONObject;
 
 public class ExportENV {
@@ -26,15 +25,17 @@ public class ExportENV {
         HttpURLConnection exportStatusConnection = null;
         
         
-        // if (args.length > 0 ) {
-                // String exportType = args[0];
-                // String env = args[1];
-        //         System.out.println("Chosen Value: " + exportType);              
-        //     } else {
-        //         System.out.println("No chosen value provided.");
-        //     }
+        if (args.length > 0 ) {
+                String exportType = args[0];
+                String env = args[1];
+                System.out.println("Chosen Value: " + exportType);              
+            } else {
+                System.out.println("No chosen value provided.");
+            }
         // Call the method to set environment variables
-        ExportEVariable.setEnvironmentVariables(args[0], args[1]);
+                String exportType = args[0];
+                String env = args[1];
+        ExportEVariable.setEnvironmentVariables(env, exportType);
         
         try {
             // Access the environment variable
