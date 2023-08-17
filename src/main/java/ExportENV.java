@@ -33,8 +33,8 @@ public class ExportENV {
             String export = System.getProperty("Export_JWT");
             String exportStatusAuth = System.getProperty("Export_JWT");
             String exportUrl = System.getProperty("Export_URL");
-            if (args.length > 0 ) {
-                String exportType = args[0] = "ExportTask";
+            String exportType = args[0];
+            if (args.length > 0 && exportType == "ExportTask" ) {                
                 System.out.println("Chosen Value: " + exportType);
                 String exportBody = System.getProperty("Export_Body_Without_Task");                
             } else {
