@@ -19,7 +19,7 @@ task runJava(type: JavaExec) {
     main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
     
-    doLast {       
+    doFirst  {       
 
         def env = project.getProperty('env')
         def exportType = project.getProperty('exportType')
