@@ -16,8 +16,10 @@ dependencies {
 
 
 task runJava(type: JavaExec) {
-
-     doLast {       
+    main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
+    classpath = sourceSets.main.runtimeClasspath
+    
+    doLast {       
 
         def env = project.getProperty('env')
         def exportType = project.getProperty('exportType')
@@ -26,10 +28,6 @@ task runJava(type: JavaExec) {
         args '$env', '$exportType'
        
     }
-    main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
-    classpath = sourceSets.main.runtimeClasspath
-    
-   
     
 }
 task runJavaI(type: JavaExec) {
