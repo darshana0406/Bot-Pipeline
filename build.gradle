@@ -29,20 +29,14 @@ task runJava(type: JavaExec) {
         // println "Selected Option: $selectedExportType"
         // args '$selectedOption', '$selectedExportType'
 
-         
+        def env = project.getProperty('env')
         def exportType = project.getProperty('exportType')
-        println "Chosen Value: $exportType"
-  
+        println "Chosen Value of ENV : $env"
+        println "Chosen Value of Export Type : $exportType"
+        // args '$env', '$exportType'
        
     }
-    // ext{
-    //     selectedEnvirnoment = project.hasProperty('selectedEnvironment') ? selectedEnvirnoment : 'dev' 
-    // }
-    // task printSelectedEnvirnoment {
-    //     doLast{
-    //         println "Selected Environment: $selectEnvironment"
-    //     }
-    // }
+    
 }
 task runJavaI(type: JavaExec) {
     main = 'UploadImport' // Replace 'HelloWorld' with the name of your main class if different
