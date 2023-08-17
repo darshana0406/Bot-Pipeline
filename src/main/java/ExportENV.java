@@ -25,17 +25,17 @@ public class ExportENV {
     public static void main(String[] args) {
         HttpURLConnection exportStatusConnection = null;
         
+        
+        if (args.length > 0 ) {
+                String exportType = args[0];
+                String env = args[1];
+                System.out.println("Chosen Value: " + exportType);              
+            } else {
+                System.out.println("No chosen value provided.");
+            }
         // Call the method to set environment variables
-        ExportEVariable.setEnvironmentVariables();
-        // if (args.length > 0 && args[0] == "ExportTask" ) {
-        //         String exportType = args[0];
-        //         System.out.println("Chosen Value: " + exportType);
-        //         String exportBody = System.getProperty("Export_Body_Without_Task");                
-        //     } else {
-        //         System.out.println("No chosen value provided.");
-        //     }
-
-
+        ExportEVariable.setEnvironmentVariables(args[0], args[1]);
+        
         try {
             // Access the environment variable
             String export = System.getProperty("Export_JWT");
