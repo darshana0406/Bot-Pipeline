@@ -23,18 +23,16 @@ public class ExportENV {
     
     public static void main(String[] args) {
         HttpURLConnection exportStatusConnection = null;
-        
+
+        String exportType = args[0];
+        String env = args[1];
         
         if (args.length > 0 ) {
-                String exportType = args[0];
-                String env = args[1];
                 System.out.println("Chosen Value: " + exportType);              
             } else {
                 System.out.println("No chosen value provided.");
             }
         // Call the method to set environment variables
-                String exportType = args[0];
-                String env = args[1];
         ExportEVariable.setEnvironmentVariables(env, exportType);
         
         try {
