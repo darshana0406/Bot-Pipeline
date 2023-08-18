@@ -28,14 +28,6 @@ task runJava(type: JavaExec) {
         args exportType, env
        
     }
-    // doFirst  {       
-
-       
-    //     def exportType = project.getProperty('exportType')
-    //     println "Chosen Value of Export Type : $exportType"
-    //     args exportType
-       
-    // }
     
 }
 task runJavaI(type: JavaExec) {
