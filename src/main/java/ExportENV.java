@@ -28,7 +28,8 @@ public class ExportENV {
         String env = args[1];
         
         if (args.length > 0 ) {
-                System.out.println("Chosen Value: " + exportType);              
+                System.out.println("Chosen Value: " + exportType); 
+                 System.out.println("Chosen Value: " + env);              
             } else {
                 System.out.println("No chosen value provided.");
             }
