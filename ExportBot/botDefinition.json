@@ -1049,71 +1049,254 @@
             "_id": "dc-7663df38-a4d1-5e37-b612-25ac9397629b",
             "refId": "9066058a-b781-5cf4-bd4b-49b6b4b215a1",
             "name": "FallbackMsg",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
             "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I could not understand that. Can you rephrase?",
+                            "type": "basic"
+                        }
+                    }
+                },
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I am unable to find an answer. Please try something else.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
             "localeData": {
                 "en": {
                     "label": "FallbackMsg"
                 }
             },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
             "useTaskLevelNs": true,
-            "vNameSpace": []
+            "isSensitive": false
         },
         {
             "_id": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
             "refId": "1653d709-a74f-54e4-bf75-c992175fbacc",
             "name": "Fallback_Task",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
             "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-f67695f9-748d-5247-b094-ae699fc89fc6",
             "localeData": {
                 "en": {
                     "intent": "Fallback Task",
                     "desc": "Fallback Task"
                 }
             },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
             "useTaskLevelNs": true,
-            "vNameSpace": []
+            "isSensitive": false
         },
         {
             "_id": "dc-d1562367-cb4a-50d5-ad70-b4ce9cf2122c",
             "refId": "dd6c7c68-5750-5f38-bf10-90357c10e15c",
             "name": "WelcomeMsg",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
             "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Hi, how can I help you?",
+                            "type": "basic"
+                        }
+                    }
+                },
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Hello, what can I do for you",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
             "localeData": {
                 "en": {
                     "label": "WelcomeMsg"
                 }
             },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
             "useTaskLevelNs": true,
-            "vNameSpace": []
+            "isSensitive": false
         },
         {
             "_id": "dc-fc82cb8a-0361-54c9-92a0-942d158bca0b",
             "refId": "31d774ab-9579-5641-86ca-1e1d18e74816",
             "name": "Welcome_Task",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
             "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-33e0ee2d-e339-57de-9d69-6561fb672599",
             "localeData": {
                 "en": {
                     "intent": "Welcome Task",
                     "desc": "Welcome Task"
                 }
             },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
             "useTaskLevelNs": true,
-            "vNameSpace": []
+            "isSensitive": false
         }
     ],
     "dialogs": [
         {
             "_id": "dg-f67695f9-748d-5247-b094-ae699fc89fc6",
             "refId": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
+                    "transitions": [
+                        {
+                            "default": "FallbackMsg",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "top": 170,
+                        "left": 30
+                    },
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "transitions": [
+                        {
+                            "metadata": {
+                                "connId": "dummy3",
+                                "color": "#299d8e"
+                            },
+                            "default": ""
+                        }
+                    ],
+                    "componentId": "dc-7663df38-a4d1-5e37-b612-25ac9397629b",
+                    "type": "message",
+                    "nodeId": "FallbackMsg",
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 240
+                    }
+                }
+            ],
             "lname": "fallback task",
+            "isHidden": true,
             "localeData": {
                 "en": {
                     "name": "Fallback Task",
                     "shortDesc": "Fallback Task"
                 }
             },
+            "groups": [],
+            "isFollowUp": true,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
             "amendConfig": {
                 "priority": "bot"
             },
+            "sceneRefId": "d64013c3-5349-56e7-ab4b-ba61ad80b3fb",
             "vNameSpace": [
                 "5535076d-5b61-5dc0-993a-93100d585935"
             ]
@@ -1121,16 +1304,121 @@
         {
             "_id": "dg-33e0ee2d-e339-57de-9d69-6561fb672599",
             "refId": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-fc82cb8a-0361-54c9-92a0-942d158bca0b",
+                    "transitions": [
+                        {
+                            "default": "message3",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "top": 170,
+                        "left": 30
+                    },
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "transitions": [
+                        {
+                            "metadata": {
+                                "connId": "dummy3",
+                                "color": "#299d8e"
+                            },
+                            "default": ""
+                        }
+                    ],
+                    "componentId": "dc-d1562367-cb4a-50d5-ad70-b4ce9cf2122c",
+                    "type": "message",
+                    "nodeId": "message3",
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 240
+                    }
+                }
+            ],
             "lname": "welcome task",
+            "isHidden": true,
             "localeData": {
                 "en": {
                     "name": "Welcome Task",
                     "shortDesc": "Welcome Task"
                 }
             },
+            "groups": [],
+            "isFollowUp": true,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
             "amendConfig": {
                 "priority": "bot"
             },
+            "sceneRefId": "64e75d89-3796-5b10-bf48-e03a52895109",
             "vNameSpace": [
                 "5535076d-5b61-5dc0-993a-93100d585935"
             ]
@@ -1262,7 +1550,318 @@
         }
     ],
     "knowledgeTasks": [],
-    "smallTalk": [],
+    "smallTalk": [
+        {
+            "language": "en",
+            "groups": [
+                {
+                    "groupName": "greetings",
+                    "groupId": "smg-ffe43a63-5ae0-530e-b04d-3a801dd1e415",
+                    "vNameSpace": [
+                        "5535076d-5b61-5dc0-993a-93100d585935"
+                    ],
+                    "nodes": [
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~ibedone"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Right, then.",
+                                    "type": "basic",
+                                    "_id": "mt-4235671c-c119-529c-85aa-ce4623c95f3b"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Alright. ",
+                                    "type": "basic",
+                                    "_id": "mt-d4e2051b-17da-53d7-9e26-d3f4f7bc1d40"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "a3295ea3-17ca-51cb-9174-4155759020ed",
+                            "seq": 6,
+                            "nodeId": "smn-26a33606-7312-56f9-a7ac-f1075a0453d8"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emogoodbye"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Have a good one!",
+                                    "type": "basic",
+                                    "_id": "mt-f96df7bc-00a9-52c8-9628-388f22c1fcd5"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK, bye for now! ",
+                                    "type": "basic",
+                                    "_id": "mt-dd7ebef9-b203-5b94-9358-c88ee3137915"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "020a0fc4-cac9-52c4-ae71-dfd35e8a618c",
+                            "seq": 7,
+                            "nodeId": "smn-3d501a49-e0a1-5af2-96ce-d43052b1a258"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~positiveackwords"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Always great to be able to help. ",
+                                    "type": "basic",
+                                    "_id": "mt-8f39986c-80f2-57da-82d7-9d4208653f76"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of some help.",
+                                    "type": "basic",
+                                    "_id": "mt-e9123585-ee6d-50e5-8521-2a068b1089a2"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could help. ",
+                                    "type": "basic",
+                                    "_id": "mt-6c0487c1-5ef8-5793-b2c0-7fa5f50673af"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of assistance. ",
+                                    "type": "basic",
+                                    "_id": "mt-0085513d-4330-5f14-a3f6-9ce448241eec"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "bd3188ed-fc29-5c2c-a9ed-953437754056",
+                            "seq": 4,
+                            "nodeId": "smn-40d67abb-372e-5ce9-8aaf-52269c3f5586"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "!n ~no"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "OK. ",
+                                    "type": "basic",
+                                    "_id": "mt-fc298ba1-57ce-5360-a797-495d6abc47b6"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Alright.",
+                                    "type": "basic",
+                                    "_id": "mt-cd7256da-4114-5c5f-b180-f00170a9903d"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "d146dfb9-566a-578f-9587-c309250bbd48",
+                            "seq": 5,
+                            "nodeId": "smn-45e10c89-8864-532f-8091-4b660e14abce"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "What ~your name"
+                                },
+                                {
+                                    "text": "what ~you called"
+                                },
+                                {
+                                    "text": "< who be ~you { ? } >"
+                                },
+                                {
+                                    "text": "< tell about yourself >"
+                                },
+                                {
+                                    "text": "< what be [~you ~your] [call name] { ? } >"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "I'm <display-bot-name>.",
+                                    "type": "basic",
+                                    "_id": "mt-9f357ca8-e930-5295-9669-c4f7da4b7b2b"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "b63036d6-88d5-532b-9bb3-1b18ba9d5ba5",
+                            "seq": 2,
+                            "nodeId": "smn-67672cba-579d-5fda-a48b-bb0606ff6711"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohowzit"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "I'm good. Thank you.",
+                                    "type": "basic",
+                                    "_id": "mt-a8a20abd-1a49-57ef-96d1-0ea6761a4aa1"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "a78cdf8c-bf61-52c2-9e78-d510e2424791",
+                            "seq": 1,
+                            "nodeId": "smn-67d4dc74-2e79-543c-8dc8-e76a322f6e41"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "!y ~yes"
+                                },
+                                {
+                                    "text": "get_it"
+                                },
+                                {
+                                    "text": "i_understand"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Right, then.",
+                                    "type": "basic",
+                                    "_id": "mt-9729fd5b-79ff-5bc0-a5d6-ae6866f64976"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK, great! ",
+                                    "type": "basic",
+                                    "_id": "mt-fc22663f-3eec-5e5c-b060-9439b3d763d0"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Alright. ",
+                                    "type": "basic",
+                                    "_id": "mt-216ba57a-ee26-5701-8faf-0588bf13cc3e"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "aa3d100f-0541-5c84-a205-12a9e297fbc9",
+                            "seq": 9,
+                            "nodeId": "smn-68b7ed06-789a-54d1-b7a8-b7c59a808e86"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "thanks"
+                                },
+                                {
+                                    "text": "thank ~you"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "You're welcome.",
+                                    "type": "basic",
+                                    "_id": "mt-0551f0bb-d417-59f7-b008-7b4d8b9e21a1"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "116ab494-ece7-5a18-88a4-b4b58d17ccaf",
+                            "seq": 8,
+                            "nodeId": "smn-a0aedb45-7989-5bcf-b0ee-bcac5622cc3d"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohappy"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could help. ",
+                                    "type": "basic",
+                                    "_id": "mt-d389d446-d5b2-5271-9e01-fd2f26c79548"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad you are happy.",
+                                    "type": "basic",
+                                    "_id": "mt-8a723b56-c272-520b-9ec6-47fc8f8ee077"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "011a1ab5-bfd1-51ee-b141-136fc10878d1",
+                            "seq": 3,
+                            "nodeId": "smn-dee0e210-8712-5420-8181-26e39d4a417f"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohello"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Hello ",
+                                    "type": "basic",
+                                    "_id": "mt-70605b5c-1c32-5444-b831-dbe4389ce680"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi! ",
+                                    "type": "basic",
+                                    "_id": "mt-c1f471d6-8eca-52f7-9ebf-88b947d1cf5f"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi there! ",
+                                    "type": "basic",
+                                    "_id": "mt-0a3e56c0-545b-58f7-bb81-d7e10168f1e0"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hey :)",
+                                    "type": "basic",
+                                    "_id": "mt-039a7214-376f-5b06-9df3-4abd22818876"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "1a5cf8a5-e788-5e0b-a424-c15d70111677",
+                            "seq": 0,
+                            "nodeId": "smn-fc432f58-fbc5-52c0-baf2-12e0e1a96ab4"
+                        }
+                    ],
+                    "count": 9
+                }
+            ]
+        }
+    ],
+    "widgets": [],
+    "panels": [],
     "unexportedTasks": [],
     "customDashboards": [],
     "paramMaps": [],
@@ -1285,6 +1884,7 @@
             "language": "en",
             "state": "published",
             "type": 1,
+            "dialogIntents": [],
             "intentData": {
                 "stopwords": "a about above abst accordance according accordingly across act actually adj  affected affecting affects afterwards again against ah all almost alone along  already also although always am among amongst an and announce another any anybody anyhow  anymore anyone anything anyway anyways anywhere apparently approximately are aren arent  arise around as aside ask asking at auth away awfully  b back be became because become becomes becoming been before beforehand begin beginning  beginnings begins behind being believe below beside besides between beyond biol both brief  briefly but by  c ca came cause causes certain certainly co com come comes contain  containing contains could couldnt  d did didn't different do does doesn't doing done don't down downwards during  e each ed edu effect eg either else elsewhere end ending enough especially  et et-al etc even ever every everybody everyone everything everywhere ex except  f far few ff fix followed following follows for former formerly forth  found from further furthermore  g gave get gets give given gives giving goes gone got gotten  h had happens hardly has hasn't haven't he hed hello hence her here hereafter hereby  herein heres hereupon hers herself hes hi hid him himself his hither home how howbeit however  i ie if i'll im immediate immediately importance important in inc indeed index information  instead into invention inward is isn't it itd it'll its itself i've 'm  j just  k keep keeps kept kg km know known knows  l largely last lately later latter latterly least less lest let lets like liked likely  line little 'll ltd  m made mainly make makes many may maybe me mean means meantime meanwhile merely mg  might miss ml more moreover most mostly mr mrs much mug must my myself  n na namely nay nd near nearly necessarily necessary needs neither never  nevertheless new next no nobody non none nonetheless noone nor normally  nos noted nothing now nowhere  o obtain obtained obviously of off often oh ok okay old omitted on once one ones only onto  or ord other others otherwise ought our ours ourselves over overall owing own  p page pages part particular particularly past per perhaps placed please plus poorly  possible possibly pp present previously primarily probably  promptly proud provides put q que quickly quite qv r ran rather rd re readily really  recent recently ref refs regarding regardless regards related relatively research  respectively resulted resulting results right run  s said same saw say saying says sec section see seeing seem seemed seeming seems seen  self selves sent seven several shall she shed she'll shes should shouldn't show showed  shown showns shows significant significantly similar similarly since slightly so some  somebody somehow someone somethan something sometime sometimes somewhat somewhere soon  sorry specifically specified specify specifying still stop strongly sub substantially  successfully such sufficiently sup sure  t take taken taking tell tends th than thank thanks thanx that that'll thats that've  the their theirs them themselves then thence there thereafter thereby thered therefore  therein there'll thereof therere theres thereto thereupon there've these they theyd they'll  theyre they've think this those thou though thoughh thousand throug through throughout  thru thus til tip to together too took toward towards tried tries truly try trying ts  twice u un under unfortunately unless unlike unlikely until unto up upon ups us use used useful  usefully usefulness uses using usually  v value various 've very via viz vol vols vs  w want wants was wasnt way we wed welcome we'll went were werent we've what whatever  what'll whats when whence whenever where whereafter whereas whereby wherein wheres  whereupon wherever whether which while whim whither who whod whoever whole who'll whom  whomever whos whose why widely willing wish with within without wont words world would  wouldnt www x y yes yet you youd you'll your youre yours yourself yourselves you've  z zero hey hello howdy bro good morning afternoon noon night bye thanks yeah yo no kk"
             },
@@ -1323,6 +1923,11 @@
     "contentVariables": [],
     "namespaces": [],
     "exportOptions": {
+        "tasks": [
+            "botTask",
+            "knowledgeGraph",
+            "smallTalk"
+        ],
         "nlpData": [
             "training_data",
             "bot_synonyms",
@@ -1332,7 +1937,6 @@
             "patterns",
             "standardResponses"
         ],
-        "tasks": [],
         "settings": [],
         "subTasks": {
             "dialogs": [
@@ -1349,5 +1953,5 @@
     },
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "026480a54a0fa122ef946266b14a65a8"
+    "encryptedHash": "875d2189de1c4cfda695cb9523614ad1"
 }
