@@ -22,13 +22,13 @@ public class ExportEVariable {
         }
 
         // for prod use workspace : VB and bot : demobot1
-        if(env.equals("prod")){
+        if(env.equals("prod11")){
             System.setProperty("Export_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWI2ZDY4Njk3LTA1ZmEtNTQwNC1iNzg4LTIxNWE3MWUwMjc0OSJ9.bRkzPwrHF2aWLhvS3e6iEI72XVsk6nuUVPWl-z0VaFQ");
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export/status");
         }
         // for qa use workspace : VB and bot : demobot2
-        else if(env.equals("qa")){
+        else if(env.equals("qa22")){
             System.setProperty("Export_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWJmNWFkNGUyLTE4MjgtNTc2MS04YmY2LTQyNjg2OGI0NWUyYiJ9.tl5Cy379FH0Tws4Mu2f9uDSnKoh0JIaxFgD5XjgQD3k");
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export/status");
