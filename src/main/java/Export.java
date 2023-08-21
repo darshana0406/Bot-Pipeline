@@ -47,7 +47,7 @@ public class Export {
             exportOutputStream.close();
             System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
 
-            Thread.sleep(1500);
+            Thread.sleep(100);
 
             // Export Status API call to get the download URL
             StringBuilder expStatusResp = new StringBuilder();
