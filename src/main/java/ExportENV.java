@@ -59,7 +59,7 @@ public class ExportENV {
             exportOutputStream.close();
             System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
 
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
 
             // Export Status API call to get the download URL
             StringBuilder expStatusResp = new StringBuilder();
@@ -86,7 +86,7 @@ public class ExportENV {
                 URL downloadUrlObj = new URL(downloadUrl);
                 downloadFile(downloadUrlObj, "fullexport.zip");
                 System.out.println("File Downloaded in current working directory");
-                Thread.sleep(1500);
+                // Thread.sleep(1500);
 
                 // Unzip the files
                 String zipFilePath = System.getProperty("ZipFile_Path");
