@@ -180,7 +180,7 @@ public class ExportENV {
         // String commitMessage = "changes for gradle";
 
          // Git commands
-        String gitpull = "git pull origin main";
+        // String gitpull = "git pull origin main";
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
         // String gitPush = "git push origin main";
@@ -188,7 +188,7 @@ public class ExportENV {
         // Execute Git commands
         try {
             // executeCommand(gitRepoPath, tmp);
-            executeCommand(gitRepoPath, gitpull);
+            // executeCommand(gitRepoPath, gitpull);
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
