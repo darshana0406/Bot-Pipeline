@@ -52,3 +52,29 @@ public class ExportEVariable {
         
     }
 }
+
+
+// if [ "$env" == "dev" ]; then
+//     TAG_NAME=$GitTag
+//     TARGET_REPO_URL=$gitrepo1
+// elif [ "$env" == "prod" ]; then
+//     TAG_NAME=$GitTag
+//     TARGET_REPO_URL=$gitrepo2
+// elif [ "$env" == "qa" ]; then
+//     echo "Invalid"
+// else
+//     echo "Invalid environment selected"
+//     exit 1
+// fi
+
+// # Clone the target repository
+// git clone "$TARGET_REPO_URL"
+
+// REPO_NAME=$(basename "$TARGET_REPO_URL" .git)
+// cd "$REPO_NAME"
+
+// # Add a tag
+// git tag "$TAG_NAME"
+
+// # Push the tag to the same repository
+// git push origin "$TAG_NAME"
