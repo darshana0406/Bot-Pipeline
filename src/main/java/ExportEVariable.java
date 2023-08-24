@@ -37,7 +37,7 @@ public class ExportEVariable {
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export/status");
             System.setProperty("Git_Repo", "https://github.com/darshana0406/testrepo.git");
              System.setProperty("ZipFile_Path", "fullexport.zip");
-            System.setProperty("Dest_Dir", "./testrepo/ExportBot");
+            System.setProperty("Dest_Dir", "testrepo/ExportBot");
             
         }
         // for dev use diffrent account workspace : DB and bot : Exportbot
