@@ -26,7 +26,9 @@ public class ExportEVariable {
             System.setProperty("Export_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWI2ZDY4Njk3LTA1ZmEtNTQwNC1iNzg4LTIxNWE3MWUwMjc0OSJ9.bRkzPwrHF2aWLhvS3e6iEI72XVsk6nuUVPWl-z0VaFQ");
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export/status");
-            System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
+            // System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
+            System.setProperty("git_repo_name", "darshana0406"); 
+            System.setProperty("project_name", "BotExportFiles"); 
              System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "ExportBot");
         }
@@ -35,7 +37,9 @@ public class ExportEVariable {
             System.setProperty("Export_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWJmNWFkNGUyLTE4MjgtNTc2MS04YmY2LTQyNjg2OGI0NWUyYiJ9.tl5Cy379FH0Tws4Mu2f9uDSnKoh0JIaxFgD5XjgQD3k");
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export/status");
-            System.setProperty("Git_Repo", "https://github.com/darshana0406/testrepo.git");
+            // System.setProperty("Git_Repo", "https://github.com/darshana0406/testrepo.git");
+            System.setProperty("git_repo_name", "darshana0406"); 
+            System.setProperty("project_name", "testrepo");
              System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "testrepo/ExportBot");
             
@@ -45,13 +49,13 @@ public class ExportEVariable {
             System.setProperty("Export_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUwZDA1N2YwLWY2MDUtNTljYS05OGFjLWI5MWJhMGQ3MmVlMiJ9.xmrKV3z7a9yoDlG7geOlCbaxgzWzVvvXM40LhdJya1A");
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-e5669197-991d-5971-9417-a422368a0805/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-e5669197-991d-5971-9417-a422368a0805/export/status");
-            System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
+            // System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
              System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "ExportBot");
         }
             
         
-       
+        
          
         
         
