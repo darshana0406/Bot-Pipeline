@@ -176,7 +176,7 @@ public class ExportENV {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "https://github.com/darshana0406/Bot-Pipeline.git"; // Replace this with the actual path to your Git repository
         // String commitMessage = "changes for gradle";
 
          // Git commands
