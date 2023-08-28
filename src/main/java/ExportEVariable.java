@@ -4,21 +4,29 @@ public class ExportEVariable {
         //condition for Export only NLPData
         if(exportType.equals("ExportNLP")){
             System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"allTasks\": true,\"customDashboards\": false,\"IncludeDependentTasks\": true}");
+             System.setProperty("ZipFile_Path", "fullexport.zip");
+            System.setProperty("Dest_Dir", "ExportNLP");
         }
 
         //condition for Export only Task and Sub Task
         else if(exportType.equals("ExportBotTasks")){
             System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": false,\"IncludeDependentTasks\": true}");
+             System.setProperty("ZipFile_Path", "fullexport.zip");
+            System.setProperty("Dest_Dir", "ExportBot");
         }
 
         //condition for Export without Setting
         else if(exportType.equals("ExportWithOutSettings")){
             System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"],\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}");
+             System.setProperty("ZipFile_Path", "fullexport.zip");
+            System.setProperty("Dest_Dir", "ExportBot");
         }
 
         //condition for Export Full Bot
         else{
             System.setProperty("Export_Body","{\"exportType\": \"published\"}");
+             System.setProperty("ZipFile_Path", "fullexport.zip");
+            System.setProperty("Dest_Dir", "ExportBot");
         }
 
         // for prod use workspace : VB and bot : demobot1
@@ -27,10 +35,9 @@ public class ExportEVariable {
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export/status");
             // System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
-            System.setProperty("git_repo_name", "darshana0406"); 
-            System.setProperty("project_name", "BotExportFiles"); 
-             System.setProperty("ZipFile_Path", "fullexport.zip");
-            System.setProperty("Dest_Dir", "ExportBot");
+            // System.setProperty("git_repo_name", "darshana0406"); 
+            // System.setProperty("project_name", "BotExportFiles"); 
+            
         }
         // for qa use workspace : VB and bot : demobot2
         else if(env.equals("qa")){
@@ -38,10 +45,10 @@ public class ExportEVariable {
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-c72008d0-ce30-571b-ba13-1078b89dbef4/export/status");
             // System.setProperty("Git_Repo", "https://github.com/darshana0406/testrepo.git");
-            System.setProperty("git_repo_name", "darshana0406"); 
-            System.setProperty("project_name", "testrepo");
-             System.setProperty("ZipFile_Path", "fullexport.zip");
-            System.setProperty("Dest_Dir", "testrepo/ExportBot");
+            // System.setProperty("git_repo_name", "darshana0406"); 
+            // System.setProperty("project_name", "testrepo");
+            //  System.setProperty("ZipFile_Path", "fullexport.zip");
+            // System.setProperty("Dest_Dir", "testrepo/ExportBot");
             
         }
         // for dev use diffrent account workspace : DB and bot : Exportbot
@@ -50,8 +57,8 @@ public class ExportEVariable {
             System.setProperty("Export_URL", "https://bots.kore.ai/api/public/bot/st-e5669197-991d-5971-9417-a422368a0805/export");
             System.setProperty("ExportStatus_URL", "https://bots.kore.ai/api/public/bot/st-e5669197-991d-5971-9417-a422368a0805/export/status");
             // System.setProperty("Git_Repo", "https://github.com/darshana0406/BotExportFiles.git");
-             System.setProperty("ZipFile_Path", "fullexport.zip");
-            System.setProperty("Dest_Dir", "ExportBot");
+            //  System.setProperty("ZipFile_Path", "fullexport.zip");
+            // System.setProperty("Dest_Dir", "ExportBot");
         }
             
         
