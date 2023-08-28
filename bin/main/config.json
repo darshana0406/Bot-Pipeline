@@ -1,0 +1,10 @@
+{
+    "dev": {
+      "git_repo_name": "darshana0406",
+      "project_name": "BotExportFiles"
+    },
+    "prod": {
+      "git_repo_name": "darshana0406",
+      "project_name": "testrepo"
+    }
+  }
