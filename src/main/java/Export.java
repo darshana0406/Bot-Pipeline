@@ -1,4 +1,5 @@
-// package EnvironmentVariable;
+// package src.main.java;
+// package Final;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -16,34 +17,21 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
 import org.json.JSONObject;
 
-public class ExportENV {
-    
-    
+import java.nio.file.Path;
+
+
+public class Export {
+
     public static void main(String[] args) {
-
         HttpURLConnection exportStatusConnection = null;
-
-        String exportType = args[0];
-        String env = args[1];
-        
-        if (args.length > 0 ) {
-                System.out.println("Chosen Value: " + exportType); 
-                 System.out.println("Chosen Value: " + env);              
-            } else {
-                System.out.println("No chosen value provided.");
-            }
-        // Call the method to set environment variables
-        ExportEVariable.setEnvironmentVariables(env, exportType);
-        
         try {
-            // Access the environment variable
-            String export = System.getProperty("Export_JWT");
-            String exportStatusAuth = System.getProperty("Export_JWT");
-            String exportUrl = System.getProperty("Export_URL");
-            String exportBody = System.getProperty("Export_Body");
-            // String gitrepo = System.getProperty("Git_Repo");
+            String export = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWI2ZDY4Njk3LTA1ZmEtNTQwNC1iNzg4LTIxNWE3MWUwMjc0OSJ9.bRkzPwrHF2aWLhvS3e6iEI72XVsk6nuUVPWl-z0VaFQ";
+            String exportStatusAuth = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWI2ZDY4Njk3LTA1ZmEtNTQwNC1iNzg4LTIxNWE3MWUwMjc0OSJ9.bRkzPwrHF2aWLhvS3e6iEI72XVsk6nuUVPWl-z0VaFQ";
+            String exportUrl = "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export";
+            String exportBody = "{\"exportType\": \"published\",\"exportOptions\": {\"settings\": [\"botSettings\",\"botVariables\",\"ivrSettings\"],\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"],\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"customDashboards\": true,\"IncludeDependentTasks\": true}";
 
             // Export API Call
             URL exportUrlObj = new URL(exportUrl);
@@ -54,17 +42,16 @@ public class ExportENV {
             exportConnection.setDoOutput(true);
 
             OutputStream exportOutputStream = exportConnection.getOutputStream();
-
             exportOutputStream.write(exportBody.getBytes());
             exportOutputStream.flush();
             exportOutputStream.close();
             System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
 
-           // Thread.sleep(1000);
+            Thread.sleep(1500);
 
             // Export Status API call to get the download URL
             StringBuilder expStatusResp = new StringBuilder();
-            String exportStatusUrl = System.getProperty("ExportStatus_URL");
+            String exportStatusUrl = "https://bots.kore.ai/api/public/bot/st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132/export/status";
             exportStatusConnection = (HttpURLConnection) new URL(exportStatusUrl).openConnection();
             exportStatusConnection.setRequestMethod("GET");
             exportStatusConnection.setRequestProperty("auth", exportStatusAuth);
@@ -87,11 +74,11 @@ public class ExportENV {
                 URL downloadUrlObj = new URL(downloadUrl);
                 downloadFile(downloadUrlObj, "fullexport.zip");
                 System.out.println("File Downloaded in current working directory");
-                // Thread.sleep(1500);
+                Thread.sleep(1500);
 
                 // Unzip the files
-                String zipFilePath = System.getProperty("ZipFile_Path");
-                String destDir = System.getProperty("Dest_Dir");
+                String zipFilePath = "fullexport.zip";
+                String destDir = "ExportBot";
                 unzip(zipFilePath, destDir);
                 System.out.println("Files unzipped to " + destDir);
 
@@ -105,15 +92,13 @@ public class ExportENV {
             exportStatusConnection.disconnect();
         }
 
-        
-
     }
 
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
             // If the file needs to be copied to specific path, create custom path and
             // provide
-            // Path path = Paths.get("/Test/Files");
+            Path path = Paths.get("ExportBot");
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         }
     }
@@ -176,31 +161,30 @@ public class ExportENV {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        // String gitRepoPath = "./ExportBot"; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         // String commitMessage = "changes for gradle";
 
          // Git commands
-        // String gitpull = "git pull origin main";
-        // String gitAdd = "git add .";
-        // String gitCommit = "git commit -m 'Updated'";
+        
+        String gitAdd = "git add .";
+        String gitCommit = "git commit -m 'Updated'";
         // String gitPush = "git push origin main";
 
         // Execute Git commands
-        // try {
-        //     // executeCommand(gitRepoPath, tmp);
-        //     // executeCommand(gitRepoPath, gitpull);
-        //     // executeCommand(gitRepoPath, gitAdd);
-        //     System.out.println("Executing: " + gitCommit);
-        //     executeCommand(gitRepoPath, gitCommit);
-        //     // System.out.println("Executing: " + gitPush);
-        //     // executeCommand(gitRepoPath, gitPush);
-        //     System.out.println("Changes added, committed and push successfully.");
-        // } catch (IOException | InterruptedException e) {
-        //     e.printStackTrace();
-        //     System.err.println("Failed to add, commit, and push changes." + e.getMessage());
-        // }
-
+        try {
+            // executeCommand(gitRepoPath, tmp);
+            executeCommand(gitRepoPath, gitAdd);
+            System.out.println("Executing: " + gitCommit);
+            executeCommand(gitRepoPath, gitCommit);
+            // System.out.println("Executing: " + gitPush);
+            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed and push successfully.");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
+        }
     }
+
     private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
         ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
         processBuilder.directory(new java.io.File(workingDir));
@@ -210,42 +194,6 @@ public class ExportENV {
             throw new RuntimeException("Failed to execute command: " + command); 
         }
     }
+ 
+    }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-//   "dev": {
-//     "git_user": "darshana0406",
-//     "git_repo_name": "BotExportFiles",
-//     "env_name" : {
-//       "ExportNLP" : {
-//         "Complete_NLP" : {
-//           "src_directory" : "Export_NLP/Complete_NLP/"
-//         },
-//         "KnowledgeGraph" : {
-//           "src_directory" : "Export_NLP/KnowledgeGraph/"
-//         }
-//       }
-//     }
-    
-//   },
-//   "prod": {
-//     "git_user": "darshana0406",
-//     "git_repo_name": "testrepo"
-//   }
-// }
