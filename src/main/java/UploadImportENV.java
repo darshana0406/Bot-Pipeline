@@ -24,7 +24,7 @@ public class UploadImportENV {
         //  String[] fileNames = System.getProperty("Upload_FileName");
 
             String retrievedProperty = System.getProperty("Upload_FileName");
-            String[] fileNames = retrievedProperty.split(",");
+            String[] fileNames = retrievedProperty.split(";");
             Arrays.stream(fileNames).forEach(System.out::println);
             String fileContext = System.getProperty("Upload_FileContext");
             String fileExtension = "json";

@@ -176,29 +176,29 @@ public class ExportENV {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        // String gitRepoPath = "./ExportBot"; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "https://github.com/darshana0406/Bot-Pipeline.git"; // Replace this with the actual path to your Git repository
         // String commitMessage = "changes for gradle";
 
          // Git commands
         // String gitpull = "git pull origin main";
-        // String gitAdd = "git add .";
-        // String gitCommit = "git commit -m 'Updated'";
+        String gitAdd = "git add .";
+        String gitCommit = "git commit -m 'Updated'";
         // String gitPush = "git push origin main";
 
         // Execute Git commands
-        // try {
-        //     // executeCommand(gitRepoPath, tmp);
-        //     // executeCommand(gitRepoPath, gitpull);
-        //     // executeCommand(gitRepoPath, gitAdd);
-        //     System.out.println("Executing: " + gitCommit);
-        //     executeCommand(gitRepoPath, gitCommit);
-        //     // System.out.println("Executing: " + gitPush);
-        //     // executeCommand(gitRepoPath, gitPush);
-        //     System.out.println("Changes added, committed and push successfully.");
-        // } catch (IOException | InterruptedException e) {
-        //     e.printStackTrace();
-        //     System.err.println("Failed to add, commit, and push changes." + e.getMessage());
-        // }
+        try {
+            // executeCommand(gitRepoPath, tmp);
+            // executeCommand(gitRepoPath, gitpull);
+            executeCommand(gitRepoPath, gitAdd);
+            System.out.println("Executing: " + gitCommit);
+            executeCommand(gitRepoPath, gitCommit);
+            // System.out.println("Executing: " + gitPush);
+            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed and push successfully.");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
+        }
 
     }
     private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
@@ -249,3 +249,36 @@ public class ExportENV {
 //     "git_repo_name": "testrepo"
 //   }
 // }
+
+
+// #!/bin/sh
+// user=`jq -r ".dev.git_user" $config`
+// repo=`jq -r ".dev.git_repo_name" $config`
+// giturl=`jq -r ".dev.git_url" $config`
+
+// if [ "$env" = "dev" ]; then
+//    	REPO_URL="git@$giturl:$user/$repo.git"
+
+// 	cat "$keyfile" > id_rsa
+// 	chmod 600 id_rsa
+
+// 	rm -rf $WORKSPACE_TMP 
+// 	mkdir -p $WORKSPACE_TMP
+  
+//    	git clone -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" "$REPO_URL" "$WORKSPACE_TMP/"
+//    	cp -r $WORKSPACE/ExportBot $WORKSPACE_TMP/
+//    	cd $WORKSPACE_TMP
+    
+//    	git add .
+//    	git commit -m "pushing bot configs"
+//    	git -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" push origin main
+//    	git tag $GitTag
+//    	git -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" push origin $GitTag
+//    	rm -f id_rsa
+   
+// else
+//     REPO_URL="git@github.com:darshana0406/testrepo.git"
+// fi
+
+
+
