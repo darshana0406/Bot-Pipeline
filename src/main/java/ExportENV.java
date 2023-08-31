@@ -181,13 +181,14 @@ public class ExportENV {
 
          // Git commands
         // String gitpull = "git pull origin main";
+        String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
         // String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
-            // executeCommand(gitRepoPath, tmp);
+            executeCommand(gitclone, gitRepoPath);
             // executeCommand(gitRepoPath, gitpull);
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
