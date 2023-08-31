@@ -176,19 +176,19 @@ public class ExportENV {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "https://github.com/darshana0406/Bot-Pipeline.git"; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
         // String commitMessage = "changes for gradle";
 
          // Git commands
         // String gitpull = "git pull origin main";
-        String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
+        // String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
         // String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
-            executeCommand(gitclone, gitRepoPath);
+            // executeCommand(gitclone, gitRepoPath);
             // executeCommand(gitRepoPath, gitpull);
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
