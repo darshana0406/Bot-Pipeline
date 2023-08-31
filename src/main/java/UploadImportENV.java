@@ -23,12 +23,14 @@ public class UploadImportENV {
             String authToken = System.getProperty("Upload_JWT");
         //  String[] fileNames = System.getProperty("Upload_FileName");
 
-            String retrievedProperty = System.getProperty("Upload_FileName");
-            String[] fileNames = retrievedProperty.split(";");
-            Arrays.stream(fileNames).forEach(System.out::println);
+            // String retrievedProperty = System.getProperty("Upload_FileName");
+            // String[] fileNames = retrievedProperty.split(",");
+            // Arrays.stream(fileNames).forEach(System.out::println);
+ 
+            String[] fileNames = System.getProperty("Upload_FileName").split(",");
             String fileContext = System.getProperty("Upload_FileContext");
-            String fileExtension = "json";
-            String boundary = "------------------------abcdef1234567890";
+            String fileExtension = System.getProperty("Upload_FileExtension");
+            String boundary = System.getProperty("Upload_boundary");
             String botDefinitionId = "";
             String configInfoId = "";
 
