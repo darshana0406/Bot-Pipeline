@@ -78,7 +78,7 @@ public class Export {
                 // String downloadUrlObj2 = "C:/Users/gg/Downloads/Bot2Test";
                 // downloadFile2(downloadUrlObj2,"fullexport.zip");
                 
-                String gitRepoUrl = "https://github.com/darshana0406/CCT-Bots-Automation/tree/javamain/CCT_Billing/Dev_NCE";
+                String gitRepoUrl = "https://github.com/darshana0406/CCT-Bots-Automation.git";
                 String fileName = "fullexport.zip";
                 downloadFile2(gitRepoUrl, fileName);
 
