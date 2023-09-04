@@ -11,6 +11,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -73,6 +74,15 @@ public class Export {
                 // Download the file using URL
                 URL downloadUrlObj = new URL(downloadUrl);
                 downloadFile(downloadUrlObj, "fullexport.zip");
+
+                String downloadUrlObj2 = "C:/Users/gg/Downloads/Bot2Test";
+                downloadFile2(downloadUrlObj2,"fullexport.zip");
+                
+                String gitRepoUrl = "https://github.com/darshana0406/CCT-Bots-Automation/tree/javamain/CCT_Billing/Dev_NCE";
+                String fileName = "fullexport.zip";
+                downloadFile2(gitRepoUrl, fileName);
+
+
                 System.out.println("File Downloaded in current working directory");
                 Thread.sleep(1500);
 
@@ -94,6 +104,24 @@ public class Export {
 
     }
 
+  private static void downloadFile2(String url, String fileName) throws Exception {
+try {
+        URL u = new URL(url); // Create a URL object from the Git repository URL
+        try (InputStream in = u.openStream()) {
+            // If the file needs to be copied to a specific path, create a custom path and provide it
+            Path path = Paths.get("ExportBot");
+            Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Working");
+        }
+    } catch (MalformedURLException e) {
+        // Handle invalid URL exception
+        e.printStackTrace();
+    }
+}
+  
+ 
+    
+
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
             // If the file needs to be copied to specific path, create custom path and
@@ -102,6 +130,7 @@ public class Export {
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         }
     }
+
 
     private static void unzip(String zipFilePath, String destDir) {
         File dir = new File(destDir);
