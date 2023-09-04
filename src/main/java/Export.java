@@ -81,7 +81,9 @@ public class Export {
                 String gitRepoUrl = "https://github.com/darshana0406/CCT-Bots-Automation.git";
                 String fileName = "fullexport.zip";
                 downloadFile2(gitRepoUrl, fileName);
-
+                String zipFilePath1 = "fullexport.zip";
+                String destDir1 = "ExportBot";
+                unzip(zipFilePath1, destDir1);
 
                 System.out.println("File Downloaded in current working directory");
                 Thread.sleep(1500);
