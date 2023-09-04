@@ -75,8 +75,8 @@ public class Export {
                 URL downloadUrlObj = new URL(downloadUrl);
                 downloadFile(downloadUrlObj, "fullexport.zip");
 
-                String downloadUrlObj2 = "C:/Users/gg/Downloads/Bot2Test";
-                downloadFile2(downloadUrlObj2,"fullexport.zip");
+                // String downloadUrlObj2 = "C:/Users/gg/Downloads/Bot2Test";
+                // downloadFile2(downloadUrlObj2,"fullexport.zip");
                 
                 String gitRepoUrl = "https://github.com/darshana0406/CCT-Bots-Automation/tree/javamain/CCT_Billing/Dev_NCE";
                 String fileName = "fullexport.zip";
@@ -104,7 +104,7 @@ public class Export {
 
     }
 
-  private static void downloadFile2(String url, String fileName) throws Exception {
+  public static void downloadFile2(String url, String fileName) throws Exception {
 try {
         URL u = new URL(url); // Create a URL object from the Git repository URL
         try (InputStream in = u.openStream()) {
