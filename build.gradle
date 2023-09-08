@@ -6,6 +6,7 @@ repositories {
 
 dependencies {
     implementation 'org.json:json:20210307'
+    implementation 'org.eclipse.jgit:org.eclipse.jgit:5.13.1.202103092114-r'
 }
 
 // if (MyChoiceParameter == 'Option 1') {

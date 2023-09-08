@@ -71,6 +71,7 @@ public class Export1 {
                 // Download the file using URL
                 URL downloadUrlObj = new URL("https://github.com/darshana0406/CCT-Bots-Automation.git");
                 downloadFile(downloadUrlObj, "fullexport.zip");
+                System.out.println("download-->"+downloadUrlObj);
 
                 // String downloadUrlObj2 = "C:/Users/gg/Downloads/Bot2Test";
                 // downloadFile2(downloadUrlObj2,"fullexport.zip");
