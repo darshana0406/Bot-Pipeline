@@ -1,18 +1,51 @@
+// apply plugin: 'java'
+
+// repositories {
+//     jcenter()
+// }
+
+// dependencies {
+//     implementation 'org.json:json:20210307'
+// }
+
+// // if (MyChoiceParameter == 'Option 1') {
+// //     return "task1"
+// // } else if (MyChoiceParameter == 'Option 2') {
+// //     return "task2"
+// // }
+
+
+// task runJava(type: JavaExec) {
+//     main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
+//     classpath = sourceSets.main.runtimeClasspath
+    
+//     doFirst  {       
+
+//         def env = project.getProperty('env')
+//         def exportType = project.getProperty('exportType')
+//         println "Chosen Value of ENV : $env"
+//         println "Chosen Value of Export Type : $exportType"
+//         args exportType, env
+       
+//     }
+    
+// }
+// task runJavaI(type: JavaExec) {
+//     main = 'UploadImportENV' // Replace 'HelloWorld' with the name of your main class if different
+//     classpath = sourceSets.main.runtimeClasspath
+// }
+
+
 apply plugin: 'java'
 
 repositories {
     jcenter()
+    mavenCentral()
 }
 
 dependencies {
     implementation 'org.json:json:20210307'
 }
-
-// if (MyChoiceParameter == 'Option 1') {
-//     return "task1"
-// } else if (MyChoiceParameter == 'Option 2') {
-//     return "task2"
-// }
 
 
 task runJava(type: JavaExec) {
@@ -21,8 +54,8 @@ task runJava(type: JavaExec) {
     
     doFirst  {       
 
-        def env = project.getProperty('env')
-        def exportType = project.getProperty('exportType')
+        def env = project.getProperty('ENVIRONMENT')
+        def exportType = project.getProperty('ACTION')
         println "Chosen Value of ENV : $env"
         println "Chosen Value of Export Type : $exportType"
         args exportType, env
@@ -31,6 +64,15 @@ task runJava(type: JavaExec) {
     
 }
 task runJavaI(type: JavaExec) {
-    main = 'UploadImportENV' // Replace 'HelloWorld' with the name of your main class if different
+    main = 'UI' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
+
+    doFirst  {       
+
+        def env = project.getProperty('ENVIRONMENT')
+        def exportType = project.getProperty('ACTION')
+        println "Chosen Value of ENV : $env"
+        println "Chosen Value of Export Type : $importType"
+        args importType, env
+}
 }
