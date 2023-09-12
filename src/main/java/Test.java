@@ -4,8 +4,8 @@
    public class Test {
     
         public static void main(String[] args) {
-            String fileUrl = "C:/Users/gg/Downloads/botexport_shell.txt"; // Replace with the URL of the file you want to download
-            String destinationPath = "https://github.com/darshana0406/CCT-Bots-Automation/tree/javamain/CCT_Billing/Dev_NCE"; // Replace with the desired destination path in the local Git repository
+            String fileUrl = "C:/Users/gg/Documents/Darshana-infy/Bot-Pipeline/ExportBot"; // Replace with the URL of the file you want to download
+            String destinationPath = "https://github.com/darshana0406/CCT-Bots-Automation"; // Replace with the desired destination path in the local Git repository
     
             try {
                 downloadFile(fileUrl, destinationPath);

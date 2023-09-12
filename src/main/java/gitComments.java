@@ -4,16 +4,18 @@
         import java.io.InputStreamReader;
         
        public class gitComments {
+
+
             public static void main(String[] args) {
-                // Set the repository URL and download path
+                // Set the destination repository URL and download path
                 String repositoryURL = "https://github.com/darshana0406/CCT-Bots-Automation.git";
-                String downloadPath = "";
+                String downloadPath = "C:/Users/gg/Downloads/botexport_shell.txt";
         
                 try {
-                    // Create a ProcessBuilder to run the 'git clone' command
-                    ProcessBuilder processBuilder = new ProcessBuilder("git", "clone", repositoryURL, downloadPath);
+                    // Create a ProcessBuilder to run the 'git add' command
+                    ProcessBuilder processBuilder = new ProcessBuilder("git", "add", repositoryURL, downloadPath);
         
-                    // Start the 'git clone' process
+                    // Start the 'git add' process
                     Process process = processBuilder.start();
         
                     // Read and display the process output
@@ -27,9 +29,9 @@
                     int exitCode = process.waitFor();
         
                     if (exitCode == 0) {
-                        System.out.println("Repository cloned successfully to " + downloadPath);
+                        System.out.println("Repository add successfully to " + downloadPath);
                     } else {
-                        System.err.println("Clone failed with exit code " + exitCode);
+                        System.err.println("Add failed with exit code " + exitCode);
                     }
                 } catch (IOException | InterruptedException e) {
                     e.printStackTrace();
