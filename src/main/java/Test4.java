@@ -19,6 +19,7 @@ public class Test4 {
             // Open the existing repository without cloning
             Repository repository = Git.open(new File(localPath)).getRepository();
             Git git = new Git(repository);
+            git.add().addFilepattern();
 
             // Perform operations on the repository, e.g., add comments
             // For example, you can list commits
