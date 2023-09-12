@@ -69,8 +69,8 @@ task runJavaI(type: JavaExec) {
 
     doFirst  {       
 
-        def env = project.getProperty('ENVIRONMENT')
-        def exportType = project.getProperty('ACTION')
+        def env = project.getProperty('env')
+        def exportType = project.getProperty('importType')
         println "Chosen Value of ENV : $env"
         println "Chosen Value of Export Type : $importType"
         args importType, env
