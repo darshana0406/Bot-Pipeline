@@ -124,8 +124,18 @@ public class UIENV extends UI {
             + "}");
          
      }
-        //Upload Properties
-        
+     // for prod use workspace : VB and bot : demobot1
+     if(env.equals("prod")){
+     
+  }
+  // for qa use workspace : VB and bot : demobot2
+  else if(env.equals("qa")){
+     
+      
+  }
+  // for dev use diffrent account workspace : DB and bot : Exportbot
+  else {
+     
         System.setProperty("Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
         System.setProperty("Upload_URL", "https://bots.kore.ai/api/public/uploadfile");
         System.setProperty("Upload_FileContext", "bulkImport");
@@ -162,6 +172,11 @@ public class UIENV extends UI {
         // String s = UploadImportEVariable.getCon();
         // System.out.println(s+".....");
     }
+     
+  }
+      
+        //Upload Properties
+      
     
     
     
