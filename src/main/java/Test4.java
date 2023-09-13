@@ -1,46 +1,65 @@
-import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.*;
+import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.TransportException;
 import org.eclipse.jgit.lib.Repository;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-import org.eclipse.jgit.transport.CredentialsProvider;
-import org.eclipse.jgit.revwalk.RevCommit;
 
-import java.io.File;
+import java.io.*;
+import java.net.URL;
+import java.nio.file.*;
 
 public class Test4 {
     public static void main(String[] args) {
-        // Replace these with your repository URL and local path
-        String remoteRepositoryURL = "https://github.com/darshana0406/CCT-Bots-Automation.git";
-        String username = "darshana0406";
-        String password = "Darshana@0406";
-        String localPath = "C:/Users/gg/Documents/Darshana-infy/CCT-Bots-Automation"; // Change this to your desired local path
+        // Replace with your GitHub repository details and personal access token (PAT)
+        String sourceRepoURL = "https://github.com/darshana0406/Bot-Pipeline";
+        String targetRepoURL = "https://github.com/darshana0406/CCT-Bots-Automation";
+        String sourceFileURL = "https://github.com/darshana0406/Bot-Pipeline/blob/javamain/fullexport.zip";
+        String targetFileName = "https://github.com/darshana0406/CCT-Bots-Automation/blob/javamain/target-file.txt";
+        String pat = "SHA256:bWvp7yTPArRSHiJ3vuE90btXv2YmkHq6qWJ4OFkMvO0"; // Your personal access token
 
         try {
-            // Open the existing repository without cloning
-            Repository repository = Git.open(new File(localPath)).getRepository();
-            Git git = new Git(repository);
-            git.add().addFilepattern();
+            // Download the file from the source GitHub URL
+            downloadFile(new URL(sourceFileURL), targetFileName);
 
-            // Perform operations on the repository, e.g., add comments
-            // For example, you can list commits
-            Iterable<RevCommit> commits = git.log().call();
-            for (RevCommit commit : commits) {
-                System.out.println("Commit: " + commit.getName() + ", Message: " + commit.getFullMessage());
-            }
+            // Initialize JGit repositories
+            // Git sourceGit = Git.cloneRepository()
+            //         .setURI(sourceRepoURL)
+            //         .setCredentialsProvider(new UsernamePasswordCredentialsProvider(pat, "Darshana@0406"))
+            //         .call();
+            
+             Git targetGit = Git.cloneRepository()
+                     .setURI(targetRepoURL)
+                     .setCredentialsProvider(new UsernamePasswordCredentialsProvider(pat, "Darshana@0406"))
+                     .call();
 
-            // You can also add comments or perform other Git operations here
+           
 
-            // Dispose of the repository when done
-            repository.close();
+            // Add the downloaded file to the target Git repository
+            targetGit.add()
+                    .addFilepattern(targetFileName)
+                    .call();
 
-            System.out.println("Repository operations completed.");
-        } catch (TransportException e) {
-            System.err.println("Error: " + e.getMessage());
-        } catch (Exception e) {
+            // Commit the changes in the target Git repository
+            targetGit.commit()
+                    .setMessage("Add " + targetFileName)
+                    .call();
+
+            // Push the changes to the target GitHub repository
+            PushCommand pushCommand = targetGit.push();
+            pushCommand.setRemote("origin"); // Change to your remote name if needed
+            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(pat, "Darshana@0406"));
+            pushCommand.call();
+
+            System.out.println("File downloaded and uploaded to the target repository successfully.");
+        } catch (IOException | GitAPIException e) {
             e.printStackTrace();
         }
     }
+
+    public static void downloadFile(URL url, String fileName) throws IOException {
+ 
+        try (InputStream in = url.openStream()) {
+            Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
 }
-
-    
-
