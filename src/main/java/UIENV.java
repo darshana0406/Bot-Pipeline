@@ -106,6 +106,7 @@ public class UIENV extends UI {
             + "        \"settings\": [\n"
             + "            \"botSettings\",\n"
             + "            \"ivrSettings\",\n"
+            
             + "            \"botVariables\",\n"
             + "            \"ivrSettings\"\n"
             + "        ],\n"

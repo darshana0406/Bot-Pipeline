@@ -48,7 +48,7 @@ try {
     // Git git = new Git(repository);
 
 
-    File localPath = new File("C:/Users/gg/Downloads/Testing/test1", "");
+    File localPath = new File("C:/Users/gg/Downloads/Test1/test", "");
           if(!localPath.createNewFile()) {
               throw new IOException("Could not delete temporary file " + localPath);
           }
