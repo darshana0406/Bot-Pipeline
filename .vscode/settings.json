@@ -1,7 +1,8 @@
 {
     "java.project.referencedLibraries": [
         "lib/json-20230618.jar",
-        "lib/org.eclipse.jgit-6.3.0.202209071007-r.jar"
+        "lib/org.eclipse.jgit-6.3.0.202209071007-r.jar",
+        "lib/org.eclipse.jgit-6.7.0.202309050840-r.jar"
         
         // "C://Users\\gg\\Downloads\\okhttp\\okhttp-3.9.0.jar",
         // "C:\\Users\\gg\\Downloads\\org.apache.commons.io.jar\\org.apache.commons.io.jar" 

@@ -169,61 +169,135 @@ try {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            // Set user email
-            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
-            Process emailProcess = setEmail.start();
-            int emailExitCode = emailProcess.waitFor();
-            if (emailExitCode == 0) {
-                System.out.println("User email set successfully.");
-            } else {
-                System.out.println("Error setting user email.");
-            }
+    //     try {
+    //         // Set user email
+    //         ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
+    //         Process emailProcess = setEmail.start();
+    //         int emailExitCode = emailProcess.waitFor();
+    //         if (emailExitCode == 0) {
+    //             System.out.println("User email set successfully.");
+    //         } else {
+    //             System.out.println("Error setting user email.");
+    //         }
 
-            // Set user name
-            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "darshana");
-            Process nameProcess = setName.start();
-            int nameExitCode = nameProcess.waitFor();
-            if (nameExitCode == 0) {
-                System.out.println("User name set successfully.");
-            } else {
-                System.out.println("Error setting user name.");
-            }
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
-        // String commitMessage = "changes for gradle";
+    //         // Set user name
+    //         ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "darshana");
+    //         Process nameProcess = setName.start();
+    //         int nameExitCode = nameProcess.waitFor();
+    //         if (nameExitCode == 0) {
+    //             System.out.println("User name set successfully.");
+    //         } else {
+    //             System.out.println("Error setting user name.");
+    //         }
+    //     } catch (IOException | InterruptedException e) {
+    //         e.printStackTrace();
+    //     }
+    //     String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+    //     // String commitMessage = "changes for gradle";
 
-         // Git commands
+    //      // Git commands
         
-        String gitAdd = "git add .";
-        String gitCommit = "git commit -m 'Updated'";
-        // String gitPush = "git push origin main";
+    //     String gitAdd = "git add .";
+    //     String gitCommit = "git commit -m 'Updated'";
+    //     // String gitPush = "git push origin main";
 
-        // Execute Git commands
-        try {
-            // executeCommand(gitRepoPath, tmp);
-            executeCommand(gitRepoPath, gitAdd);
-            System.out.println("Executing: " + gitCommit);
-            executeCommand(gitRepoPath, gitCommit);
-            // System.out.println("Executing: " + gitPush);
-            // executeCommand(gitRepoPath, gitPush);
-            System.out.println("Changes added, committed and push successfully.");
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
-        }
+    //     // Execute Git commands
+    //     try {
+    //         // executeCommand(gitRepoPath, tmp);
+    //         executeCommand(gitRepoPath, gitAdd);
+    //         System.out.println("Executing: " + gitCommit);
+    //         executeCommand(gitRepoPath, gitCommit);
+    //         // System.out.println("Executing: " + gitPush);
+    //         // executeCommand(gitRepoPath, gitPush);
+    //         System.out.println("Changes added, committed and push successfully.");
+    //     } catch (IOException | InterruptedException e) {
+    //         e.printStackTrace();
+    //         System.err.println("Failed to add, commit, and push changes." + e.getMessage());
+    //     }
+    // }
+
+    // private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
+    //     ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+    //     processBuilder.directory(new java.io.File(workingDir));
+    //     Process process = processBuilder.start();
+    //     int exitCode = process.waitFor();
+    //     if (exitCode != 0) {
+    //         throw new RuntimeException("Failed to execute command: " + command); 
+    //     }
+
+
+    String gitUrl = "git@$giturl";
+    String user = "yourUsername";
+    String repo = "yourRepo";
+    String keyFile = "/path/to/your/keyfile";
+    String workspaceTmp = "/path/to/your/workspace/tmp";
+    String workspace = "/path/to/your/workspace";
+    String gitTag = "yourGitTag";
+
+    try {
+        // Construct the repository URL
+        String repoUrl = gitUrl + ":" + user + "/" + repo + ".git";
+
+        // Create a Git instance
+        Git git = Git.init().setDirectory(new File(workspaceTmp)).call();
+
+        // Clone the repository with SSH key
+        CloneCommand cloneCommand = Git.cloneRepository()
+                .setURI(repoUrl)
+                .setDirectory(new File(workspaceTmp))
+                .setTransportConfigCallback(transport -> {
+                    SshSessionFactory sshSessionFactory = new JschConfigSessionFactory() {
+                        @Override
+                        protected void configure(OpenSshConfig.Host host, Session session) {
+                            session.setConfig("StrictHostKeyChecking", "no");
+                            session.setIdentityFile(keyFile);
+                        }
+                    };
+                    transport.setSshSessionFactory(sshSessionFactory);
+                });
+        cloneCommand.call();
+
+        // Copy files from ExportBot to workspaceTmp
+        // (You need to implement this part based on your requirements)
+
+        // Commit and push changes
+        git = Git.open(new File(workspaceTmp));
+        git.add().addFilepattern(".").call();
+        git.commit().setMessage("pushing bot configs").call();
+
+        PushCommand pushCommand = git.push()
+                .setTransportConfigCallback(transport -> {
+                    SshSessionFactory sshSessionFactory = new JschConfigSessionFactory() {
+                        @Override
+                        protected void configure(OpenSshConfig.Host host, Session session) {
+                            session.setConfig("StrictHostKeyChecking", "no");
+                            session.setIdentityFile(keyFile);
+                        }
+                    };
+                    transport.setSshSessionFactory(sshSessionFactory);
+                });
+
+        // Push to the main branch
+        pushCommand.setRemote("origin").setRefSpecs(new RefSpec("main")).call();
+
+        // Push the Git tag
+        pushCommand.setRemote("origin").setRefSpecs(new RefSpec(gitTag)).call();
+
+        // Clean up
+        git.close();
+        new File(keyFile).delete(); // Delete the key file
+    } catch (IOException | GitAPIException e) {
+        e.printStackTrace();
     }
 
-    private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
-        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
-        processBuilder.directory(new java.io.File(workingDir));
-        Process process = processBuilder.start();
-        int exitCode = process.waitFor();
-        if (exitCode != 0) {
-            throw new RuntimeException("Failed to execute command: " + command); 
-        }
+
+
+
+
+
+
+
+    
     }
  
     }
