@@ -56,7 +56,7 @@ git commit -m "Bot Files Update"
 git push origin main
 
 # Set variables
-$REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git"
+$REPO_URL = "https://$test@github.com/darshana0406/CCT-Bots-Automation.git"
 $TIMESTAMPS = (Get-Date -Format "yyyyMMddHHmmss")
 
 # Remove and recreate the workspace directory
