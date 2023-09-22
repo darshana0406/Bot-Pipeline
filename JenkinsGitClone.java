@@ -4,9 +4,9 @@ public class JenkinsGitClone {
     public static void main(String[] args) {
         try {
             // Define the environment variables
-            String REPO_URL = https://Username:PAT@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git;
-            String WORKSPACE = "/path/to/your/workspace"; // Replace with the actual workspace path
-            String GIT_TAG = "your_tag_name_here"; // Replace with your desired tag name
+            String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+            String WORKSPACE = "/temp"; // Replace with the actual workspace path
+            String GIT_TAG = "1.76767"; // Replace with your desired tag name
             
             // Get the current timestamp
             String TIMESTAMPS = new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date());
