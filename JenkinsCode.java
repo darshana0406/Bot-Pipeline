@@ -1,4 +1,8 @@
 import java.io.*;
+import org.eclipse.jgit.api.*;
+import org.eclipse.jgit.lib.Repository;
+import org.eclipse.jgit.transport.CredentialsProvider;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 public class JenkinsCode {
     public static void main(String[] args) {
