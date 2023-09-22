@@ -1,13 +1,8 @@
-// import org.eclipse.jgit.api.*;
-// import org.eclipse.jgit.lib.Repository;
-// import org.eclipse.jgit.transport.URIish;
-// import org.eclipse.jgit.util.FileUtils;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 
-public class new {
+public class Hello {
     public static void main(String[] args) {
         try {
             // Define source and destination repository URLs
