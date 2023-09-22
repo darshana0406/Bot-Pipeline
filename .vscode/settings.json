@@ -1,7 +1,10 @@
 {
     "java.project.referencedLibraries": [
         "lib/json-20230618.jar",
-        "lib/org.eclipse.jgit-6.7.0.202309050840-r.jar"
+        "lib/org.eclipse.jgit-6.7.0.202309050840-r.jar",
+        "lib/slf4j-api-2.0.6.jar",
+        "lib/slf4j-simple-2.0.6.jar"
+
         // "C:\\Users\\gg\\Downloads\\okhttp\\okhttp-3.9.0.jar",
         // "C:\\Users\\gg\\Downloads\\org.apache.commons.io.jar\\org.apache.commons.io.jar" 
         // "C:\\Users\\gg\\Downloads\\jar_filesjgit.zip\\org.eclipse.jgit.pgm-6.6.0.202305301015-r.jar"
