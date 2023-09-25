@@ -13,17 +13,19 @@ import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 public class GitHubClone {
 	    public static void main(String[] args) throws IOException, GitAPIException {
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
-	String password = "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";
+	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test";
 	String GIT_TAG = "env" ;
 	String TIMESTAMPS = dateFormat.format(new Date());
-	String exportType = args[0];
-        String env = args[1];
+	String exportType = "Export_All";
+        String env = "dev";
         
         if (args.length > 0 ) {
+			    exportType=args[1];
+				env=args[0];
                 System.out.println("Chosen Value: " + exportType); 
                  System.out.println("Chosen Value: " + env);              
             } else {
