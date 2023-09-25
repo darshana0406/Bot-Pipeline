@@ -44,12 +44,20 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.json:json:20210307'
+        implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
+        implementation 'org.json:json:20210307'
+        implementation files('lib/slf4j-api-2.0.6.jar')
+        implementation files('lib/slf4j-simple-2.0.6.jar')  
+        implementation files('lib/org.apache.commons.io.jar')
+    
+        // implementation 'slf4j-api-2.0.6.jar'
+        // implementation 'slf4j-simple-2.0.6.jar'
+        // implementation 'org.apache.commons.io.jar'
 }
 
 
 task runJava(type: JavaExec) {
-    main = 'ExportENV' // Replace 'HelloWorld' with the name of your main class if different
+    main = 'GitHubClone' // Replace 'HelloWorld' with the name of your main class if different
     classpath = sourceSets.main.runtimeClasspath
     
     doFirst  {       
