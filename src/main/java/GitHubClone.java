@@ -13,9 +13,9 @@ import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 public class GitHubClone {
 	    public static void main(String[] args) throws IOException, GitAPIException {
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
-	String password = "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";
+	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test";
 	String GIT_TAG = "env" ;
