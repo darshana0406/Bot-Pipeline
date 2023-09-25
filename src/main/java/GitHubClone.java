@@ -18,10 +18,19 @@ public class GitHubClone {
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test";
-	String GIT_TAG = "cct_ivr_billing" ;
+	String GIT_TAG = "env" ;
 	String TIMESTAMPS = dateFormat.format(new Date());
+	String exportType = args[0];
+        String env = args[1];
+        
+        if (args.length > 0 ) {
+                System.out.println("Chosen Value: " + exportType); 
+                 System.out.println("Chosen Value: " + env);              
+            } else {
+                System.out.println("No chosen value provided.");
+            }
 
- 
+	ExportEVariable.setEnvironmentVariables(env, exportType);
 
 	FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
 	FileUtils.forceMkdir(new File(WORKSPACE + "/TMP"));
@@ -30,9 +39,9 @@ public class GitHubClone {
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
 	        .call();
 	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/dev_nce/Export_All/ExportBot"));
+			"/TMP/cct_ivr_billing/env/importType/ExportBot"));
 	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/dev_nce/Export_All/fullexport.zip"));
+			"/TMP/cct_ivr_billing/env/importType/fullexport.zip"));
 
 	git.add().addFilepattern(".").call();
 
