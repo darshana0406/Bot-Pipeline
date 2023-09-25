@@ -39,9 +39,9 @@ public class GitHubClone {
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
 	        .call();
 	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/env/importType/ExportBot"));
+			"/TMP/cct_ivr_billing/dev_nce/Export_All/ExportBot"));
 	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/env/importType/fullexport.zip"));
+			"/TMP/cct_ivr_billing/dev_nce/Export_All/fullexport.zip"));
 
 	git.add().addFilepattern(".").call();
 
