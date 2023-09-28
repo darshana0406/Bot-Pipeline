@@ -3749,7 +3749,6 @@
     ],
     "widgets": [],
     "panels": [],
-    "forms": [],
     "unexportedTasks": [],
     "customDashboards": [],
     "paramMaps": [],
@@ -4850,43 +4849,54 @@
         }
     ],
     "exportOptions": {
-        "tasks": [
-            "botTask",
-            "knowledgeGraph",
-            "smallTalk",
-            "forms"
-        ],
-        "nlpData": [
-            "nlpSettings",
-            "utterances",
-            "patterns",
-            "synonyms",
-            "standardResponses"
-        ],
         "settings": [
             "botSettings",
             "botVariables",
             "ivrSettings"
         ],
+        "tasks": [
+            "botTask",
+            "knowledgeGraph",
+            "smallTalk"
+        ],
+        "nlpData": [
+            "training_data",
+            "bot_synonyms",
+            "defaultDialog",
+            "nlpSettings",
+            "utterances",
+            "patterns",
+            "standardResponses"
+        ],
         "subTasks": {
             "dialogs": [
-                "dg-8fe5aa0e-7945-5d01-b57e-b4cd33abc04b",
+                "dg-48afd1b3-7bba-558f-ab69-f243952c8201",
                 "dg-cd89ee26-a071-5ff2-89dc-7491737ef1fb",
-                "dg-7220e01d-37a8-5e3e-83eb-ec02eca6e7d9",
-                "dg-f26fdf9b-079d-53b6-8d11-089ba867e187",
-                "dg-d6307660-4386-57bc-b18e-3b3a7805a556",
+                "dg-d17331f4-f309-599c-89c0-d51f5a21544b",
+                "dg-658fdef2-7f56-53a0-a281-06c5b03c018a",
+                "dg-55fcccd6-c278-56d5-8d55-f48c1eee44aa",
                 "dg-3003ade1-c454-5cae-89fa-a90d1806831f",
+                "dg-26c07b9b-7711-524a-ad11-548bb6127b18",
                 "dg-29a3e22c-13b1-5a02-a2cc-1a34b1d9a00e",
-                "dg-6b028f4d-d1ac-5231-b72f-efe47938abba",
-                "dg-658fdef2-7f56-53a0-a281-06c5b03c018a"
+                "dg-08e35dea-9972-5b81-bc3b-6492bbb45d37",
+                "dg-8fe5aa0e-7945-5d01-b57e-b4cd33abc04b",
+                "dg-69591127-0d5f-5fa4-aa76-342d0a27f413",
+                "dg-d6307660-4386-57bc-b18e-3b3a7805a556",
+                "dg-30d97700-6191-5b2f-8cf0-67a632fa21c7",
+                "dg-f26fdf9b-079d-53b6-8d11-089ba867e187",
+                "dg-db02d8f4-ea7f-5bee-b2dc-ded85c293793",
+                "dg-7220e01d-37a8-5e3e-83eb-ec02eca6e7d9",
+                "dg-1937b1f4-21fd-52f4-8f5e-16b1e5cb9049",
+                "dg-6b028f4d-d1ac-5231-b72f-efe47938abba"
             ],
             "alerts": [],
             "actions": [],
             "forms": []
-        }
+        },
+        "IncludeDependentTasks": true
     },
     "feedbackSurveys": [],
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "8cb9e75c6626be6fbe12533c74753973"
+    "encryptedHash": "1d2e6682f5a8c7a7813cb147f9eb48f5"
 }

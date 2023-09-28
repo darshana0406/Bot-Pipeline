@@ -92,11 +92,10 @@ public class UIENV extends UI {
 
      //condition for import Full Bot
      else{
-      System.setProperty("Import_Body",  "\"importOptions\": {\n"
+      System.setProperty("Import_Body",  "    \"importOptions\": {\n"
             + "        \"tasks\": [\n"
             + "            \"botTask\",\n"
-            + "            \"knowledgeGraph\",\n"
-            + "            \"smallTalk\"\n"
+            + "            \"knowledgeGraph\"\n"
             + "        ],\n"
             + "        \"nlpData\": [\n"
             + "            \"training_data\",\n"
@@ -125,7 +124,6 @@ public class UIENV extends UI {
             + "        \"customDashboard\": true\n"
             + "    }\n"
             + "}");
-         
      }
      // for prod use workspace : VB and bot : demobot1
    if(env.equals("prod")){
