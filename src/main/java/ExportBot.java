@@ -18,7 +18,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import org.json.JSONObject;
 
-public class ExportENV {
+public class ExportBot {
     
     
     public static void main(String[] args) {
