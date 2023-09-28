@@ -32,7 +32,7 @@ public class ExportBot {
               HttpURLConnection exportStatusConnection = null;
 
               String exportType = "ExportAll";
-              String env = "prod";
+              String env = "qa";
               String botName = "cct_ivr_billing";
         
         if (args.length > 0 ) {
