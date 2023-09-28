@@ -31,7 +31,7 @@ public class ExportBot {
 
               HttpURLConnection exportStatusConnection = null;
 
-              String exportType = "Export_Tasks";
+              String exportType = "ExportTasks";
               String env = "prod";
         
         if (args.length > 0 ) {
