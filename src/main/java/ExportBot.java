@@ -45,7 +45,7 @@ public class ExportBot {
                 System.out.println("No chosen value provided.");
             }
         // Call the method to set environment variables
-        ExportEVariable.setEnvironmentVariables(env, exportType);
+        ExportEVariable.setEnvironmentVariables(botName, env, exportType);
         
         try {
             // Access the environment variable
@@ -134,6 +134,7 @@ public class ExportBot {
 	        .setURI(REPO_URL)
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
 	        .call();
+    // delete every other exporttype folders 
 
 	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
 			"/TMP/cct_ivr_billing/" + env +"_nce/" + exportType + "/ExportBot"));
@@ -198,7 +199,7 @@ public class ExportBot {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
+       try {
             // Set user email
             ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
             Process emailProcess = setEmail.start();
@@ -255,5 +256,5 @@ public class ExportBot {
         if (exitCode != 0) {
             throw new RuntimeException("Failed to execute command: " + command); 
         }
-    }
+    } 
 }
