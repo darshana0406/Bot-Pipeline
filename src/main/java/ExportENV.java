@@ -117,7 +117,7 @@ public class ExportENV {
 	String username = "darshana0406";
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\ExportBot";
+	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
 	String GIT_TAG = "cct_ivr_billing" ;
 	String TIMESTAMPS = dateFormat.format(new Date());
 
