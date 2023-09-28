@@ -103,8 +103,11 @@ public class ExportBot {
                 unzip(zipFilePath, destDir);
                 System.out.println("Files unzipped to " + destDir);
 
-            } else {
+            } 
+            else {
+                
                 InputStream exportStatusInputStream = exportStatusConnection.getErrorStream();
+                System.out.println(exportStatusInputStream);
             }
 
         } catch (Exception e) {
@@ -113,9 +116,9 @@ public class ExportBot {
             exportStatusConnection.disconnect();
         }
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
-	String password = "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";
+	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
 	String GIT_TAG = "cct_ivr_billing" ;
@@ -140,8 +143,8 @@ public class ExportBot {
 	git.commit().setMessage("pushing bot configs").call();
 	System.out.println("Files are committed to target repo.");
 
-	git.tag().setName(GIT_TAG + "_" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "_" + TIMESTAMPS).call();
-	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "_" + TIMESTAMPS)).call();
+	git.tag().setName(GIT_TAG + "-" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "-" + TIMESTAMPS).call();
+	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "-" + TIMESTAMPS)).call();
 	System.out.println("GIT Tag is created.");
 
 	git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
@@ -224,7 +227,7 @@ public class ExportBot {
         // String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
-        String gitPush = "git push origin main";
+        // String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
@@ -233,8 +236,8 @@ public class ExportBot {
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
-            System.out.println("Executing: " + gitPush);
-            executeCommand(gitRepoPath, gitPush);
+            // System.out.println("Executing: " + gitPush);
+            // executeCommand(gitRepoPath, gitPush);
             System.out.println("Changes added, committed and push successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();

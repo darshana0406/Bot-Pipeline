@@ -23,7 +23,7 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing-prod-Export_Tasks_20230928144049";
+        String tagName = "cct_ivr_billing-prod-Export_Tasks-20230928144049";
         
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
