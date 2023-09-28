@@ -24,7 +24,7 @@ public class ExportEVariable {
 
         //condition for Export Full Bot
         else{
-            System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"tasks\": [\"botTask\",\"knowledgeGraph\",\"smallTalk\"]},\"subTasks\": {\"alerts\": [],\"actions\": [],\"dialogs\": []},\"allTasks\": true,\"IncludeDependentTasks\": true}");
+            System.setProperty("Export_Body","{\"exportType\": \"published\"}");
              System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "ExportBot");
             
