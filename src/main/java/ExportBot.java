@@ -137,9 +137,9 @@ public class ExportBot {
     // delete every other exporttype folders 
 
 	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/" + env + exportType + "/ExportBot"));
+			"/TMP/cct_ivr_billing/" + env  + "/" + exportType + "/ExportBot"));
 	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/" + env + exportType +"/fullexport.zip"));
+			"/TMP/cct_ivr_billing/" + env +"/"+ exportType +"/fullexport.zip"));
 
 	git.add().addFilepattern(".").call();
 
