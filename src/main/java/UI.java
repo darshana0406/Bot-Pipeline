@@ -6,9 +6,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.io.File;
+import org.apache.commons.io.FileUtils;
+import org.eclipse.jgit.api.CloneCommand;
+import org.eclipse.jgit.api.Git;
 
 import org.json.JSONObject;
-import org.w3c.dom.events.UIEvent;
+
 
 public class UI {
     
@@ -17,10 +21,28 @@ public class UI {
             
             
     
-    public static void main(String[] args) {
+   public static void main(String[] args) throws Exception {
 
-        String importType = args[0];
-        String env = args[1];
+        String tagName = "cct_ivr_billing_20230925212737";
+        FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
+
+        // Clone the Git repository
+        CloneCommand cloneCommand = Git.cloneRepository();
+        cloneCommand.setURI("https://github.com/darshana0406/CCT-Bots-Automation.git");
+        cloneCommand.setDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
+        // /apps/bss/jenkins_slave/workspace/cct_ivr_kore_bot_export_import/import
+        cloneCommand.setBranch(tagName);
+        cloneCommand.call();
+
+        // Checkout the Git tag
+        Git git = Git.open(new File("c:\\Users\\gg\\Documents\\GITTags"));
+        git.checkout().setName(tagName).call();
+
+        // Close the Git repository
+        git.close();
+
+        String importType = "Import_All";
+        String env = "dev";
         
         if (args.length > 0 ) {
                 System.out.println("Chosen Value: " + importType);              

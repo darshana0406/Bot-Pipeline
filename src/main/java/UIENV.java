@@ -141,7 +141,7 @@ public class UIENV extends UI {
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
         System.setProperty("Upload_boundary", "------------------------abcdef1234567890");
-        String[] values = {"./ExportBot/botDefinition.json", "./ExportBot/config.json"};
+        String[] values = {"C:/Users/gg/Documents/GITTags/cct_ivr_billing/dev_nce/Export_All/ExportBot/botDefinition.json", "C:/Users/gg/Documents/GITTags/cct_ivr_billing/dev_nce/Export_All/ExportBot/config.json"};
         String combinedValues = String.join(",", values);
         System.setProperty("Upload_FileName", combinedValues);
     

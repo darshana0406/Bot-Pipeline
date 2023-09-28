@@ -27,6 +27,7 @@ public class ExportEVariable {
             System.setProperty("Export_Body","{\"exportType\": \"published\"}");
              System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "ExportBot");
+            
         }
 
         // for prod use workspace : VB and bot : demobot1

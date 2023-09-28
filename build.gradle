@@ -45,34 +45,36 @@ repositories {
 
 dependencies {
         implementation 'org.eclipse.jgit:org.eclipse.jgit:6.7.0.202309050840-r'
-        implementation 'org.json:json:20210307'
-        implementation files('lib/slf4j-api-2.0.6.jar')
-        implementation files('lib/slf4j-simple-2.0.6.jar')  
-        implementation files('lib/org.apache.commons.io.jar')
+        implementation 'org.json:json:20210307' 
+        implementation 'org.slf4j:slf4j-api:1.7.36'
+        implementation 'org.slf4j:slf4j-nop:1.7.36'
+        implementation 'org.slf4j:slf4j-simple:2.0.6'
+        implementation 'org.apache.commons:commons-io:1.3.2'
+
     
-        // implementation 'slf4j-api-2.0.6.jar'
-        // implementation 'slf4j-simple-2.0.6.jar'
-        // implementation 'org.apache.commons.io.jar'
+    
 }
 
 
 task runJava(type: JavaExec) {
-    main = 'GitHubClone' // Replace 'HelloWorld' with the name of your main class if different
+    main = 'GitHubClone' // Add your main class to execute
     classpath = sourceSets.main.runtimeClasspath
     
     doFirst  {       
-
+        def botname = project.getProperty('BotName')
         def env = project.getProperty('env')
         def exportType = project.getProperty('exportType')
+        println "Chosen Value of BotName: $BotName"
         println "Chosen Value of ENV : $env"
         println "Chosen Value of Export Type : $exportType"
-        args exportType, env
+        
+        args botname, exportType, env
        
     }
     
 }
 task runJavaI(type: JavaExec) {
-    main = 'UI' // Replace 'HelloWorld' with the name of your main class if different
+    main = 'UI' // Add your main class to execute
     classpath = sourceSets.main.runtimeClasspath
 
     doFirst  {       
