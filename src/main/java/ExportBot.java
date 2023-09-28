@@ -123,7 +123,7 @@ public class ExportBot {
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
-	String GIT_TAG = botName ;
+	String GIT_TAG = botName;
 	String TIMESTAMPS = dateFormat.format(new Date());
 
 	GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
