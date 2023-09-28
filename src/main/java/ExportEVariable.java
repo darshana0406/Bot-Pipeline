@@ -3,7 +3,7 @@ public class ExportEVariable {
        
         //condition for Export only NLPData
         if(exportType.equals("ExportNLP")){
-            System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"allTasks\": true,\"customDashboards\": false,\"IncludeDependentTasks\": true}");
+            System.setProperty("Export_Body","{\"exportType\": \"published\",\"exportOptions\": {\"nlpData\": [\"training_data\",\"bot_synonyms\",\"defaultDialog\",\"nlpSettings\",\"utterances\",\"patterns\",\"standardResponses\"]},\"allTasks\": true,\"IncludeDependentTasks\": true}");
             System.setProperty("ZipFile_Path", "fullexport.zip");
             System.setProperty("Dest_Dir", "ExportNLP");
         }
