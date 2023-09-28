@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
  
 
-public class GitHubClone {
+public class ExportENV {
 	    public static void main(String[] args) throws IOException, GitAPIException {
 
               HttpURLConnection exportStatusConnection = null;
@@ -115,28 +115,16 @@ public class GitHubClone {
 
 	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
-	// String password = "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";
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-	String WORKSPACE = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test";
+	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\ExportBot";
 	String GIT_TAG = "cct_ivr_billing" ;
 	String TIMESTAMPS = dateFormat.format(new Date());
-	
-	
-        // if (args.length > 0 ) {
-		// 	    exportType=args[1];
-		// 		env=args[0];
-        //         System.out.println("Chosen Value: " + exportType); 
-        //          System.out.println("Chosen Value: " + env);              
-        //     } else {
-        //         System.out.println("No chosen value provided.");
-        //     }
-	   GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
-	ExportEVariable.setEnvironmentVariables(env, exportType);
+
+	GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
 
 	FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
 	FileUtils.forceMkdir(new File(WORKSPACE + "/TMP"));
-
 	Git git = Git.cloneRepository()
 	        .setURI(REPO_URL)
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
@@ -166,9 +154,6 @@ public class GitHubClone {
 	}
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
-            // If the file needs to be copied to specific path, create custom path and
-            // provide
-            // Path path = Paths.get("/Test/Files");
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         }
     }

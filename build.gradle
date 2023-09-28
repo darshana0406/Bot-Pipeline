@@ -57,7 +57,7 @@ dependencies {
 
 
 task runJava(type: JavaExec) {
-    main = 'GitHubClone' // Add your main class to execute
+    main = 'ExportENV' // Add your main class to execute
     classpath = sourceSets.main.runtimeClasspath
     
     doFirst  {       
@@ -78,11 +78,12 @@ task runJavaI(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 
     doFirst  {       
-
+        // def gitTag = project.getProperty('Git_Tag')
         def env = project.getProperty('env')
         def importType = project.getProperty('importType')
         println "Chosen Value of ENV : $env"
         println "Chosen Value of Export Type : $importType"
+        // println "Chosen Value of gitTag : $Git_Tag"
         args importType, env
 }
 }
