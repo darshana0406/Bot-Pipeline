@@ -135,7 +135,7 @@ public class ExportBot {
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
 	        .call(); 
     //Delete all folders from target repo except .git older
-			File[] files = new File(WORKSPACE + "/TMP").listFiles();
+		File[] files = new File(WORKSPACE + "/TMP").listFiles();
 
     if(files!=null) {
         for(File file: files) {
