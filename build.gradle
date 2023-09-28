@@ -57,7 +57,7 @@ dependencies {
 
 
 task runJava(type: JavaExec) {
-    main = 'ExportENV' // Add your main class to execute
+    main = 'ExportBot' // Add your main class to execute
     classpath = sourceSets.main.runtimeClasspath
     
     doFirst  {       

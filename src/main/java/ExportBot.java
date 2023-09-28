@@ -33,10 +33,12 @@ public class ExportBot {
 
               String exportType = "ExportTasks";
               String env = "prod";
+              String botName = "cct_ivr_billing";
         
         if (args.length > 0 ) {
-              exportType = args[0];
-              env = args[1];
+              botName =args[0];
+              exportType = args[1];
+              env = args[2];
                 System.out.println("Chosen Value: " + exportType); 
                  System.out.println("Chosen Value: " + env);              
             } else {
@@ -121,7 +123,7 @@ public class ExportBot {
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
-	String GIT_TAG = "cct_ivr_billing" ;
+	String GIT_TAG = botName ;
 	String TIMESTAMPS = dateFormat.format(new Date());
 
 	GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
