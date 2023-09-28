@@ -133,8 +133,22 @@ public class ExportBot {
 	Git git = Git.cloneRepository()
 	        .setURI(REPO_URL)
 	        .setDirectory(new File(WORKSPACE + "/TMP"))
-	        .call();
-    // delete every other exporttype folders 
+	        .call(); 
+    //Delete all folders from target repo except .git older
+			File[] files = new File(WORKSPACE + "/TMP").listFiles();
+
+    if(files!=null) {
+        for(File file: files) {
+            if(file.isDirectory()&& !file.getName().equals(".git")) {
+                try {
+                    FileUtils.deleteDirectory(file);
+                    System.out.println(" Deleted file:: "+file.getName());
+                }catch(IOException io) {
+                    io.printStackTrace();
+                }
+            }
+        }
+    }
 
 	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
 			"/TMP/cct_ivr_billing/" + env  + "_nce/" + exportType + "/ExportBot"));
