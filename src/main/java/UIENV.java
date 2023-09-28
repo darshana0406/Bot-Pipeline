@@ -134,7 +134,7 @@ public class UIENV extends UI {
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
         System.setProperty("Upload_boundary", "------------------------abcdef1234567890");
-        String[] values = { workSpace + botName + env +"_nce/"+ exportType + "/ExportBot/botDefinition.json", workSpace + botName + env +"_nce/"+ exportType + "/ExportBot/config.json"};
+        String[] values = { workSpace + botName +"/" + env +"_nce/"+ exportType + "/ExportBot/botDefinition.json", workSpace + botName + "/" + env +"_nce/"+ exportType + "/ExportBot/config.json"};
         String combinedValues = String.join(",", values);
         System.setProperty("Upload_FileName", combinedValues);
           System.setProperty("Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
