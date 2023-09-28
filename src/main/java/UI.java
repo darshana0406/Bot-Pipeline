@@ -23,7 +23,7 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing-prod-ExportBotTasks-20230928231220";
+        String tagName = "cct_ivr_billing-prod-ExportBotTasks-20230928231508";
         
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
@@ -45,7 +45,7 @@ public class UI {
         String botName = values[0];
         String exportType = values[2];
 
-        String importType = "ImportBotTasks";
+        String importType = "ImportAll";
         String env = "prod";
         System.out.println("importType: " + importType);
         System.out.println("botName: " + botName); 
