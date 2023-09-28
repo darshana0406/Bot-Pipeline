@@ -4,7 +4,9 @@ public class UIENV extends UI {
     public static String configId;
     
         
-    public static void setEnvironmentVariables(String env, String importType) {
+    public static void setEnvironmentVariables(String env, String importType, String botName, String exportType) {
+
+      String workSpace = "C:/Users/gg/Documents/GITTags/";
 
       // condition for import NLP
 
@@ -141,7 +143,7 @@ public class UIENV extends UI {
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
         System.setProperty("Upload_boundary", "------------------------abcdef1234567890");
-        String[] values = {"C:/Users/gg/Documents/GITTags/cct_ivr_billing/dev_nce/Export_All/ExportBot/botDefinition.json", "C:/Users/gg/Documents/GITTags/cct_ivr_billing/dev_nce/Export_All/ExportBot/config.json"};
+        String[] values = { workSpace + botName + env +"_nce/"+ exportType + "/ExportBot/botDefinition.json", workSpace + botName + env +"_nce/"+ exportType + "/ExportBot/config.json"};
         String combinedValues = String.join(",", values);
         System.setProperty("Upload_FileName", combinedValues);
     
@@ -153,14 +155,6 @@ public class UIENV extends UI {
           botDefinitionId = botDefinition; 
           configInfoId = configId;
 
-        //   UploadImport up = new UploadImport();
-        //   String botDeninitionId = up.botDefinitionId;
-        //  String configInfoId = up.configInfoId;
-        //  System.out.println("config"+configInfoId);
-         
-            //    String botDefinitionId = "4f8342142f30e00e762afd0"; 
-            //    String configInfoId = "64f8342142f30e00e762afd9";
-
          
         System.setProperty("Test","{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
         + "\"configInfo\": \"" + configInfoId + "\",\n" +System.getProperty("Import_Body"));
@@ -169,8 +163,6 @@ public class UIENV extends UI {
         
         System.out.println("botDefinition-->"+botDefinitionId);
 
-        // String s = UploadImportEVariable.getCon();
-        // System.out.println(s+".....");
     }
      
   }

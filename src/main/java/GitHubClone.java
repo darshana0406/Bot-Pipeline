@@ -1,25 +1,38 @@
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.api.errors.GitAPIException;
-import org.eclipse.jgit.lib.Repository;
-import org.eclipse.jgit.lib.RepositoryBuilder;
 import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-import org.eclipse.jgit.api.CloneCommand;
+import org.json.JSONObject;
 
  
 
 public class GitHubClone {
 	    public static void main(String[] args) throws IOException, GitAPIException {
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
 	// String password = "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";
-	String password = "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";
+	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test";
 	String GIT_TAG = "cct_ivr_billing" ;
@@ -41,15 +54,6 @@ public class GitHubClone {
 
 	FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
 	FileUtils.forceMkdir(new File(WORKSPACE + "/TMP"));
-
-		// 	// Create a new Git repository object.
-        // Repository repository = new RepositoryBuilder().build();
-
-		// 	 // Filter the contents of the local repository to only include the desired folder.
-		//  repository.getRefDatabase().updateRef("HEAD", "refs/heads/master^{tree}");
-		//  repository.getConfig().setString("core.sparsecheckout", "true");
-		//  repository.getConfig().setString("core.sparsecheckout", "/path/to/desired/folder");
-		//  repository.getConfig().save();	
 
 	Git git = Git.cloneRepository()
 	        .setURI(REPO_URL)
@@ -75,8 +79,198 @@ public class GitHubClone {
 			.setRefSpecs(new RefSpec("main"))
 			.call();
 	System.out.println("Files are pushed to main branch of target repo.");
+	git.close();
+{
 
-	// FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
-	// 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
+	 HttpURLConnection exportStatusConnection = null;
+
+    
+        
+        if (args.length > 0 ) {
+                System.out.println("Chosen Value: " + exportType); 
+                 System.out.println("Chosen Value: " + env);              
+            } else {
+                System.out.println("No chosen value provided.");
+            }
+        // Call the method to set environment variables
+        ExportEVariable.setEnvironmentVariables(env, exportType);
+        
+        try {
+            // Access the environment variable
+            String export = System.getProperty("Export_JWT");
+            String exportStatusAuth = System.getProperty("Export_JWT");
+            String exportUrl = System.getProperty("Export_URL");
+            String exportBody = System.getProperty("Export_Body");
+            // String gitrepo = System.getProperty("Git_Repo");
+
+            // Export API Call
+            URL exportUrlObj = new URL(exportUrl);
+            HttpURLConnection exportConnection = (HttpURLConnection) exportUrlObj.openConnection();
+            exportConnection.setRequestMethod("POST");
+            exportConnection.setRequestProperty("auth", export);
+            exportConnection.setRequestProperty("Content-Type", "application/json");
+            exportConnection.setDoOutput(true);
+
+            OutputStream exportOutputStream = exportConnection.getOutputStream();
+
+            exportOutputStream.write(exportBody.getBytes());
+            exportOutputStream.flush();
+            exportOutputStream.close();
+            System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
+
+           // Thread.sleep(1000);
+
+            // Export Status API call to get the download URL
+            StringBuilder expStatusResp = new StringBuilder();
+            String exportStatusUrl = System.getProperty("ExportStatus_URL");
+            exportStatusConnection = (HttpURLConnection) new URL(exportStatusUrl).openConnection();
+            exportStatusConnection.setRequestMethod("GET");
+            exportStatusConnection.setRequestProperty("auth", exportStatusAuth);
+            System.out.println("Export Status API Response Code :: " + exportStatusConnection.getResponseCode());
+
+            if (exportStatusConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                InputStream in = new BufferedInputStream(exportStatusConnection.getInputStream());
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    expStatusResp.append(line);
+                }
+                System.out.println("Export API Status Response :: " + expStatusResp);
+                JSONObject jsonObject = new JSONObject(expStatusResp.toString());
+                String downloadUrl = jsonObject.get("downloadURL").toString();
+                System.out.println("downloadUrl:: " + downloadUrl);
+
+                // Download the file using URL
+                URL downloadUrlObj = new URL(downloadUrl);
+                downloadFile(downloadUrlObj, "fullexport.zip");
+                System.out.println("File Downloaded in current working directory");
+                // Thread.sleep(1500);
+
+                // Unzip the files
+                String zipFilePath = System.getProperty("ZipFile_Path");
+                String destDir = System.getProperty("Dest_Dir");
+                unzip(zipFilePath, destDir);
+                System.out.println("Files unzipped to " + destDir);
+
+            } else {
+                InputStream exportStatusInputStream = exportStatusConnection.getErrorStream();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            exportStatusConnection.disconnect();
+        }
+	}
+
+        
+
+    }
+
+    public static void downloadFile(URL url, String fileName) throws Exception {
+        try (InputStream in = url.openStream()) {
+            // If the file needs to be copied to specific path, create custom path and
+            // provide
+            // Path path = Paths.get("/Test/Files");
+            Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+
+    private static void unzip(String zipFilePath, String destDir) {
+        File dir = new File(destDir);
+        // create output directory if it doesn't exist
+        if (!dir.exists())
+            dir.mkdirs();
+        FileInputStream fis;
+        // buffer for read and write data to file
+        byte[] buffer = new byte[1024];
+        try {
+            fis = new FileInputStream(zipFilePath);
+            ZipInputStream zis = new ZipInputStream(fis);
+            ZipEntry ze = zis.getNextEntry();
+            while (ze != null) {
+                String fileName = ze.getName();
+                File newFile = new File(destDir + File.separator + fileName);
+                System.out.println("Unzipping to " + newFile.getAbsolutePath());
+                // create directories for sub directories in zip
+                new File(newFile.getParent()).mkdirs();
+                FileOutputStream fos = new FileOutputStream(newFile);
+                int len;
+                while ((len = zis.read(buffer)) > 0) {
+                    fos.write(buffer, 0, len);
+                }
+                fos.close();
+                // close this ZipEntry
+                zis.closeEntry();
+                ze = zis.getNextEntry();
+            }
+            // close last ZipEntry
+            zis.closeEntry();
+            zis.close();
+            fis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            // Set user email
+            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
+            Process emailProcess = setEmail.start();
+            int emailExitCode = emailProcess.waitFor();
+            if (emailExitCode == 0) {
+                System.out.println("User email set successfully.");
+            } else {
+                System.out.println("Error setting user email.");
+            }
+
+            // Set user name
+            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "darshana");
+            Process nameProcess = setName.start();
+            int nameExitCode = nameProcess.waitFor();
+            if (nameExitCode == 0) {
+                System.out.println("User name set successfully.");
+            } else {
+                System.out.println("Error setting user name.");
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        // String commitMessage = "changes for gradle";
+
+         // Git commands
+        // String gitpull = "git pull origin main";
+        // String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
+        String gitAdd = "git add .";
+        String gitCommit = "git commit -m 'Updated'";
+        // String gitPush = "git push origin main";
+
+        // Execute Git commands
+        try {
+            // executeCommand(gitclone, gitRepoPath);
+            // executeCommand(gitRepoPath, gitpull);
+            executeCommand(gitRepoPath, gitAdd);
+            System.out.println("Executing: " + gitCommit);
+            executeCommand(gitRepoPath, gitCommit);
+            // System.out.println("Executing: " + gitPush);
+            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Changes added, committed and push successfully.");
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.err.println("Failed to add, commit, and push changes." + e.getMessage());
+        }
+
+    }
+    private static void executeCommand(String workingDir, String command) throws IOException, InterruptedException {
+        ProcessBuilder processBuilder = new ProcessBuilder(command.split(" "));
+        processBuilder.directory(new java.io.File(workingDir));
+        Process process = processBuilder.start();
+        int exitCode = process.waitFor();
+        if (exitCode != 0) {
+            throw new RuntimeException("Failed to execute command: " + command); 
+
+
+
 	        }
 	    }
+	}

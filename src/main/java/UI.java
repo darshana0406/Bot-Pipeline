@@ -23,7 +23,8 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing_20230925212737";
+        String tagName = "cct_ivr_billing-prod-Export_Tasks_20230928144049";
+        
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
         // Clone the Git repository
@@ -40,17 +41,23 @@ public class UI {
 
         // Close the Git repository
         git.close();
-
+        String[] values = tagName.split("-");
+        String botName = values[0];
+        String exportType = values[2];
         String importType = "Import_All";
         String env = "dev";
+        System.out.println("botName: " + botName); 
+        System.out.println("exportType: " + exportType); 
         
         if (args.length > 0 ) {
+            importType = args[0];
+            env = args[1];
                 System.out.println("Chosen Value: " + importType);              
             } else {
                 System.out.println("No chosen value provided.");
             }
         // Call the method to set environment variables
-        UIENV.setEnvironmentVariables(env, importType);
+        UIENV.setEnvironmentVariables(env, importType, botName, exportType);
 
         // UIENV.setEnvironmentVariables();
              String botDefinitionId = "";
