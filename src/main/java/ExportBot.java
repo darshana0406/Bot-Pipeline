@@ -113,9 +113,9 @@ public class ExportBot {
             exportStatusConnection.disconnect();
         }
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
-	String password = "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";
+	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
 	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
 	String GIT_TAG = "cct_ivr_billing" ;
