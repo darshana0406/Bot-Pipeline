@@ -1,6 +1,6 @@
 {
-    "_id": "st-e5669197-991d-5971-9417-a422368a0805",
-    "refId": "6447e892-914a-57ab-97ef-0573520292b5",
+    "_id": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+    "refId": "71d2f2c8-d290-55ef-bb45-331a9f48a2b9",
     "purpose": "customer",
     "type": "default",
     "defaultLanguage": "en",
@@ -12,14 +12,14 @@
     },
     "localeData": {
         "en": {
-            "name": "ExportDemo",
+            "name": "Demobot1",
             "errorCodes": {
                 "pollError": []
             },
             "isSmalltalkMigrated": true,
             "description": "Use this option when none of the predefined purposes match your bot’s purpose.",
             "nlMeta": {
-                "mlUtterances": 1,
+                "mlUtterances": 116,
                 "patterns": 0,
                 "synonyms": 708
             },
@@ -868,228 +868,85 @@
     "assignAllChildBots": true,
     "recentBotLimit": 5,
     "isCsMatchEnabled": false,
-    "defaultDialogId": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
-    "botSentimentEvents": [],
-    "enableNegativePatterns": false,
+    "defaultDialogId": "53e14338-0441-5e8a-a885-d990b771e80a",
     "advancedNLSettings": [
         {
-            "_id": "anls-6e6fb8a4-b1fe-5015-83bb-dc486680df7b",
+            "_id": "anls-223265dd-f338-560b-9a45-08d306c7c32c",
             "isCustom": false,
             "type": 1,
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
-            "language": "en",
-            "nlpEngine": "ML",
-            "configurationKeyName": "ml_suggestion_proximity",
-            "configurationValue": 5,
-            "requiresTraining": false,
-            "state": "published",
-            "refId": "68f6611b-119a-587a-b2c5-02bc08f99dec",
-            "lastModifiedOn": "2023-08-18T11:20:33.411Z",
-            "__v": 0
-        },
-        {
-            "_id": "anls-a998edcb-02f1-5603-bae8-075684ffcdae",
-            "isCustom": false,
-            "type": 1,
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
             "language": "en",
             "nlpEngine": "ML",
             "configurationKeyName": "network",
             "configurationValue": "Few-shot Model (Kore.ai Hosted Embeddings)",
             "requiresTraining": true,
             "state": "published",
-            "refId": "69dbc597-2092-554f-b2e5-5cb0e75f043a",
-            "lastModifiedOn": "2023-08-18T11:20:33.403Z",
+            "refId": "9bd70d94-59cf-502a-bb52-3e97f5339237",
+            "lastModifiedOn": "2023-06-22T05:40:21.411Z",
             "__v": 0
         },
         {
-            "_id": "anls-43308eb2-4ad1-541e-a729-ee683f16ee40",
+            "_id": "anls-2981beda-86a2-546b-8445-1267e2224704",
             "isCustom": false,
             "type": 1,
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "language": "en",
+            "nlpEngine": "ML",
+            "configurationKeyName": "ml_suggestion_proximity",
+            "configurationValue": 5,
+            "requiresTraining": false,
+            "state": "published",
+            "refId": "83dae4e0-0e1e-5c4f-87ed-e674cce1487c",
+            "lastModifiedOn": "2023-06-22T05:40:21.422Z",
+            "__v": 0
+        },
+        {
+            "_id": "anls-3744644b-104b-5aea-96a9-8aa98f4c79a9",
+            "isCustom": false,
+            "type": 1,
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
             "language": "en",
             "nlpEngine": "FM",
             "configurationKeyName": "exactTaskNameMatch",
             "configurationValue": false,
             "requiresTraining": false,
             "state": "published",
-            "refId": "2f35cc36-1d3c-50ff-89b7-bd7a46a78ca7",
-            "lastModifiedOn": "2023-08-18T11:20:33.412Z",
+            "refId": "0d625a0a-2673-5c5e-8208-18022bcfa846",
+            "lastModifiedOn": "2023-06-22T05:40:21.423Z",
             "__v": 0
         },
         {
-            "_id": "anls-9d91d9cc-112f-4508-8269-1e1bc1bd36e7",
+            "_id": "anls-aa8fa4af-8008-437b-984c-2980a427488a",
             "isCustom": true,
             "configurationKeyName": "ML_RemovePunctuation",
             "configurationValue": ".,?!؟",
             "type": 1,
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
             "language": "en",
             "nlpEngine": "ML",
             "state": "published",
             "requiresTraining": true,
-            "refId": "646c3916-7f26-491f-ae3c-8015806f8db1",
-            "lastModifiedOn": "2023-09-10T10:37:14.821Z"
+            "refId": "48fe5791-22bd-48a7-bf63-90c6b8873f00",
+            "lastModifiedOn": "2023-09-10T10:36:55.822Z"
         }
     ],
-    "botEvents": {
-        "INTENT_UNIDENTIFIED": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": null,
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "WELCOME_MESSAGE_EVENT": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": {
-                "greetings": "respondToUserInput",
-                "faq": "respondToUserInput",
-                "task": "respondToUserInput"
-            },
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "ON_CONNECT_EVENT": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": null,
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "REPEAT_RESPONSE_EVENT": {
-            "enabled": false,
-            "action": "showMsg",
-            "msg": [
-                {
-                    "localeData": {
-                        "en": {
-                            "type": "basic",
-                            "text": "Sure%2C%20I%20will%20repeat%20it%20for%20you"
-                        }
-                    },
-                    "vNameSpace": [],
-                    "createdBy": "u-58d3b65a-b4f5-5008-bd43-804bffe920cf",
-                    "createdOn": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
-                    "channel": "default",
-                    "lModBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "lMod": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "__v": 0
-                }
-            ],
-            "pre_conditions": {
-                "channels": [
-                    "ivrVoice",
-                    "audiocodes",
-                    "twiliovoice"
-                ]
-            },
-            "advance_settings": {
-                "limit": 5
-            },
-            "event_config": "lastBotResponse"
-        },
-        "TASK_FAILURE_EVENT": {
-            "enabled": true,
-            "action": "showMsg",
-            "task": null,
-            "script": ".",
-            "msg": [
-                {
-                    "__v": 0,
-                    "channel": "default",
-                    "createdBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "createdOn": "Fri Aug 18 2023 11:21:13 GMT+0000 (Coordinated Universal Time)",
-                    "lMod": "Fri Aug 18 2023 11:34:59 GMT+0000 (Coordinated Universal Time)",
-                    "lModBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "localeData": {
-                        "en": {
-                            "type": "basic",
-                            "text": "I%20am%20sorry%2C%20something%20went%20wrong%20and%20I%20had%20to%20discard%20your%20task.%20Please%20retry."
-                        }
-                    },
-                    "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
-                    "vNameSpace": []
-                }
-            ],
-            "welcomeIvrOptions": []
-        }
-    },
+    "botEvents": {},
     "idpConfigurations": [],
     "actions": [],
     "alerts": [],
-    "patterns": [
-        {
-            "localeData": {
-                "en": {}
-            },
-            "refId": "1653d709-a74f-54e4-bf75-c992175fbacc",
-            "taskName": "Fallback_Task",
-            "taskType": "intent",
-            "nodeType": "dialog"
-        },
-        {
-            "localeData": {
-                "en": {}
-            },
-            "refId": "31d774ab-9579-5641-86ca-1e1d18e74816",
-            "taskName": "Welcome_Task",
-            "taskType": "intent",
-            "nodeType": "dialog"
-        }
-    ],
+    "patterns": [],
     "dialogComponents": [
         {
-            "_id": "dc-7663df38-a4d1-5e37-b612-25ac9397629b",
-            "refId": "9066058a-b781-5cf4-bd4b-49b6b4b215a1",
-            "name": "FallbackMsg",
+            "_id": "dc-09347f26-1b85-509a-9a50-6991590e9247",
+            "refId": "86dee4e5-c888-5178-a49f-8116fe4ed76b",
+            "name": "AgentTransfer0001",
             "piiDataEnabled": false,
             "serviceNodeType": "custom",
-            "type": "message",
-            "message": [
-                {
-                    "channel": "default",
-                    "localeData": {
-                        "en": {
-                            "text": "I could not understand that. Can you rephrase?",
-                            "type": "basic"
-                        }
-                    }
-                },
-                {
-                    "channel": "default",
-                    "localeData": {
-                        "en": {
-                            "text": "I am unable to find an answer. Please try something else.",
-                            "type": "basic"
-                        }
-                    }
-                }
-            ],
+            "type": "agentTransfer",
             "applyDefaultTemplate": false,
             "localeData": {
                 "en": {
-                    "label": "FallbackMsg"
+                    "label": "AgentTransfer0001"
                 }
             },
             "entityFields": {
@@ -1102,14 +959,107 @@
             "isSensitive": false
         },
         {
-            "_id": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
-            "refId": "1653d709-a74f-54e4-bf75-c992175fbacc",
+            "_id": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "refId": "de007bf3-baa4-565e-9e1c-da196e02cd17",
+            "name": "Test",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+            "localeData": {
+                "en": {
+                    "desc": "Test Dialog",
+                    "intent": "Test"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
+            "refId": "a158f6f1-a2de-582b-8eb1-e0a50291007e",
+            "name": "Welcome_Task",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2",
+            "localeData": {
+                "en": {
+                    "intent": "Welcome Task",
+                    "desc": "Welcome Task"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-67d33da9-ea6a-5579-bea3-0326aafebf8e",
+            "refId": "800eaa36-99a2-5e39-a58a-ab3b64d8bc58",
+            "name": "Entity0003",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0003",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0003"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-6b635838-a11c-551f-a919-ced4ca696cc8",
+            "refId": "55ebda15-0d92-5caf-b448-c817aaac3264",
             "name": "Fallback_Task",
             "piiDataEnabled": false,
             "serviceNodeType": "custom",
             "type": "intent",
             "applyDefaultTemplate": false,
-            "dialogId": "dg-f67695f9-748d-5247-b094-ae699fc89fc6",
+            "dialogId": "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
             "localeData": {
                 "en": {
                     "intent": "Fallback Task",
@@ -1126,8 +1076,41 @@
             "isSensitive": false
         },
         {
-            "_id": "dc-d1562367-cb4a-50d5-ad70-b4ce9cf2122c",
-            "refId": "dd6c7c68-5750-5f38-bf10-90357c10e15c",
+            "_id": "dc-7065819f-f716-5f5c-b15d-8420bb8d58d9",
+            "refId": "d691a714-0247-5be1-8189-a42d814c6d64",
+            "name": "AgemntMSG",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I%20am%20Agent",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "AgemntMSG"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-897dcc65-7237-5c33-9fb3-1134a3a7d67c",
+            "refId": "8016bff7-21d9-549a-ac94-8b5d836f5f67",
             "name": "WelcomeMsg",
             "piiDataEnabled": false,
             "serviceNodeType": "custom",
@@ -1168,18 +1151,371 @@
             "isSensitive": false
         },
         {
-            "_id": "dc-fc82cb8a-0361-54c9-92a0-942d158bca0b",
-            "refId": "31d774ab-9579-5641-86ca-1e1d18e74816",
-            "name": "Welcome_Task",
+            "_id": "dc-8f9209f8-2cde-58d7-8170-768c04350960",
+            "refId": "a7639789-662b-5a5f-b0d5-7f28368a0acd",
+            "name": "Entity0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0001",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+            "refId": "e6e0cee6-724e-5a9b-9828-78ecfb18811a",
+            "name": "ViewMyBill",
             "piiDataEnabled": false,
             "serviceNodeType": "custom",
             "type": "intent",
             "applyDefaultTemplate": false,
-            "dialogId": "dg-33e0ee2d-e339-57de-9d69-6561fb672599",
+            "dialogId": "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
             "localeData": {
                 "en": {
-                    "intent": "Welcome Task",
-                    "desc": "Welcome Task"
+                    "desc": "",
+                    "intent": "ViewMyBill"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+            "refId": "4e4fd6d8-fa61-52c6-9115-e26d703914e7",
+            "name": "Voice",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "Voice"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "refId": "5a7b9921-4d4a-5979-a3ba-a9abdbaa826b",
+            "name": "PayBill",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "PayBill"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-b310ce0d-ab4f-5e6b-a53a-8b578e928008",
+            "refId": "56981f93-0da4-52b9-8113-646569f5288e",
+            "name": "Message0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample message for Message0001",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Message0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+            "refId": "69ef5da2-e696-5ffb-9a8f-63912562895d",
+            "name": "Service0001",
+            "piiDataEnabled": false,
+            "endPoint": {
+                "host": "122.170.77.44",
+                "port": "8003",
+                "path": "/job/Test/build?token=test.",
+                "protocol": "http",
+                "method": "post",
+                "connectorEnabled": false,
+                "piiDataEnabled": false
+            },
+            "authRequired": false,
+            "payload": {
+                "type": "raw",
+                "value": "%7B%7D"
+            },
+            "headers": {
+                "type": "raw",
+                "value": "{}"
+            },
+            "serviceType": "rest",
+            "idp": "none",
+            "serviceNodeType": "custom",
+            "type": "service",
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Service0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "timeOutError": {
+                "closeConversation": true
+            },
+            "serviceAPITimeout": 20,
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-c7484e87-0470-52f4-859b-dc768c4d0439",
+            "refId": "14466020-2c7f-53b6-b8f2-a200fbbcea47",
+            "name": "BotAction0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "botAction",
+            "nodes": [
+                {
+                    "type": "service",
+                    "nodeId": "nd-5196c00f-9acb-535a-974c-c7d55076c241",
+                    "componentId": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-fd3155da-63df-4327-b583-01208d707939",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 0,
+                        "top": 200
+                    },
+                    "level": "root"
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "label": "BotAction0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-d3eba954-0da6-5977-9eb9-a9ebadfd1564",
+            "refId": "144cbc64-7368-5cd2-bb24-4304384576e4",
+            "name": "InternetTroubleshooting",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "InternetTroubleshooting"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-e3230925-437f-5a7a-9002-8c8f31dbc3d3",
+            "refId": "a4a01ccf-3e96-5ade-aae6-ba6cce00d7f7",
+            "name": "Entity0002",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0002",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0002"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "refId": "2ef55c26-b445-55cf-aca9-530175eb1894",
+            "name": "AgentTransfer",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "SEPTest"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-fba7728c-f1b7-5faf-ade4-da7041c57957",
+            "refId": "b93c886a-d155-56fb-bad3-92cb1a18c4e5",
+            "name": "FallbackMsg",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I could not understand that. Can you rephrase?",
+                            "type": "basic"
+                        }
+                    }
+                },
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I am unable to find an answer. Please try something else.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "FallbackMsg"
                 }
             },
             "entityFields": {
@@ -1194,8 +1530,8 @@
     ],
     "dialogs": [
         {
-            "_id": "dg-f67695f9-748d-5247-b094-ae699fc89fc6",
-            "refId": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
+            "_id": "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
+            "refId": "53e14338-0441-5e8a-a885-d990b771e80a",
             "nodes": [
                 {
                     "nodeOptions": {
@@ -1226,7 +1562,7 @@
                     "useTaskLevelNs": true,
                     "nodeId": "intent0",
                     "type": "intent",
-                    "componentId": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
+                    "componentId": "dc-6b635838-a11c-551f-a919-ced4ca696cc8",
                     "transitions": [
                         {
                             "default": "FallbackMsg",
@@ -1281,7 +1617,7 @@
                             "default": ""
                         }
                     ],
-                    "componentId": "dc-7663df38-a4d1-5e37-b612-25ac9397629b",
+                    "componentId": "dc-fba7728c-f1b7-5faf-ade4-da7041c57957",
                     "type": "message",
                     "nodeId": "FallbackMsg",
                     "positionMeta": {
@@ -1310,14 +1646,14 @@
             "amendConfig": {
                 "priority": "bot"
             },
-            "sceneRefId": "d64013c3-5349-56e7-ab4b-ba61ad80b3fb",
+            "sceneRefId": "4107d373-cc18-55ff-86d3-c6b56b079ede",
             "vNameSpace": [
-                "5535076d-5b61-5dc0-993a-93100d585935"
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
             ]
         },
         {
-            "_id": "dg-33e0ee2d-e339-57de-9d69-6561fb672599",
-            "refId": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
+            "_id": "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+            "refId": "4442ec9b-23bc-5136-8c46-a9debc947431",
             "nodes": [
                 {
                     "nodeOptions": {
@@ -1348,7 +1684,837 @@
                     "useTaskLevelNs": true,
                     "nodeId": "intent0",
                     "type": "intent",
-                    "componentId": "dc-fc82cb8a-0361-54c9-92a0-942d158bca0b",
+                    "componentId": "dc-d3eba954-0da6-5977-9eb9-a9ebadfd1564",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-eb4c69bf-1724-41be-b108-a7e134486b17",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-eb4c69bf-1724-41be-b108-a7e134486b17",
+                    "type": "entity",
+                    "componentId": "dc-e3230925-437f-5a7a-9002-8c8f31dbc3d3",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-a2c8477c-c527-48b2-bd70-3e9389da5ecf",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-6d753985-a47c-40a0-9c71-9afdf838ddac",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-a2c8477c-c527-48b2-bd70-3e9389da5ecf",
+                    "type": "entity",
+                    "componentId": "dc-67d33da9-ea6a-5579-bea3-0326aafebf8e",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-467f8769-c26c-4c12-8f65-4603ee95b126",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 380
+                    }
+                }
+            ],
+            "lname": "internettroubleshooting",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "InternetTroubleshooting",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "93b8e0e5-2dfd-5ba1-8700-ff46144cec2f",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+            "refId": "3e83710e-f873-5944-89d9-e523eae07e53",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                }
+            ],
+            "lname": "paybill",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "PayBill",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "4e429496-0f51-52ef-87a9-170fefb229d8",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+            "refId": "83f04e93-fbc8-511e-8056-c74dce398c09",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+                    "transitions": [
+                        {
+                            "default": "nd-msg-9251a036-e4be-4bc0-9517-96eded219091",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-msg-9251a036-e4be-4bc0-9517-96eded219091",
+                    "type": "message",
+                    "componentId": "dc-7065819f-f716-5f5c-b15d-8420bb8d58d9",
+                    "transitions": [
+                        {
+                            "default": "nd-agt-27cc3327-1f80-40b7-96f6-7d40fd67a3f1",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-7fc7778c-5cac-40de-88a2-7bebee3697a4",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-agt-27cc3327-1f80-40b7-96f6-7d40fd67a3f1",
+                    "type": "agentTransfer",
+                    "componentId": "dc-09347f26-1b85-509a-9a50-6991590e9247",
+                    "transitions": [
+                        {
+                            "default": "end",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-92527dca-8395-4d97-8495-02e4e91c13d5",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 380
+                    }
+                }
+            ],
+            "lname": "septest",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "SEPTest",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "followupTaskOptions": {
+                "isFollowUp": false,
+                "message": ""
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "onTaskFailure": {
+                "msg": [],
+                "enabled": false
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "a1981541-a080-5601-9a49-aefd9d41ef3b",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+            "refId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+                    "transitions": [
+                        {
+                            "default": "nd-bac-dab1fdd1-76ea-4d28-a046-f78383057aee",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 519.1666870117188,
+                        "top": 95.00000762939453
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-bac-dab1fdd1-76ea-4d28-a046-f78383057aee",
+                    "type": "botAction",
+                    "componentId": "dc-c7484e87-0470-52f4-859b-dc768c4d0439",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-55cae517-9d49-4428-be40-35629f15eefd",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 518.3333129882812,
+                        "top": 239.33334350585938
+                    },
+                    "nodes": [
+                        {
+                            "type": "service",
+                            "componentId": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+                            "level": "root",
+                            "nodeId": "nd-5196c00f-9acb-535a-974c-c7d55076c241"
+                        }
+                    ]
+                }
+            ],
+            "lname": "test",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "Test",
+                    "shortDesc": "Test Dialog"
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "4aceed66-dc6f-5a4e-8d9f-b939f48dcf2c",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
+            "refId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+                    "transitions": [
+                        {
+                            "default": "nd-msg-3bb26bde-d121-4d6a-bad5-de33d6aa6b90",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-msg-3bb26bde-d121-4d6a-bad5-de33d6aa6b90",
+                    "type": "message",
+                    "componentId": "dc-b310ce0d-ab4f-5e6b-a53a-8b578e928008",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-feaabbda-d4a7-4f02-9616-a5f69bca2557",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "viewmybill",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "ViewMyBill",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "bcdf814b-7260-5676-9f64-598faa02087b",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+            "refId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-c8b210e7-3b1e-412b-8173-33aecfdb126e",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-c8b210e7-3b1e-412b-8173-33aecfdb126e",
+                    "type": "entity",
+                    "componentId": "dc-8f9209f8-2cde-58d7-8170-768c04350960",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-22cb43f2-27b6-4046-b828-3c871d6dc889",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "voice",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "Voice",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "660053b5-60ec-5e23-ac33-bac0484e204d",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2",
+            "refId": "0864af19-4355-5c18-888d-fb91555e7fa2",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
                     "transitions": [
                         {
                             "default": "message3",
@@ -1403,7 +2569,7 @@
                             "default": ""
                         }
                     ],
-                    "componentId": "dc-d1562367-cb4a-50d5-ad70-b4ce9cf2122c",
+                    "componentId": "dc-897dcc65-7237-5c33-9fb3-1134a3a7d67c",
                     "type": "message",
                     "nodeId": "message3",
                     "positionMeta": {
@@ -1432,24 +2598,24 @@
             "amendConfig": {
                 "priority": "bot"
             },
-            "sceneRefId": "64e75d89-3796-5b10-bf48-e03a52895109",
+            "sceneRefId": "803919e1-af8d-5247-bdb5-308d37f0686d",
             "vNameSpace": [
-                "5535076d-5b61-5dc0-993a-93100d585935"
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
             ]
         }
     ],
     "scenes": [
         {
-            "_id": "sn-582ee35a-68b2-5b1a-8ee6-8c59c1893ce4",
+            "_id": "sn-ea9fb611-219e-534c-89f8-5b1f73845b99",
             "botstoreInfo": [
                 {
                     "type": "interactive",
                     "isSecured": false,
-                    "link": "4176484931786f374f3635efbfbdefbfbdefbfbd"
+                    "link": "454678516f586b6a4f3870efbfbd0cefbfbd"
                 }
             ],
             "components": {
-                "snc-a0772a25-cbde-5fcd-bb15-246780296697": {
+                "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740": {
                     "childs": [],
                     "parentId": null,
                     "seqId": "Id1"
@@ -1458,34 +2624,250 @@
             "currentSeqId": 1,
             "description": "Fallback Task",
             "dialogLinks": {
-                "snc-a0772a25-cbde-5fcd-bb15-246780296697": {
-                    "dialogRefId": "3cd45fb6-1aae-54dc-bb15-436344e0b622"
+                "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740": {
+                    "dialogRefId": "53e14338-0441-5e8a-a885-d990b771e80a"
                 }
             },
-            "dialogRefId": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
+            "dialogRefId": "53e14338-0441-5e8a-a885-d990b771e80a",
             "messageLinks": {},
             "name": "Fallback Task",
-            "refId": "d64013c3-5349-56e7-ab4b-ba61ad80b3fb",
+            "refId": "4107d373-cc18-55ff-86d3-c6b56b079ede",
             "sceneLinkedBy": [],
             "sceneLinks": {},
             "sceneType": "dialogScene",
             "status": "inProgress",
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
             "tags": [],
             "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
             "resourceid": "scenes"
         },
         {
-            "_id": "sn-d20c4c91-e25d-5993-ad7c-449239898150",
+            "_id": "sn-15768eec-226d-5fd4-afc8-cca6a45a87b5",
             "botstoreInfo": [
                 {
                     "type": "interactive",
                     "isSecured": false,
-                    "link": "3869723472396835c58d71efbfbdefbfbd65"
+                    "link": "6c6d513665766376596b3c1cefbfbd"
                 }
             ],
             "components": {
-                "snc-368fae18-db92-5358-93ed-48cc1fc4ebb2": {
+                "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9": {
+                    "dialogRefId": "4442ec9b-23bc-5136-8c46-a9debc947431"
+                }
+            },
+            "dialogRefId": "4442ec9b-23bc-5136-8c46-a9debc947431",
+            "messageLinks": {},
+            "name": "InternetTroubleshooting",
+            "refId": "93b8e0e5-2dfd-5ba1-8700-ff46144cec2f",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-397a122a-d94c-57cc-b022-c28359118e84",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "4e5277554f5141344fefbfbd6fefbfbd"
+                }
+            ],
+            "components": {
+                "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9": {
+                    "dialogRefId": "3e83710e-f873-5944-89d9-e523eae07e53"
+                }
+            },
+            "dialogRefId": "3e83710e-f873-5944-89d9-e523eae07e53",
+            "messageLinks": {},
+            "name": "PayBill",
+            "refId": "4e429496-0f51-52ef-87a9-170fefb229d8",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-444aa92e-71d4-5ff7-8292-1ccb3b1abbbb",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6956724a5471796245552defbfbd1a"
+                }
+            ],
+            "components": {
+                "snc-9920ffdb-066a-582e-b1c8-585f695b91fa": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-9920ffdb-066a-582e-b1c8-585f695b91fa": {
+                    "dialogRefId": "83f04e93-fbc8-511e-8056-c74dce398c09"
+                }
+            },
+            "dialogRefId": "83f04e93-fbc8-511e-8056-c74dce398c09",
+            "messageLinks": {},
+            "name": "SEPTest",
+            "refId": "a1981541-a080-5601-9a49-aefd9d41ef3b",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-39ee83fd-c026-57a1-b7f7-2e902d0369fe",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "47416b6c43374e7350efbfbd6752"
+                }
+            ],
+            "components": {
+                "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "Test Dialog",
+            "dialogLinks": {
+                "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362": {
+                    "dialogRefId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647"
+                }
+            },
+            "dialogRefId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647",
+            "messageLinks": {},
+            "name": "Test",
+            "refId": "4aceed66-dc6f-5a4e-8d9f-b939f48dcf2c",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-6c4f7767-8fd7-5c16-84b8-ad33447608b0",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "636979623776706946efbfbd60efbfbd"
+                }
+            ],
+            "components": {
+                "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9": {
+                    "dialogRefId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3"
+                }
+            },
+            "dialogRefId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3",
+            "messageLinks": {},
+            "name": "ViewMyBill",
+            "refId": "bcdf814b-7260-5676-9f64-598faa02087b",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-cab96118-05fe-5fcb-8e91-ad993b36e275",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6d38644c66756150614defbfbdefbfbd3d"
+                }
+            ],
+            "components": {
+                "snc-345ea5ea-d40b-5261-adea-00d24cefb94d": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-345ea5ea-d40b-5261-adea-00d24cefb94d": {
+                    "dialogRefId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5"
+                }
+            },
+            "dialogRefId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5",
+            "messageLinks": {},
+            "name": "Voice",
+            "refId": "660053b5-60ec-5e23-ac33-bac0484e204d",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-f7eaee24-83c6-5dd5-88b3-c8f6a9bb6652",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6e5630714455443945514842102b"
+                }
+            ],
+            "components": {
+                "snc-6a615c73-93d4-52db-b914-628f9fb77eb1": {
                     "childs": [],
                     "parentId": null,
                     "seqId": "Id1"
@@ -1494,19 +2876,19 @@
             "currentSeqId": 1,
             "description": "Welcome Task",
             "dialogLinks": {
-                "snc-368fae18-db92-5358-93ed-48cc1fc4ebb2": {
-                    "dialogRefId": "716a6e33-96fa-5cb9-95d9-078bda0ba190"
+                "snc-6a615c73-93d4-52db-b914-628f9fb77eb1": {
+                    "dialogRefId": "0864af19-4355-5c18-888d-fb91555e7fa2"
                 }
             },
-            "dialogRefId": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
+            "dialogRefId": "0864af19-4355-5c18-888d-fb91555e7fa2",
             "messageLinks": {},
             "name": "Welcome Task",
-            "refId": "64e75d89-3796-5b10-bf48-e03a52895109",
+            "refId": "803919e1-af8d-5247-bdb5-308d37f0686d",
             "sceneLinkedBy": [],
             "sceneLinks": {},
             "sceneType": "dialogScene",
             "status": "inProgress",
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
             "tags": [],
             "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
             "resourceid": "scenes"
@@ -1514,7 +2896,7 @@
     ],
     "sceneComponents": [
         {
-            "_id": "snc-368fae18-db92-5358-93ed-48cc1fc4ebb2",
+            "_id": "snc-345ea5ea-d40b-5261-adea-00d24cefb94d",
             "state": 0,
             "msg": {
                 "type": "text",
@@ -1523,13 +2905,13 @@
                 }
             },
             "type": "note",
-            "refId": "b36de03b-cfe4-5fd8-adac-91c8bcfc5d23",
+            "refId": "5d7d8845-0913-505a-9e9e-5eeb6c5ec35b",
             "comments": [],
-            "sceneId": "sn-d20c4c91-e25d-5993-ad7c-449239898150",
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805"
+            "sceneId": "sn-cab96118-05fe-5fcb-8e91-ad993b36e275",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
         },
         {
-            "_id": "snc-a0772a25-cbde-5fcd-bb15-246780296697",
+            "_id": "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9",
             "state": 0,
             "msg": {
                 "type": "text",
@@ -1538,10 +2920,100 @@
                 }
             },
             "type": "note",
-            "refId": "0d1e1cd8-d215-5f86-8779-dfd62d3b7d15",
+            "refId": "806b3eb9-8bb5-58dc-837b-07afa8e38d54",
             "comments": [],
-            "sceneId": "sn-582ee35a-68b2-5b1a-8ee6-8c59c1893ce4",
-            "streamId": "st-e5669197-991d-5971-9417-a422368a0805"
+            "sceneId": "sn-15768eec-226d-5fd4-afc8-cca6a45a87b5",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "51d76e02-f7c8-5c92-978b-8e6caa4aac0d",
+            "comments": [],
+            "sceneId": "sn-6c4f7767-8fd7-5c16-84b8-ad33447608b0",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "f9d1c003-b832-5d7e-8b12-1cec0e13e1e4",
+            "comments": [],
+            "sceneId": "sn-39ee83fd-c026-57a1-b7f7-2e902d0369fe",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "1d36f877-1b44-5486-961a-8f7618d20f4d",
+            "comments": [],
+            "sceneId": "sn-397a122a-d94c-57cc-b022-c28359118e84",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "f753128f-d625-5668-8f7d-07c522686bdf",
+            "comments": [],
+            "sceneId": "sn-ea9fb611-219e-534c-89f8-5b1f73845b99",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-9920ffdb-066a-582e-b1c8-585f695b91fa",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "9b65a832-df59-5698-b8a3-fc35f15fa4a0",
+            "comments": [],
+            "sceneId": "sn-444aa92e-71d4-5ff7-8292-1ccb3b1abbbb",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-6a615c73-93d4-52db-b914-628f9fb77eb1",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "b3069907-c543-5582-805c-ea37733699fe",
+            "comments": [],
+            "sceneId": "sn-f7eaee24-83c6-5dd5-88b3-c8f6a9bb6652",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
         }
     ],
     "widgetThemes": [
@@ -1570,15 +3042,79 @@
             "groups": [
                 {
                     "groupName": "greetings",
-                    "groupId": "smg-ffe43a63-5ae0-530e-b04d-3a801dd1e415",
+                    "groupId": "smg-3736b4ee-6feb-50dd-bccb-affafbea9f27",
                     "vNameSpace": [
-                        "5535076d-5b61-5dc0-993a-93100d585935"
+                        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
                     ],
                     "nodes": [
                         {
                             "userUtterances": [
                                 {
-                                    "text": "~ibedone"
+                                    "text": "~positiveackwords"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could help. ",
+                                    "type": "basic",
+                                    "_id": "mt-adae768b-a96f-5d1f-a211-a5e61015b9b9"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of assistance. ",
+                                    "type": "basic",
+                                    "_id": "mt-5d9de7b7-63c4-53de-a831-515e637269bc"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of some help.",
+                                    "type": "basic",
+                                    "_id": "mt-2162a617-ff58-5b7d-8230-175572ab9d3a"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Always great to be able to help. ",
+                                    "type": "basic",
+                                    "_id": "mt-6cf03b13-6638-5735-9287-96bc256148eb"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "ce63f443-82e2-50e3-b3d3-da173b363cf4",
+                            "seq": 4,
+                            "nodeId": "smn-103c5f45-c669-525a-a5f7-8b8ec4bcda8c"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohowzit"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "I'm good. Thank you.",
+                                    "type": "basic",
+                                    "_id": "mt-f931f16a-4876-5e77-ac68-2c2a9a406511"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "784be822-a951-539f-934b-b94f5e1833be",
+                            "seq": 1,
+                            "nodeId": "smn-22c2be40-5104-5d5d-be86-6fc33de7cfb6"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "!y ~yes"
+                                },
+                                {
+                                    "text": "get_it"
+                                },
+                                {
+                                    "text": "i_understand"
                                 }
                             ],
                             "botUtterances": [
@@ -1586,20 +3122,26 @@
                                     "channel": "default",
                                     "text": "Right, then.",
                                     "type": "basic",
-                                    "_id": "mt-4235671c-c119-529c-85aa-ce4623c95f3b"
+                                    "_id": "mt-cf98fc0d-2c93-540b-828c-71972c8fcbb8"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK, great! ",
+                                    "type": "basic",
+                                    "_id": "mt-97c6ba6f-5068-57a5-b792-bbac972107d8"
                                 },
                                 {
                                     "channel": "default",
                                     "text": "Alright. ",
                                     "type": "basic",
-                                    "_id": "mt-d4e2051b-17da-53d7-9e26-d3f4f7bc1d40"
+                                    "_id": "mt-d546cf5f-d50f-5968-8e23-dd7490b15973"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "a3295ea3-17ca-51cb-9174-4155759020ed",
-                            "seq": 6,
-                            "nodeId": "smn-26a33606-7312-56f9-a7ac-f1075a0453d8"
+                            "refId": "367c4f6d-337e-53b2-b333-282a4711401f",
+                            "seq": 9,
+                            "nodeId": "smn-2b074735-ff6b-51fc-b17f-14fa8a12bc69"
                         },
                         {
                             "userUtterances": [
@@ -1612,58 +3154,107 @@
                                     "channel": "default",
                                     "text": "Have a good one!",
                                     "type": "basic",
-                                    "_id": "mt-f96df7bc-00a9-52c8-9628-388f22c1fcd5"
+                                    "_id": "mt-90836fbf-e755-5fdf-bee2-0b5db24e26ca"
                                 },
                                 {
                                     "channel": "default",
                                     "text": "OK, bye for now! ",
                                     "type": "basic",
-                                    "_id": "mt-dd7ebef9-b203-5b94-9358-c88ee3137915"
+                                    "_id": "mt-728893f9-b654-5965-822e-654eb99724a6"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "020a0fc4-cac9-52c4-ae71-dfd35e8a618c",
+                            "refId": "e2226397-0bfb-534e-8c56-4b9715142b58",
                             "seq": 7,
-                            "nodeId": "smn-3d501a49-e0a1-5af2-96ce-d43052b1a258"
+                            "nodeId": "smn-32b0dae3-1319-552a-a13c-55631851b8af"
                         },
                         {
                             "userUtterances": [
                                 {
-                                    "text": "~positiveackwords"
+                                    "text": "~ibedone"
                                 }
                             ],
                             "botUtterances": [
                                 {
                                     "channel": "default",
-                                    "text": "Always great to be able to help. ",
+                                    "text": "Alright. ",
                                     "type": "basic",
-                                    "_id": "mt-8f39986c-80f2-57da-82d7-9d4208653f76"
+                                    "_id": "mt-43bd669d-f5dd-5ac1-ad15-49a1ab2ef359"
                                 },
                                 {
                                     "channel": "default",
-                                    "text": "Glad I could be of some help.",
+                                    "text": "Right, then.",
                                     "type": "basic",
-                                    "_id": "mt-e9123585-ee6d-50e5-8521-2a068b1089a2"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Glad I could help. ",
-                                    "type": "basic",
-                                    "_id": "mt-6c0487c1-5ef8-5793-b2c0-7fa5f50673af"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Glad I could be of assistance. ",
-                                    "type": "basic",
-                                    "_id": "mt-0085513d-4330-5f14-a3f6-9ce448241eec"
+                                    "_id": "mt-067de5ef-d2be-5e72-9d92-5eee6171f52c"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "bd3188ed-fc29-5c2c-a9ed-953437754056",
-                            "seq": 4,
-                            "nodeId": "smn-40d67abb-372e-5ce9-8aaf-52269c3f5586"
+                            "refId": "317b010f-e523-5752-8d5b-0c769f322212",
+                            "seq": 6,
+                            "nodeId": "smn-5859dcef-36d4-5a27-a069-beb1b956faba"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "thanks"
+                                },
+                                {
+                                    "text": "thank ~you"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "You're welcome.",
+                                    "type": "basic",
+                                    "_id": "mt-5e5116a9-1b6c-57be-b017-fa6ce6af0096"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "f70acc59-7c23-5a8a-8cc3-e161fcb97d3c",
+                            "seq": 8,
+                            "nodeId": "smn-7cb53b9b-c680-575b-acf9-5fa4820003d4"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohello"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Hey :)",
+                                    "type": "basic",
+                                    "_id": "mt-b08fa133-3d00-5830-a798-9646da556244"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hello ",
+                                    "type": "basic",
+                                    "_id": "mt-0dce043f-1773-5add-b35f-7179c9eccf52"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi! ",
+                                    "type": "basic",
+                                    "_id": "mt-c52e1da2-bc6e-50a0-ae4b-bd171733f034"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi there! ",
+                                    "type": "basic",
+                                    "_id": "mt-ac7c5775-c956-5c2f-b17c-76d6bf92a78e"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "bb5514ae-c7d5-54bb-8aea-aa221f775f91",
+                            "seq": 0,
+                            "nodeId": "smn-7e4accbc-30fc-5432-addb-b632776ff3fb"
                         },
                         {
                             "userUtterances": [
@@ -1674,22 +3265,22 @@
                             "botUtterances": [
                                 {
                                     "channel": "default",
-                                    "text": "OK. ",
+                                    "text": "Alright.",
                                     "type": "basic",
-                                    "_id": "mt-fc298ba1-57ce-5360-a797-495d6abc47b6"
+                                    "_id": "mt-836f51e4-9625-5afd-b80f-86a681aa978e"
                                 },
                                 {
                                     "channel": "default",
-                                    "text": "Alright.",
+                                    "text": "OK. ",
                                     "type": "basic",
-                                    "_id": "mt-cd7256da-4114-5c5f-b180-f00170a9903d"
+                                    "_id": "mt-6182f378-9384-5f31-baf3-e6be78d8c640"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "d146dfb9-566a-578f-9587-c309250bbd48",
+                            "refId": "a9197369-952d-56e3-a703-b22991853660",
                             "seq": 5,
-                            "nodeId": "smn-45e10c89-8864-532f-8091-4b660e14abce"
+                            "nodeId": "smn-9b6fb8e2-86fb-5d85-8dd3-6efd321c1a8d"
                         },
                         {
                             "userUtterances": [
@@ -1714,95 +3305,14 @@
                                     "channel": "default",
                                     "text": "I'm <display-bot-name>.",
                                     "type": "basic",
-                                    "_id": "mt-9f357ca8-e930-5295-9669-c4f7da4b7b2b"
+                                    "_id": "mt-0fc55833-1035-5010-9466-8f8b757f5076"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "b63036d6-88d5-532b-9bb3-1b18ba9d5ba5",
+                            "refId": "8e4f005a-f47d-5928-97ea-5671857bdd5c",
                             "seq": 2,
-                            "nodeId": "smn-67672cba-579d-5fda-a48b-bb0606ff6711"
-                        },
-                        {
-                            "userUtterances": [
-                                {
-                                    "text": "~emohowzit"
-                                }
-                            ],
-                            "botUtterances": [
-                                {
-                                    "channel": "default",
-                                    "text": "I'm good. Thank you.",
-                                    "type": "basic",
-                                    "_id": "mt-a8a20abd-1a49-57ef-96d1-0ea6761a4aa1"
-                                }
-                            ],
-                            "state": "published",
-                            "language": "en",
-                            "refId": "a78cdf8c-bf61-52c2-9e78-d510e2424791",
-                            "seq": 1,
-                            "nodeId": "smn-67d4dc74-2e79-543c-8dc8-e76a322f6e41"
-                        },
-                        {
-                            "userUtterances": [
-                                {
-                                    "text": "!y ~yes"
-                                },
-                                {
-                                    "text": "get_it"
-                                },
-                                {
-                                    "text": "i_understand"
-                                }
-                            ],
-                            "botUtterances": [
-                                {
-                                    "channel": "default",
-                                    "text": "Right, then.",
-                                    "type": "basic",
-                                    "_id": "mt-9729fd5b-79ff-5bc0-a5d6-ae6866f64976"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "OK, great! ",
-                                    "type": "basic",
-                                    "_id": "mt-fc22663f-3eec-5e5c-b060-9439b3d763d0"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Alright. ",
-                                    "type": "basic",
-                                    "_id": "mt-216ba57a-ee26-5701-8faf-0588bf13cc3e"
-                                }
-                            ],
-                            "state": "published",
-                            "language": "en",
-                            "refId": "aa3d100f-0541-5c84-a205-12a9e297fbc9",
-                            "seq": 9,
-                            "nodeId": "smn-68b7ed06-789a-54d1-b7a8-b7c59a808e86"
-                        },
-                        {
-                            "userUtterances": [
-                                {
-                                    "text": "thanks"
-                                },
-                                {
-                                    "text": "thank ~you"
-                                }
-                            ],
-                            "botUtterances": [
-                                {
-                                    "channel": "default",
-                                    "text": "You're welcome.",
-                                    "type": "basic",
-                                    "_id": "mt-0551f0bb-d417-59f7-b008-7b4d8b9e21a1"
-                                }
-                            ],
-                            "state": "published",
-                            "language": "en",
-                            "refId": "116ab494-ece7-5a18-88a4-b4b58d17ccaf",
-                            "seq": 8,
-                            "nodeId": "smn-a0aedb45-7989-5bcf-b0ee-bcac5622cc3d"
+                            "nodeId": "smn-af328923-3c56-51a3-acd5-3dfef400e105"
                         },
                         {
                             "userUtterances": [
@@ -1815,58 +3325,20 @@
                                     "channel": "default",
                                     "text": "Glad I could help. ",
                                     "type": "basic",
-                                    "_id": "mt-d389d446-d5b2-5271-9e01-fd2f26c79548"
+                                    "_id": "mt-b8202fd1-7466-5d4f-b9a5-7f5d595d6891"
                                 },
                                 {
                                     "channel": "default",
                                     "text": "Glad you are happy.",
                                     "type": "basic",
-                                    "_id": "mt-8a723b56-c272-520b-9ec6-47fc8f8ee077"
+                                    "_id": "mt-7a7f1a8c-e2aa-5115-8f6e-53cebe98893f"
                                 }
                             ],
                             "state": "published",
                             "language": "en",
-                            "refId": "011a1ab5-bfd1-51ee-b141-136fc10878d1",
+                            "refId": "1737e21a-93fc-5082-90cc-80012186034e",
                             "seq": 3,
-                            "nodeId": "smn-dee0e210-8712-5420-8181-26e39d4a417f"
-                        },
-                        {
-                            "userUtterances": [
-                                {
-                                    "text": "~emohello"
-                                }
-                            ],
-                            "botUtterances": [
-                                {
-                                    "channel": "default",
-                                    "text": "Hello ",
-                                    "type": "basic",
-                                    "_id": "mt-70605b5c-1c32-5444-b831-dbe4389ce680"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Hi! ",
-                                    "type": "basic",
-                                    "_id": "mt-c1f471d6-8eca-52f7-9ebf-88b947d1cf5f"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Hi there! ",
-                                    "type": "basic",
-                                    "_id": "mt-0a3e56c0-545b-58f7-bb81-d7e10168f1e0"
-                                },
-                                {
-                                    "channel": "default",
-                                    "text": "Hey :)",
-                                    "type": "basic",
-                                    "_id": "mt-039a7214-376f-5b06-9df3-4abd22818876"
-                                }
-                            ],
-                            "state": "published",
-                            "language": "en",
-                            "refId": "1a5cf8a5-e788-5e0b-a424-c15d70111677",
-                            "seq": 0,
-                            "nodeId": "smn-fc432f58-fbc5-52c0-baf2-12e0e1a96ab4"
+                            "nodeId": "smn-ef840fd0-6421-56d5-a6eb-f1becff30b99"
                         }
                     ],
                     "count": 9
@@ -1880,17 +3352,7 @@
     "customDashboards": [],
     "paramMaps": [],
     "taskDgParamMaps": [],
-    "sentences": [
-        {
-            "_id": "64df576225bf6b552b5332c2",
-            "taskId": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
-            "sentence": "welcomtask",
-            "taskName": "Fallback_Task",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        }
-    ],
+    "sentences": [],
     "koraResponses": [],
     "customTemplates": [],
     "mlParams": [
@@ -1928,7 +3390,8 @@
                 "NoneIntentCustomTraining": false
             },
             "nerParams": {
-                "type": "corenlp"
+                "type": "corenlp",
+                "thresholdValue": 0
             },
             "utterances": [],
             "btutterances": []
@@ -1942,22 +3405,26 @@
             "knowledgeGraph",
             "smallTalk"
         ],
-        "nlpData": [
-            "training_data",
-            "bot_synonyms",
-            "defaultDialog",
-            "nlpSettings",
-            "utterances",
-            "patterns",
-            "standardResponses"
-        ],
+        "nlpData": [],
         "settings": [],
         "subTasks": {
             "dialogs": [
-                "dg-91085f68-3ff6-5cb6-a28f-4de3b2aaa1b9",
-                "dg-f67695f9-748d-5247-b094-ae699fc89fc6",
-                "dg-48f1c174-2681-59a6-8006-2678fbe6b3d9",
-                "dg-33e0ee2d-e339-57de-9d69-6561fb672599"
+                "dg-1cf44aae-8fe5-58cd-86fe-cee40bf637a5",
+                "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
+                "dg-b0c577a0-9aab-50e1-aeb2-fa8cc3e1d973",
+                "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+                "dg-8156e38d-4383-56ed-b3a5-550fc9b44467",
+                "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+                "dg-7c7a8623-2243-5e0a-aa64-3fe2b576a392",
+                "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+                "dg-0d90b671-bc11-571d-9a4a-fffc976789f8",
+                "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+                "dg-a1171528-f533-5dbc-ad6f-4211009450d7",
+                "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
+                "dg-543c371c-5e16-5592-9a5b-81fe494f2ff0",
+                "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+                "dg-5e361608-f5fa-5458-aa10-945955982ea2",
+                "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2"
             ],
             "alerts": [],
             "actions": [],
@@ -1967,5 +3434,5 @@
     },
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "0f2338d94d53ccb227d332ff97eebd4c"
+    "encryptedHash": "277f903ee3f643f5f6190101defbcd73"
 }
