@@ -44,6 +44,7 @@ public class UI {
         String[] values = tagName.split("-");
         String botName = values[0];
         String exportType = values[2];
+
         String importType = "Import_All";
         String env = "dev";
         System.out.println("botName: " + botName); 

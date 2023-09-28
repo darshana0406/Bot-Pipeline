@@ -1,5 +1,3 @@
-// package EnvironmentVariable;
-
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,21 +12,31 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import org.apache.commons.io.FileUtils;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.transport.RefSpec;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.json.JSONObject;
 
+ 
+
 public class ExportBot {
-    
-    
-    public static void main(String[] args) {
+	    public static void main(String[] args) throws IOException, GitAPIException {
 
-        HttpURLConnection exportStatusConnection = null;
+              HttpURLConnection exportStatusConnection = null;
 
-        String exportType = args[0];
-        String env = args[1];
+              String exportType = "Export_Tasks";
+              String env = "prod";
         
         if (args.length > 0 ) {
+              exportType = args[0];
+              env = args[1];
                 System.out.println("Chosen Value: " + exportType); 
                  System.out.println("Chosen Value: " + env);              
             } else {
@@ -105,15 +113,47 @@ public class ExportBot {
             exportStatusConnection.disconnect();
         }
 
-        
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String username = "darshana0406";
+	String password = "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";
+	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
+	String GIT_TAG = "cct_ivr_billing" ;
+	String TIMESTAMPS = dateFormat.format(new Date());
 
-    }
+	GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
 
+	FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
+	FileUtils.forceMkdir(new File(WORKSPACE + "/TMP"));
+	Git git = Git.cloneRepository()
+	        .setURI(REPO_URL)
+	        .setDirectory(new File(WORKSPACE + "/TMP"))
+	        .call();
+
+	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
+			"/TMP/cct_ivr_billing/" + env +"_nce/" + exportType + "/ExportBot"));
+	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
+			"/TMP/cct_ivr_billing/" + env +"_nce/" + exportType +"/fullexport.zip"));
+
+	git.add().addFilepattern(".").call();
+
+	git.commit().setMessage("pushing bot configs").call();
+	System.out.println("Files are committed to target repo.");
+
+	git.tag().setName(GIT_TAG + "_" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "_" + TIMESTAMPS).call();
+	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "_" + TIMESTAMPS)).call();
+	System.out.println("GIT Tag is created.");
+
+	git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+			.setRemote("origin")
+			.setRefSpecs(new RefSpec("main"))
+			.call();
+	System.out.println("Files are pushed to main branch of target repo.");
+	git.close();
+
+	}
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
-            // If the file needs to be copied to specific path, create custom path and
-            // provide
-            // Path path = Paths.get("/Test/Files");
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
         }
     }
@@ -176,7 +216,7 @@ public class ExportBot {
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
-        String gitRepoPath = "."; // Replace this with the actual path to your Git repository
+        String gitRepoPath = "."; // Replace this with the actual path 
         // String commitMessage = "changes for gradle";
 
          // Git commands
@@ -184,7 +224,7 @@ public class ExportBot {
         // String gitclone = "git clone https://github.com/darshana0406/Bot-Pipeline.git";
         String gitAdd = "git add .";
         String gitCommit = "git commit -m 'Updated'";
-        // String gitPush = "git push origin main";
+        String gitPush = "git push origin main";
 
         // Execute Git commands
         try {
@@ -193,8 +233,8 @@ public class ExportBot {
             executeCommand(gitRepoPath, gitAdd);
             System.out.println("Executing: " + gitCommit);
             executeCommand(gitRepoPath, gitCommit);
-            // System.out.println("Executing: " + gitPush);
-            // executeCommand(gitRepoPath, gitPush);
+            System.out.println("Executing: " + gitPush);
+            executeCommand(gitRepoPath, gitPush);
             System.out.println("Changes added, committed and push successfully.");
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -211,75 +251,4 @@ public class ExportBot {
             throw new RuntimeException("Failed to execute command: " + command); 
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-//   "dev": {
-//     "git_user": "darshana0406",
-//     "git_repo_name": "BotExportFiles",
-//     "env_name" : {
-//       "ExportNLP" : {
-//         "Complete_NLP" : {
-//           "src_directory" : "Export_NLP/Complete_NLP/"
-//         },
-//         "KnowledgeGraph" : {
-//           "src_directory" : "Export_NLP/KnowledgeGraph/"
-//         }
-//       }
-//     }
-    
-//   },
-//   "prod": {
-//     "git_user": "darshana0406",
-//     "git_repo_name": "testrepo"
-//   }
-// }
-
-
-// #!/bin/sh
-// user=`jq -r ".dev.git_user" $config`
-// repo=`jq -r ".dev.git_repo_name" $config`
-// giturl=`jq -r ".dev.git_url" $config`
-
-// if [ "$env" = "dev" ]; then
-//    	REPO_URL="git@$giturl:$user/$repo.git"
-
-// 	cat "$keyfile" > id_rsa
-// 	chmod 600 id_rsa
-
-// 	rm -rf $WORKSPACE_TMP 
-// 	mkdir -p $WORKSPACE_TMP
-  
-//    	git clone -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" "$REPO_URL" "$WORKSPACE_TMP/"
-//    	cp -r $WORKSPACE/ExportBot $WORKSPACE_TMP/
-//    	cd $WORKSPACE_TMP
-    
-//    	git add .
-//    	git commit -m "pushing bot configs"
-//    	git -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" push origin main
-//    	git tag $GitTag
-//    	git -c core.sshCommand="ssh -i $WORKSPACE/id_rsa" push origin $GitTag
-//    	rm -f id_rsa
-   
-// else
-//     REPO_URL="git@github.com:darshana0406/testrepo.git"
-// fi
-
-
-

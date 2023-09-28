@@ -1,143 +1,113 @@
-import org.eclipse.jgit.api.*;
-import org.eclipse.jgit.lib.Repository;
-import org.eclipse.jgit.transport.CredentialsProvider;
-import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
-
-import java.io.File;
+import java.io.*;
 
 public class Hello {
+
+  
+
     public static void main(String[] args) {
-        // Define source and destination repositories and credentials
-        String sourceRepoURL = "https://github.com/da/Bo.git";
-        String targetRepoURL = "https://github.com/da/CCT.git";
-        String username = "da";
-        String password = "githfghjR";
+
+        String sourceRepoUrl = "https://github.com/vijayvelduti/spare-parts";
+
+        String destinationRepoUrl = "https://github.com/vijayvelduti/Cummins";
+
+        String fileName = "bags.html";
+
+        String localDirectory = "c:\\Users\\gg\\Documents";
 
         try {
-            copyFileBetweenRepositories(sourceRepoURL, targetRepoURL, username, password);
-            System.out.println("File copied and changes pushed successfully.");
-        } catch (Exception e) {
+
+            // Clone source repository
+
+            cloneRepository(sourceRepoUrl, localDirectory);
+
+            // Copy the specific file to another local directory
+
+            String filePath = localDirectory + File.separator + fileName;
+
+            String newLocalDirectory = "C:\\Users\\gg\\Documents\\GITTags";
+
+            String newFilePath = newLocalDirectory + File.separator + fileName;
+
+            copyFile(filePath, newFilePath);
+
+            // Initialize Git in the new directory
+
+            executeCommand(newLocalDirectory, "git init");
+
+            // Add all files and commit changes
+
+            executeCommand(newLocalDirectory, "git add.");
+
+            executeCommand(newLocalDirectory, "git commit -m\"initial commit\"");
+
+            // Set the new repository as the remote
+
+            executeCommand(newLocalDirectory, "git remote add origin" + destinationRepoUrl);
+
+            // Push to the new repository
+
+            executeCommand(newLocalDirectory, "git push -u origin master");
+
+            System.out.println("Process completed successfully!");
+
+        } catch (IOException | InterruptedException e) {
+
             e.printStackTrace();
+
         }
+
     }
 
-    private static void copyFileBetweenRepositories(String sourceRepoURL, String targetRepoURL, String username, String password) throws Exception {
-        try {
-            // Clone the source repository
-            Git sourceGit = cloneRepository(sourceRepoURL, username, password);
+    private static void cloneRepository(String sourceUrl, String destinationDirectory)
+            throws IOException, InterruptedException {
 
-            // Download the file from the source repository
-            String filePathInSource = sourceGit.getRepository().getWorkTree().getAbsolutePath() + "\\fullexport.zip";
-            System.out.println("filePathInSource  " + filePathInSource);
+        executeCommand(null, "git clone" + sourceUrl + "" + destinationDirectory);
 
-            downloadFile(sourceGit, filePathInSource);
-
-            // Clone the target repository
-            Git targetGit = cloneRepository(targetRepoURL, username, password);
-
-            // Add the downloaded file to the target repository
-            String filePathInTarget = targetGit.getRepository().getWorkTree().getAbsolutePath() + "\\fullexport.zip";
-            System.out.println("filePathInTarget  " + filePathInTarget);
-
-            addFileToRepository(targetGit, filePathInTarget);
-
-            // Commit and push changes to the target repository
-            commitAndPushChanges(targetGit, username, password);
-        } catch (Exception e) {
-            throw e;
-        }
     }
 
-    // Existing methods for cloneRepository, downloadFile, addFileToRepository, and commitAndPushChanges
-    // (as provided in your initial code)
+    private static void copyFile(String source, String destination) throws IOException {
 
-private static Git cloneRepository(String repoURL, String username, String password) throws Exception {
-        Git git = null;
-        try {
-            CloneCommand cloneCommand = Git.cloneRepository()
-                    .setURI(repoURL)
-                    .setDirectory(new File("temp_repo"));
+        File sourceFile = new File(source);
 
-            // Set up credentials for authentication (if required)
-            if (username != null && password != null) {
-                CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider(username, password);
-                cloneCommand.setCredentialsProvider(credentialsProvider);
-            }
+        File destinationFile = new File(destination);
 
-            git = cloneCommand.call();
-        } catch (Exception e) {
-            throw e;
+        InputStream in = new FileInputStream(sourceFile);
+
+        OutputStream out = new FileOutputStream(destinationFile);
+
+        byte[] buffer = new byte[1024];
+
+        int length;
+
+        while ((length = in.read(buffer)) > 0) {
+
+            out.write(buffer, 0, length);
+
         }
-        return git;
+
+        in.close();
+
+        out.close();
+
     }
 
-    private static Git cloneDestRepository(String repoURL, String username, String password) throws Exception {
-        Git git = null;
-        try {
-            CloneCommand cloneCommand = Git.cloneRepository()
-                    .setURI(repoURL)
-                    .setDirectory(new File("temp_repo1"));
+    private static void executeCommand(String workingDirectory, String command)
+            throws IOException, InterruptedException {
 
-            // Set up credentials for authentication (if required)
-            if (username != null && password != null) {
-                CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider(username, password);
-                cloneCommand.setCredentialsProvider(credentialsProvider);
-            }
+        ProcessBuilder processBuilder = new ProcessBuilder();
 
-            git = cloneCommand.call();
-        } catch (Exception e) {
-            throw e;
+        if (workingDirectory != null) {
+
+            processBuilder.directory(new File(workingDirectory));
+
         }
-        return git;
+
+        processBuilder.command("bash", "-c", command);
+
+        Process process = processBuilder.start();
+
+        process.waitFor();
+
     }
 
-    private static void downloadFile(Git sourceGit, String filePathInSource) throws Exception {
-        try {
-            // Checkout the specific file from the source repository
-            sourceGit.checkout()
-                    .setName("main") // or any branch/commit where the file exists
-                    .addPath(filePathInSource)
-                    .call();
-        } catch (Exception e) {
-            throw e;
-        }
-    }
-
-    private static void addFileToRepository(Git targetGit, String filePathInTarget) throws Exception {
-        try {
-            // Add the downloaded file to the target repository
-            targetGit.add()
-                    .addFilepattern(filePathInTarget)
-                    .call();
-        } catch (Exception e) {
-        	e.printStackTrace();
-            throw e;
-        }
-    }
-
-    private static void commitAndPushChanges(Git targetGit, String username, String password) throws Exception {
-        try {
-            // Commit the changes
-            targetGit.commit()
-                    .setMessage("Added downloaded file")
-                    .call();
-            System.out.println("Added downloaded file to Target");
-
-            // Push changes to the target repository
-            targetGit.push()
-                    .setCredentialsProvider
-                    (new UsernamePasswordCredentialsProvider(username, password))
-                    .call();
-            
-           /* // Push the changes to the target GitHub repository
-            PushCommand pushCommand = targetGit.push();
-            pushCommand.setRemote("origin"); // Change to your remote name if needed
-            pushCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username,password));
-            pushCommand.call();*/
-            
-        } catch (Exception e) {
-        	e.printStackTrace();
-            throw e;
-        }
-    }
 }
