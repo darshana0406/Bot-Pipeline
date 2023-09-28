@@ -31,7 +31,7 @@ public class ExportBot {
 
               HttpURLConnection exportStatusConnection = null;
 
-              String exportType = "ExportTasks";
+              String exportType = "ExportBotTasks";
               String env = "prod";
               String botName = "cct_ivr_billing";
         
