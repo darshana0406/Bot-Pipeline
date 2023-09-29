@@ -5,7 +5,7 @@ public class ExportEVariable {
 
     private static final Map<String, String> botDtlMap = new HashMap<>();
     static {
-    	botDtlMap.put("cct_ivr_billing-devBotId", "botId");
+    	botDtlMap.put("cct_ivr_billing-devBotId", "st-e5669197-991d-5971-9417-a422368a0805");
     	botDtlMap.put("cct_ivr_billing-qaBotId", "st-c72008d0-ce30-571b-ba13-1078b89dbef4");
     	botDtlMap.put("cct_ivr_billing-prodBotId", "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132");
     	botDtlMap.put("cct_ivr_billing-devJwtToken", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUwZDA1N2YwLWY2MDUtNTljYS05OGFjLWI5MWJhMGQ3MmVlMiJ9.xmrKV3z7a9yoDlG7geOlCbaxgzWzVvvXM40LhdJya1A");
