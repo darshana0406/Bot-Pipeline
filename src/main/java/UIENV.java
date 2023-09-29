@@ -114,7 +114,7 @@ public class UIENV extends UI {
       + "        ],\n"
       + "        \"options\": {\n"
       + "            \"utterances\": {\n"
-      + "                \"append\": true,\n"
+      + "                \"append\": false,\n"
       + "                \"replace\": true\n"
       + "            }\n"
       + "        },\n"
