@@ -118,7 +118,7 @@ public class ExportBot {
             exportStatusConnection.disconnect();
         }
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation/tree/main/cct_ivr_billing/qa_nce/ExportNLP";
 	String username = "darshana0406";
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
@@ -170,8 +170,7 @@ public class ExportBot {
 			.call();
 	System.out.println("Files are pushed to main branch of target repo.");
 	git.close();
-
-	}
+        }
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
