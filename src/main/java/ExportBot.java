@@ -155,7 +155,7 @@ public class ExportBot {
 	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
 			"/TMP/cct_ivr_billing/" + env +"_nce/"+ exportType +"/fullexport.zip"));
 
-	git.add().addFilepattern("./TMP/cct_ivr_billing/qa_nce/exportAll").call();
+	git.add().addFilepattern(".").call();
 
 	git.commit().setMessage("pushing bot configs").call();
 	System.out.println("Files are committed to target repo.");
