@@ -118,7 +118,7 @@ public class ExportBot {
             exportStatusConnection.disconnect();
         }
 
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation/tree/main/cct_ivr_billing/qa_nce/ExportNLP";
+	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
 	String username = "darshana0406";
 	String password = "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";
 	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
