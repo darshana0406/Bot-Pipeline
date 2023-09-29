@@ -1,10 +1,41 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class UIENV extends UI {
+private static final Map<String, String> botDtlMap = new HashMap<>();
+   static {
+      botDtlMap.put("dev-Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("dev-Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("qa-Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("qa-Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("prod-Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("prod-Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+      botDtlMap.put("dev-BotId", "st-e5669197-991d-5971-9417-a422368a0805");
+      botDtlMap.put("qa-BotId", "st-c72008d0-ce30-571b-ba13-1078b89dbef4");
+      botDtlMap.put("prod-BotId", "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132");
+   }
 
     public static String botDefinition ;
     public static String configId;
-    
+   
         
     public static void setEnvironmentVariables(String env, String importType, String botName, String exportType) {
+      String uploadJwtKey = env+"-Upload_JWT";
+      String uploadJwtToken = "";
+      if (botDtlMap.containsKey(uploadJwtKey)) {
+         uploadJwtToken = botDtlMap.get(uploadJwtKey);
+      }
+      String importJwtToken ="";
+      String importJwtKey = env+"-Import_JWT";
+      if (botDtlMap.containsKey(importJwtKey)) {
+         importJwtToken = botDtlMap.get(importJwtKey);
+      }
+       String botId ="";
+		 String botIdKey = env+"-BotId";
+		 if (botDtlMap.containsKey(botIdKey)) {
+			 botId = botDtlMap.get(botIdKey);
+		 }
+
 
       String workSpace = "C:/Users/gg/Documents/GITTags/";
 
@@ -114,8 +145,8 @@ public class UIENV extends UI {
       + "        ],\n"
       + "        \"options\": {\n"
       + "            \"utterances\": {\n"
-      + "                \"append\": false,\n"
-      + "                \"replace\": true\n"
+      + "                \"append\": true,\n"
+      + "                \"replace\": false\n"
       + "            }\n"
       + "        },\n"
       + "        \"botComponents\": [\n"
@@ -130,7 +161,7 @@ public class UIENV extends UI {
      // for prod use workspace : VB and bot : demobot1
    if(env.equals("prod")){
      
-        System.setProperty("Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+        System.setProperty("Upload_JWT", uploadJwtToken);
         System.setProperty("Upload_URL", "https://bots.kore.ai/api/public/uploadfile");
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
@@ -138,8 +169,8 @@ public class UIENV extends UI {
         String[] values = { workSpace + botName +"/" + env +"_nce/"+ exportType + "/ExportBot/botDefinition.json", workSpace + botName + "/" + env +"_nce/"+ exportType + "/ExportBot/config.json"};
         String combinedValues = String.join(",", values);
         System.setProperty("Upload_FileName", combinedValues);
-          System.setProperty("Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
-        System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/st-c99808ed-b936-5b7d-a49f-a0fad24a1a00/import");
+          System.setProperty("Import_JWT", importJwtToken);
+          System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/"+botId+"/import");
           botDefinitionId = botDefinition; 
           configInfoId = configId;
 
@@ -153,7 +184,7 @@ public class UIENV extends UI {
   // for qa use workspace : VB and bot : demobot2
   else if(env.equals("qa")){
 
-        System.setProperty("Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+        System.setProperty("Upload_JWT", uploadJwtToken);
         System.setProperty("Upload_URL", "https://bots.kore.ai/api/public/uploadfile");
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
@@ -161,8 +192,8 @@ public class UIENV extends UI {
         String[] values = { workSpace + botName + "/"+ env +"_nce/"+ exportType + "/ExportBot/botDefinition.json", workSpace + botName +"/" + env +"_nce/"+ exportType + "/ExportBot/config.json"};
         String combinedValues = String.join(",", values);
         System.setProperty("Upload_FileName", combinedValues);
-          System.setProperty("Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
-        System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/st-c99808ed-b936-5b7d-a49f-a0fad24a1a00/import");
+            System.setProperty("Import_JWT", importJwtToken);
+            System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/"+botId+"/import");
           botDefinitionId = botDefinition; 
           configInfoId = configId;
 
@@ -179,7 +210,7 @@ public class UIENV extends UI {
   // for dev use diffrent account workspace : DB and bot : Exportbot
   else {
      
-        System.setProperty("Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
+         System.setProperty("Upload_JWT", uploadJwtToken);
         System.setProperty("Upload_URL", "https://bots.kore.ai/api/public/uploadfile");
         System.setProperty("Upload_FileContext", "bulkImport");
         System.setProperty("Upload_FileExtension", "json");
@@ -191,8 +222,8 @@ public class UIENV extends UI {
 
          
         
-        System.setProperty("Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
-        System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/st-c99808ed-b936-5b7d-a49f-a0fad24a1a00/import");
+          System.setProperty("Import_JWT", importJwtToken);
+          System.setProperty("Import_URL", "https://bots.kore.ai/api/public/bot/"+botId+"/import");
           botDefinitionId = botDefinition; 
           configInfoId = configId;
 
