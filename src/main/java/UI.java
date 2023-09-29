@@ -23,7 +23,7 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing-qa-ExportAll-20230929210252";
+        String tagName = "cct_ivr_billing-qa-ExportAll-20230929215056";
         
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
@@ -42,7 +42,7 @@ public class UI {
         // Close the Git repository
         git.close();
      
-         String importType = "ImportBotTasks";
+         String importType = "ImportAll";
          String env = "qa";
         if (args.length > 0 ) {
             importType = args[0];

@@ -10,9 +10,9 @@ private static final Map<String, String> botDtlMap = new HashMap<>();
       botDtlMap.put("qa-Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
       botDtlMap.put("prod-Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
       botDtlMap.put("prod-Import_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
-      botDtlMap.put("dev-BotId", "st-e5669197-991d-5971-9417-a422368a0805");
-      botDtlMap.put("qa-BotId", "st-c72008d0-ce30-571b-ba13-1078b89dbef4");
-      botDtlMap.put("prod-BotId", "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132");
+      botDtlMap.put("dev-BotId", "st-c99808ed-b936-5b7d-a49f-a0fad24a1a00");
+      botDtlMap.put("qa-BotId", "st-c99808ed-b936-5b7d-a49f-a0fad24a1a00");
+      botDtlMap.put("prod-BotId", "st-c99808ed-b936-5b7d-a49f-a0fad24a1a00");
    }
 
     public static String botDefinition ;
