@@ -30,8 +30,7 @@ public class ExportBot {
 	    public static void main(String[] args) throws IOException, GitAPIException {
 
               HttpURLConnection exportStatusConnection = null;
-
-              String exportType = "ExportBotTasks";
+              String exportType = "ExportAll";
               String env = "qa";
               String botName = "cct_ivr_billing";
         
