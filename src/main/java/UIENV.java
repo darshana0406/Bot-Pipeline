@@ -114,7 +114,7 @@ public class UIENV extends UI {
             + "        \"options\": {\n"
             + "            \"utterances\": {\n"
             + "                \"append\": true,\n"
-            + "                \"replace\": true\n"
+            + "                \"replace\": false\n"
             + "            }\n"
             + "        },\n"
             + "        \"botComponents\": [\n"
