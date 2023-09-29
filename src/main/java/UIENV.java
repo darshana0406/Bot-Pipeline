@@ -83,7 +83,7 @@ public class UIENV extends UI {
             + "            \"linkedBots\",\n"
             + "            \"smallTalk\"\n"
             + "        ],\n"
-            + "        \"customDashboard\": true\n"
+            + "        \"customDashboard\":true\n"
             + "    }\n"
             + "}");
 
@@ -92,7 +92,7 @@ public class UIENV extends UI {
 
      //condition for import Full Bot
      else{
-      System.setProperty("Import_Body",  "    \"importOptions\": {\n"
+      System.setProperty("Import_Body",  "\"importOptions\": {\n"
             + "        \"tasks\": [\n"
             + "            \"botTask\",\n"
             + "            \"knowledgeGraph\"\n"
@@ -113,7 +113,7 @@ public class UIENV extends UI {
             + "        ],\n"
             + "        \"options\": {\n"
             + "            \"utterances\": {\n"
-            + "                \"append\": false,\n"
+            + "                \"append\": true,\n"
             + "                \"replace\": true\n"
             + "            }\n"
             + "        },\n"
@@ -124,6 +124,7 @@ public class UIENV extends UI {
             + "        \"customDashboard\": true\n"
             + "    }\n"
             + "}");
+
      }
      // for prod use workspace : VB and bot : demobot1
    if(env.equals("prod")){

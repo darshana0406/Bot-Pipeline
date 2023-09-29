@@ -1,18 +1,4 @@
 {
     "name": "Demobot2",
-    "envVariables": [
-        {
-            "key": "abc",
-            "value": "12345",
-            "variableType": "env",
-            "hint": "",
-            "scope": "prePopulated",
-            "group": "",
-            "propagateValue": false,
-            "vNameSpace": [
-                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
-            ],
-            "isSecured": false
-        }
-    ]
+    "envVariables": []
 }

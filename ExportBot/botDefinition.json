@@ -1,15 +1,8 @@
 {
     "_id": "st-c72008d0-ce30-571b-ba13-1078b89dbef4",
     "refId": "71d2f2c8-d290-55ef-bb45-331a9f48a2b9",
-    "notifyUserViaEmail": true,
     "purpose": "customer",
-    "hasTenant": false,
-    "hasUserEndpoint": false,
-    "offKoraConfirmation": false,
-    "skipMakeEditLinks": false,
     "type": "default",
-    "variables": [],
-    "showInMp": false,
     "defaultLanguage": "en",
     "supportedLanguages": [
         "en"
@@ -17,57 +10,6 @@
     "languagePreferences": {
         "type": "perVolley"
     },
-    "ivrSettings": null,
-    "twilioVoiceSettings": null,
-    "enable_pii": false,
-    "strict_pii": false,
-    "pii_patterns": [],
-    "languageConfigurations": {
-        "en": {
-            "enabled": true
-        }
-    },
-    "channels": [],
-    "audioCodesSettings": null,
-    "korevgSettings": null,
-    "vNameSpace": [],
-    "krVNameSpace": [
-        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
-    ],
-    "evVNameSpace": [
-        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
-    ],
-    "color": "#009dab",
-    "sBannerColor": "#009dab",
-    "enableInputTranslation": false,
-    "multiLingualConfigurations": {
-        "en": {
-            "nluLanguage": "en",
-            "inputTranslation": false,
-            "responseTranslation": false
-        }
-    },
-    "isSmartAssist": false,
-    "bBannerColor": "#009dab",
-    "categoryIds": [
-        "451902a073c071463e2fe7f6"
-    ],
-    "class": [],
-    "featured": false,
-    "sendVcf": false,
-    "isNLEnabled": true,
-    "interruptsEnabled": true,
-    "externalNluAdapters": [],
-    "sessionInactiveTime": 900000,
-    "sessionClosureProcess": 1,
-    "skipSessionMessage": false,
-    "clearAllAuthTokens": false,
-    "runCustomScript": {
-        "enable": false,
-        "script": ""
-    },
-    "isDeflect": false,
-    "languagesToBeIgnored": [],
     "localeData": {
         "en": {
             "name": "Demobot2",
@@ -898,6 +840,14 @@
             }
         }
     },
+    "isNLEnabled": true,
+    "multiLingualConfigurations": {
+        "en": {
+            "nluLanguage": "en",
+            "inputTranslation": false,
+            "responseTranslation": false
+        }
+    },
     "interruptOptions": {
         "interruptsEnabled": true,
         "numTasksToHold": "1",
@@ -984,8 +934,6 @@
             "__v": 0
         }
     ],
-    "translationEngines": [],
-    "preBuiltIntegrations": [],
     "botEvents": {
         "INTENT_UNIDENTIFIED": {
             "enabled": true,
@@ -5033,25 +4981,8 @@
         }
     ],
     "contentVariables": [],
-    "namespaces": [
-        {
-            "_id": "ns-f60b7240-f88e-5fdf-ad96-538dc2899962",
-            "status": "published",
-            "streamId": "st-c72008d0-ce30-571b-ba13-1078b89dbef4",
-            "__v": 0,
-            "createdBy": "u-f801f53d-5777-5513-ac0b-11537b6941ea",
-            "createdOn": "2023-06-13T10:38:31.260Z",
-            "name": "default",
-            "refId": "045b9bbe-b347-5ba8-98e4-1345111adf3a",
-            "type": "system"
-        }
-    ],
+    "namespaces": [],
     "exportOptions": {
-        "settings": [
-            "botSettings",
-            "botVariables",
-            "ivrSettings"
-        ],
         "tasks": [
             "botTask",
             "knowledgeGraph",
@@ -5066,6 +4997,7 @@
             "patterns",
             "standardResponses"
         ],
+        "settings": [],
         "subTasks": {
             "dialogs": [
                 "dg-48afd1b3-7bba-558f-ab69-f243952c8201",
@@ -5095,8 +5027,7 @@
         },
         "IncludeDependentTasks": true
     },
-    "feedbackSurveys": [],
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "02eb8ae55e92985d50b65f35f7a00445"
+    "encryptedHash": "ee0308f2d549ffbffb1ddee562dae3a4"
 }
