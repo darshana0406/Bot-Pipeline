@@ -162,7 +162,7 @@ public class ExportBot {
 
 	git.tag().setName(GIT_TAG + "-" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "-" + TIMESTAMPS).call();
     git.checkout()
-                .setName("cct_ivr_billing/" + env  + "_nce/" + exportType).call();
+                .setName("cct_ivr_billing/qa_nce" ).call();
 	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "-" + TIMESTAMPS)).call();
 	System.out.println("GIT Tag is created.");
 
