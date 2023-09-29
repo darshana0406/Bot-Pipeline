@@ -19,7 +19,7 @@
             "isSmalltalkMigrated": true,
             "description": "Use this option when none of the predefined purposes match your bot’s purpose.",
             "nlMeta": {
-                "mlUtterances": 119,
+                "mlUtterances": 118,
                 "patterns": 0,
                 "synonyms": 704
             },
@@ -980,7 +980,7 @@
                     "channel": "default",
                     "createdBy": "u-e0a23b03-b37f-5332-b47a-95c06683499c",
                     "createdOn": "Wed Sep 20 2023 08:28:07 GMT+0000 (Coordinated Universal Time)",
-                    "lMod": "Fri Sep 29 2023 13:30:56 GMT+0000 (Coordinated Universal Time)",
+                    "lMod": "Fri Sep 29 2023 13:43:46 GMT+0000 (Coordinated Universal Time)",
                     "lModBy": "u-e0a23b03-b37f-5332-b47a-95c06683499c",
                     "localeData": {
                         "en": {
@@ -1031,7 +1031,7 @@
                 "en": {}
             },
             "refId": "28c5fbf6-1ea6-561a-9dda-46375df9380e",
-            "taskName": "taxiiwala",
+            "taskName": "sweetshopbill",
             "taskType": "intent",
             "nodeType": "dialog"
         },
@@ -1176,12 +1176,12 @@
         {
             "_id": "dc-12a27328-70a4-5206-ae5f-61d8d99c112f",
             "refId": "28c5fbf6-1ea6-561a-9dda-46375df9380e",
-            "name": "taxiiwala",
+            "name": "sweetshopbill",
             "type": "intent",
             "localeData": {
                 "en": {
                     "desc": "",
-                    "intent": "taxiiwala"
+                    "intent": "sweetshopbill"
                 }
             },
             "useTaskLevelNs": true,
@@ -1484,10 +1484,10 @@
         {
             "_id": "dg-658fdef2-7f56-53a0-a281-06c5b03c018a",
             "refId": "5a9126d9-ff3b-5a32-84e9-cce879b0cc33",
-            "lname": "taxiiwala",
+            "lname": "sweetshopbill",
             "localeData": {
                 "en": {
-                    "name": "taxiiwala",
+                    "name": "sweetshopbill",
                     "shortDesc": ""
                 }
             },
@@ -1841,7 +1841,7 @@
             "resourceid": "scenes"
         },
         {
-            "_id": "sn-ac0dc4a1-3c3c-537f-bffc-ac69ff9d47a2",
+            "_id": "sn-8c9d6740-bb6e-565f-9050-ab79373c0657",
             "botstoreInfo": [
                 {
                     "type": "interactive",
@@ -1850,7 +1850,7 @@
                 }
             ],
             "components": {
-                "snc-36614c9c-8141-5f01-8508-731056d5897d": {
+                "snc-bb30a2a9-1e77-5099-b304-0745dfb2b3fa": {
                     "childs": [],
                     "parentId": null,
                     "seqId": "Id1"
@@ -1859,13 +1859,13 @@
             "currentSeqId": 1,
             "description": "",
             "dialogLinks": {
-                "snc-36614c9c-8141-5f01-8508-731056d5897d": {
+                "snc-bb30a2a9-1e77-5099-b304-0745dfb2b3fa": {
                     "dialogRefId": "5a9126d9-ff3b-5a32-84e9-cce879b0cc33"
                 }
             },
             "dialogRefId": "5a9126d9-ff3b-5a32-84e9-cce879b0cc33",
             "messageLinks": {},
-            "name": "taxiiwala",
+            "name": "sweetshopbill",
             "refId": "55364ec6-0fa7-57b0-ad43-6c5b559f14ac",
             "sceneLinkedBy": [],
             "sceneLinks": {},
@@ -2014,7 +2014,7 @@
             "streamId": "st-c72008d0-ce30-571b-ba13-1078b89dbef4"
         },
         {
-            "_id": "snc-36614c9c-8141-5f01-8508-731056d5897d",
+            "_id": "snc-bb30a2a9-1e77-5099-b304-0745dfb2b3fa",
             "state": 0,
             "msg": {
                 "type": "text",
@@ -2025,7 +2025,7 @@
             "type": "note",
             "refId": "cbdebcd3-7784-52fc-ae56-f5586986549b",
             "comments": [],
-            "sceneId": "sn-ac0dc4a1-3c3c-537f-bffc-ac69ff9d47a2",
+            "sceneId": "sn-8c9d6740-bb6e-565f-9050-ab79373c0657",
             "streamId": "st-c72008d0-ce30-571b-ba13-1078b89dbef4"
         }
     ],
@@ -2110,19 +2110,10 @@
             "taskId": "dc-0d36ba85-b889-5725-a1e4-2a2a476b40c7"
         },
         {
-            "_id": "6516c57dfff6dc3ca119eab1",
+            "_id": "6516d492b7f5de25b1839d2f",
             "taskId": "dc-12a27328-70a4-5206-ae5f-61d8d99c112f",
-            "sentence": "hello hello",
-            "taskName": "bikbike",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        },
-        {
-            "_id": "6516cec1bb738177053d1d6c",
-            "taskId": "dc-12a27328-70a4-5206-ae5f-61d8d99c112f",
-            "sentence": "i am car care",
-            "taskName": "bikbike",
+            "sentence": "i need sweet",
+            "taskName": "sweetshopbill",
             "type": "DialogIntent",
             "entities": [],
             "language": "en"
@@ -3215,5 +3206,5 @@
     },
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "eb6028ab3ecb3574e23fbc9102fef1d2"
+    "encryptedHash": "462fcfadc0e082ae14080d9e25fc6312"
 }
