@@ -150,7 +150,7 @@ public class ExportBot {
         }
     }
 
-	FileUtils.copyDirectory(new File(WORKSPACE + "/ExportBot"),new File(WORKSPACE +
+	FileUtils.copyDirectory(new File(WORKSPACE + "\\ExportBot"),new File(WORKSPACE +
 			"/TMP/cct_ivr_billing/" + env  + "_nce/" + exportType + "/ExportBot"));
 	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
 			"/TMP/cct_ivr_billing/" + env +"_nce/"+ exportType +"/fullexport.zip"));
@@ -161,8 +161,6 @@ public class ExportBot {
 	System.out.println("Files are committed to target repo.");
 
 	git.tag().setName(GIT_TAG + "-" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "-" + TIMESTAMPS).call();
-    git.checkout()
-                .setName("cct_ivr_billing" ).call();
 	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "-" + TIMESTAMPS)).call();
 	System.out.println("GIT Tag is created.");
 
