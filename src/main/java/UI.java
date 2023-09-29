@@ -23,7 +23,7 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing-qa-FullExport-20230929191456";
+        String tagName = "cct_ivr_billing-qa-ExportAll-20230929195214";
         
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
@@ -41,23 +41,24 @@ public class UI {
 
         // Close the Git repository
         git.close();
-        String[] values = tagName.split("-");
-        String botName = values[0];
-        String exportType = values[2];
-
-        String importType = "ImportBotTasks";
-        String env = "qa";
-        System.out.println("importType: " + importType);
-        System.out.println("botName: " + botName); 
-        System.out.println("exportType: " + exportType); 
-        
+     
+         String importType = "ImportBotTasks";
+         String env = "qa";
         if (args.length > 0 ) {
             importType = args[0];
             env = args[1];
+            tagName = args[2];
                 System.out.println("Chosen Value: " + importType);              
             } else {
                 System.out.println("No chosen value provided.");
             }
+        String[] values = tagName.split("-");
+        String botName = values[0];
+        String exportType = values[2];
+       
+        System.out.println("importType: " + importType);
+        System.out.println("botName: " + botName); 
+        System.out.println("exportType: " + exportType); 
         // Call the method to set environment variables
         UIENV.setEnvironmentVariables(env, importType, botName, exportType);
 
