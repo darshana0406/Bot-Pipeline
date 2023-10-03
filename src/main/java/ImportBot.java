@@ -30,7 +30,7 @@ public class ImportBot {
 	static String exportType = BotConstants.EXP_BOT_TASKS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003161720";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003164806";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -48,20 +48,20 @@ public class ImportBot {
 		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\"+env+"\\BotConfig.properties");
 		prop.load(inputStream);
 		
-		FileUtils.deleteDirectory(new File(BotConstants.IMPORT_DIR));
+		FileUtils.deleteDirectory(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
 
 		String username = prop.getProperty(BotConstants.USERNAME);
 		String password = prop.getProperty(BotConstants.PASSWORD);
 		// Clone the Git repository
 		CloneCommand cloneCommand = Git.cloneRepository();
 		cloneCommand.setURI(prop.getProperty(BotConstants.TARGET_REPO_URL));
-		cloneCommand.setDirectory(new File(BotConstants.IMPORT_DIR));
+		cloneCommand.setDirectory(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
 		cloneCommand.setBranch(tagName);
 		cloneCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password));
 		cloneCommand.call();
 
 		// Checkout the Git tag
-		Git git = Git.open(new File(BotConstants.IMPORT_DIR));
+		Git git = Git.open(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
 		git.checkout().setName(tagName).call();
 		
 		uploadAPICall(prop);
@@ -80,8 +80,8 @@ public class ImportBot {
 		String workspaceDir = prop.getProperty(BotConstants.IMPORT_DIR);
 		try {
 
-			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
-					workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
+			String[] fileNames = { "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\" +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
+					"C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
 
 			
 			for (String filePath : fileNames) {
