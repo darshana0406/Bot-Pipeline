@@ -213,7 +213,7 @@ public class ExportBot {
         }
        try {
             // Set user email
-            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "c-meenakshi.kaeley@charter.com");
+            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "db@gmail.com");
             Process emailProcess = setEmail.start();
             int emailExitCode = emailProcess.waitFor();
             if (emailExitCode == 0) {
@@ -223,7 +223,7 @@ public class ExportBot {
             }
 
             // Set user name
-            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "Meenakshi Kaeley");
+            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "Darshana V");
             Process nameProcess = setName.start();
             int nameExitCode = nameProcess.waitFor();
             if (nameExitCode == 0) {
@@ -310,7 +310,7 @@ public class ExportBot {
 			}
 
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
-					"C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\TMP\\cct_ivr_billing\\dev\\ExportBotTasks\\ExportBot"));
+					workspace + "TMP\\cct_ivr_billing\\dev\\ExportBotTasks\\ExportBot"));
 
 			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
 					workspace + BotConstants.TMP_PATH + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
