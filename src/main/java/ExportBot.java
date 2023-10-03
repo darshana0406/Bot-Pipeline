@@ -1,3 +1,4 @@
+// package cicd;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
@@ -14,6 +15,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Properties;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -24,152 +26,150 @@ import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.json.JSONObject;
 
- 
-
 public class ExportBot {
-	    public static void main(String[] args) throws IOException, GitAPIException {
+	
+	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String env = BotConstants.ENV_DEV;;
+	static String botName = BotConstants.CCT_IVR_BILLING;
+	
+	public static void main(String[] args) throws IOException, GitAPIException {
 
-              HttpURLConnection exportStatusConnection = null;
-              String exportType = "ExportAll";
-              String env = "qa";
-              String botName = "cct_ivr_billing";
-        
-        if (args.length > 0 ) {
-              botName =args[0];
-              exportType = args[1];
-              env = args[2];
-                System.out.println("Chosen Value: " + exportType); 
-                 System.out.println("Chosen Value: " + env);              
-            } else {
-                System.out.println("No chosen value provided.");
-            }
-        // Call the method to set environment variables
-        ExportEVariable.setEnvironmentVariables(botName, env, exportType);
-        
-        try {
-            // Access the environment variable
-            String export = System.getProperty("Export_JWT");
-            String exportStatusAuth = System.getProperty("Export_JWT");
-            String exportUrl = System.getProperty("Export_URL");
-            String exportBody = System.getProperty("Export_Body");
-            // String gitrepo = System.getProperty("Git_Repo");
+		//Get argument values from Jenkins
+		if (args.length > 0) {
+			botName = args[0];
+			exportType = args[1];
+			env = args[2];
+		} else {
+			System.out.println("No Arguments received from Jenkins");
+		}
+		System.out.println("ExportType: " + exportType +"\n" +"Environment: " + env+"\n"+"Bot Name: " + botName);
 
-            // Export API Call
-            URL exportUrlObj = new URL(exportUrl);
-            HttpURLConnection exportConnection = (HttpURLConnection) exportUrlObj.openConnection();
-            exportConnection.setRequestMethod("POST");
-            exportConnection.setRequestProperty("auth", export);
-            exportConnection.setRequestProperty("Content-Type", "application/json");
-            exportConnection.setDoOutput(true);
+		//Load property files based on the env selected
+		Properties prop = new Properties();
+		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\"+env+"\\BotConfig.properties");
+		prop.load(inputStream);
+		
+		System.out.println("**************************** Starting Export Bot Process ****************************");
+		
+		try {
+			//Export Bot API call to export the bot from source account
+			exportBotAPICall(prop);
+			
+			//Export Status API call to check the export status
+			String downloadUrl = callExportStatusAPI(prop);
+			System.out.println("downloadUrl: " + downloadUrl);
 
-            OutputStream exportOutputStream = exportConnection.getOutputStream();
+			//Download the source files using downloadUrl
+			URL downloadUrlObj = new URL(downloadUrl);
+			downloadFile(downloadUrlObj, BotConstants.FULL_EXP_FILE);
+			System.out.println("File Downloaded in current working directory");
+			Thread.sleep(1500);
 
-            exportOutputStream.write(exportBody.getBytes());
-            exportOutputStream.flush();
-            exportOutputStream.close();
-            System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
+			// Unzip the files to local workspace
+			String zipFile = BotConstants.FULL_EXP_FILE;
+			String destDir = BotConstants.EXPORTBOT;
+			unzip(zipFile, destDir);
+			System.out.println("Files unzipped to " + destDir);
+			
+			//Commit files to target repository
+			commitToTargetRepo(prop,botName,env,exportType);
 
-           // Thread.sleep(1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-            // Export Status API call to get the download URL
-            StringBuilder expStatusResp = new StringBuilder();
-            String exportStatusUrl = System.getProperty("ExportStatus_URL");
-            exportStatusConnection = (HttpURLConnection) new URL(exportStatusUrl).openConnection();
-            exportStatusConnection.setRequestMethod("GET");
-            exportStatusConnection.setRequestProperty("auth", exportStatusAuth);
-            System.out.println("Export Status API Response Code :: " + exportStatusConnection.getResponseCode());
+		System.out.println("**************************** Export Bot Process Completed **********************");
 
-            if (exportStatusConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                InputStream in = new BufferedInputStream(exportStatusConnection.getInputStream());
-                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+	}
+	
+    public static void exportBotAPICall(Properties prop) throws Exception {
+		// Access the environment variable
+		String exportJwt = prop.getProperty(BotConstants.EXPORT_JWT);
+		String exportBody = BotConstants.EMPTY_STRING;
+		
+		try {
+			//Populate export Bosy based on the export type passed
+			switch (exportType) {
+			case (BotConstants.EXP_NLP):
+				exportBody = BotConstants.EXP_NLP_REQ_BODY;
+			case (BotConstants.EXP_BOT_TASKS):
+				exportBody =  BotConstants.EXP_BOTTSKS_REQ_BODY;
+			case (BotConstants.EXP_WHT_SETTINGS):
+				exportBody =  BotConstants.EXP_WHTSTG_REQ_BODY;
+			default:
+				exportBody = BotConstants.EXP_ALL_REQ_BODY;
+			}
+			// Export API Call
+			String botId = prop.getProperty(botName);
+			String exportUrl = prop.getProperty(BotConstants.EXPORT_URL) + botId + BotConstants.EXPORT;
+			
+			System.out.println("botId: " + botId);
+			System.out.println("exportUrl: " + exportUrl);
+			
+			URL exportUrlObj = new URL(exportUrl);
+			HttpURLConnection exportConnection = (HttpURLConnection) exportUrlObj.openConnection();
+			exportConnection.setRequestMethod(BotConstants.METHOD_POST);
+			exportConnection.setRequestProperty(BotConstants.AUTH, exportJwt);
+			exportConnection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.APPLICATION_JSON);
+			exportConnection.setDoOutput(true);
 
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    expStatusResp.append(line);
-                }
-                System.out.println("Export API Status Response :: " + expStatusResp);
-                JSONObject jsonObject = new JSONObject(expStatusResp.toString());
-                String downloadUrl = jsonObject.get("downloadURL").toString();
-                System.out.println("downloadUrl:: " + downloadUrl);
+			OutputStream exportOutputStream = exportConnection.getOutputStream();
 
-                // Download the file using URL
-                URL downloadUrlObj = new URL(downloadUrl);
-                downloadFile(downloadUrlObj, "fullexport.zip");
-                System.out.println("File Downloaded in current working directory");
-                // Thread.sleep(1500);
-
-                // Unzip the files
-                String zipFilePath = System.getProperty("ZipFile_Path");
-                String destDir = System.getProperty("Dest_Dir");
-                unzip(zipFilePath, destDir);
-                System.out.println("Files unzipped to " + destDir);
-
-            } 
-            else {
-                
-                InputStream exportStatusInputStream = exportStatusConnection.getErrorStream();
-                System.out.println(exportStatusInputStream);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            exportStatusConnection.disconnect();
-        }
-
-	String REPO_URL = "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
-	String username = "darshana0406";
-	String password = "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";
-	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
-	String WORKSPACE = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
-	String GIT_TAG = botName;
-	String TIMESTAMPS = dateFormat.format(new Date());
-
-	GIT_TAG = GIT_TAG + "-" + env + "-" + exportType; 
-
-	FileUtils.deleteDirectory(new File(WORKSPACE + "/TMP"));
-	FileUtils.forceMkdir(new File(WORKSPACE + "/TMP"));
-	Git git = Git.cloneRepository()
-	        .setURI(REPO_URL)
-	        .setDirectory(new File(WORKSPACE + "/TMP"))
-	        .call(); 
-    //Delete all folders from target repo except .git older
-		File[] files = new File(WORKSPACE + "/TMP").listFiles();
-
-    if(files!=null) {
-        for(File file: files) {
-            if(file.isDirectory()&& !file.getName().equals(".git")) {
-                try {
-                    FileUtils.deleteDirectory(file);
-                    System.out.println(" Deleted file:: "+file.getName());
-                }catch(IOException io) {
-                    io.printStackTrace();
-                }
-            }
-        }
+			exportOutputStream.write(exportBody.getBytes());
+			exportOutputStream.flush();
+			exportOutputStream.close();
+			System.out.println("Export  API Response Code :: " + exportConnection.getResponseCode());
+			Thread.sleep(1000);
+		}catch(Exception e) {
+			e.getMessage();
+			e.printStackTrace();
+		}
     }
+	
+	public static String callExportStatusAPI(Properties prop) throws Exception {
+		
+		// Export Status API call to get the download URL
+		String downloadUrl = BotConstants.EMPTY_STRING;
+		HttpURLConnection exportStatusConnection = null;
+		StringBuilder expStatusResp = new StringBuilder();
+		
+		try {
+			String botId = prop.getProperty(botName);
+			String exportStatusAuth = prop.getProperty(BotConstants.EXPORT_JWT);
+			String exportStatusUrl = prop.getProperty(BotConstants.EXP_STATUS_URL)+ botId + BotConstants.EXPORTSTATUS;
+			
+			System.out.println("botId: " + botId);
+			System.out.println("exportStatusAuth: " + exportStatusAuth);
+			System.out.println("exportStatusUrl: " + exportStatusUrl);
+			
+			exportStatusConnection = (HttpURLConnection) new URL(exportStatusUrl).openConnection();
+			exportStatusConnection.setRequestMethod(BotConstants.METHOD_GET);
+			exportStatusConnection.setRequestProperty(BotConstants.AUTH, exportStatusAuth);
+			System.out.println("Export Status API Response Code :: " + exportStatusConnection.getResponseCode());
 
-	FileUtils.copyDirectory(new File(WORKSPACE + "\\ExportBot"),new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/" + env  + "_nce/" + exportType + "/ExportBot"));
-	FileUtils.copyFile(new File(WORKSPACE+"\\fullexport.zip"), new File(WORKSPACE +
-			"/TMP/cct_ivr_billing/" + env +"_nce/"+ exportType +"/fullexport.zip"));
+			if (exportStatusConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+				InputStream in = new BufferedInputStream(exportStatusConnection.getInputStream());
+				BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
-	git.add().addFilepattern(".").call();
-
-	git.commit().setMessage("pushing bot configs").call();
-	System.out.println("Files are committed to target repo.");
-
-	git.tag().setName(GIT_TAG + "-" + TIMESTAMPS).setMessage("tag " + GIT_TAG + "-" + TIMESTAMPS).call();
-	git.push().setRemote("origin").setRefSpecs(new RefSpec(GIT_TAG + "-" + TIMESTAMPS)).call();
-	System.out.println("GIT Tag is created.");
-
-	git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-			.setRemote("origin")
-			.setRefSpecs(new RefSpec("main"))
-			.call();
-	System.out.println("Files are pushed to main branch of target repo.");
-	git.close();
-        }
+				String line;
+				while ((line = reader.readLine()) != null) {
+					expStatusResp.append(line);
+				}
+				System.out.println("Export API Status Response :: " + expStatusResp);
+				JSONObject jsonObject = new JSONObject(expStatusResp.toString());
+				downloadUrl = jsonObject.get(BotConstants.DOWNLOAD_URL).toString();
+			} else {
+				InputStream exportStatusInputStream = exportStatusConnection.getErrorStream();
+				System.out.println(exportStatusInputStream);
+			}
+		}catch(Exception ex) {
+			ex.getMessage();
+			ex.printStackTrace();
+		}
+		return downloadUrl;
+	}
+	
+	
     public static void downloadFile(URL url, String fileName) throws Exception {
         try (InputStream in = url.openStream()) {
             Files.copy(in, Paths.get(fileName), StandardCopyOption.REPLACE_EXISTING);
@@ -213,7 +213,7 @@ public class ExportBot {
         }
        try {
             // Set user email
-            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshana@gmail.com");
+            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "c-meenakshi.kaeley@charter.com");
             Process emailProcess = setEmail.start();
             int emailExitCode = emailProcess.waitFor();
             if (emailExitCode == 0) {
@@ -223,7 +223,7 @@ public class ExportBot {
             }
 
             // Set user name
-            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "darshana");
+            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "Meenakshi Kaeley");
             Process nameProcess = setName.start();
             int nameExitCode = nameProcess.waitFor();
             if (nameExitCode == 0) {
@@ -269,4 +269,70 @@ public class ExportBot {
             throw new RuntimeException("Failed to execute command: " + command); 
         }
     } 
+    
+	public static void commitToTargetRepo(Properties prop, String botName,String env,String exportType) throws Exception {
+
+		// String repoUrl =
+		// "https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git";
+		// String username = "darshana0406";
+		// String password =
+		// "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";
+		// String workspace = "C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline";
+
+		try {
+			String repoUrl = prop.getProperty(BotConstants.TARGET_REPO_URL);
+			String username = prop.getProperty(BotConstants.USERNAME);
+			String password = prop.getProperty(BotConstants.PASSWORD);
+			SimpleDateFormat dateFormat = new SimpleDateFormat(BotConstants.TS_FORMAT);
+			String workspace = prop.getProperty(BotConstants.WS_LOCATION);
+			String gitTag = botName;
+			String TIMESTAMPS = dateFormat.format(new Date());
+			String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
+
+			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
+			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
+			Git git = Git.cloneRepository().setURI(repoUrl).setDirectory(new File(workspace + BotConstants.TMP_PATH))
+					.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password)).call();
+			// Delete all folders from target repo except .git older
+			File[] files = new File(workspace + BotConstants.TMP_PATH).listFiles();
+
+			if (files != null) {
+				for (File file : files) {
+					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
+						try {
+							FileUtils.deleteDirectory(file);
+							System.out.println(" Deleted file:: " + file.getName());
+						} catch (IOException io) {
+							io.printStackTrace();
+						}
+					}
+				}
+			}
+
+			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
+					workspace + BotConstants.TMP_PATH + botName + "/" + env + "/" + exportType + "/ExportBot"));
+
+			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
+					workspace + BotConstants.TMP_PATH + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
+
+			// git.add().addFilepattern(".").call();
+
+			git.add().addFilepattern(filePath).call();
+
+			git.commit().setMessage("pushing bot configs").call();
+			System.out.println("Files are committed to target repo.");
+			gitTag = botName + "-" + env + "-" + exportType + TIMESTAMPS;
+			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
+			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag + "-" + TIMESTAMPS)).call();
+			System.out.println("GIT Tag is created: " + gitTag);
+
+			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+			System.out.println("Files are pushed to main branch of target repo.");
+		} catch (Exception e) {
+			e.getMessage();
+			e.printStackTrace();
+		}
+	}
 }

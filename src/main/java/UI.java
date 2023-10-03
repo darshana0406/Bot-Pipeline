@@ -23,7 +23,7 @@ public class UI {
     
    public static void main(String[] args) throws Exception {
 
-        String tagName = "cct_ivr_billing-qa-ExportAll-20230929220312";
+        String tagName = "cct_ivr_billing-qa-ExportAll-20230929220857";
         
         FileUtils.deleteDirectory(new File("c:\\Users\\gg\\Documents\\GITTags"));
 
@@ -42,6 +42,7 @@ public class UI {
         // Close the Git repository
         git.close();
      
+   // This is the change for retreving tag name dynamically 
          String importType = "ImportAll";
          String env = "qa";
         if (args.length > 0 ) {

@@ -2,6 +2,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UIENV extends UI {
+
+
+   // This is the change for the dynamic BotIds, JWTs
+
 private static final Map<String, String> botDtlMap = new HashMap<>();
    static {
       botDtlMap.put("dev-Upload_JWT", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw");
@@ -20,6 +24,9 @@ private static final Map<String, String> botDtlMap = new HashMap<>();
    
         
     public static void setEnvironmentVariables(String env, String importType, String botName, String exportType) {
+
+   // This is the key value change need to be done 
+
       String uploadJwtKey = env+"-Upload_JWT";
       String uploadJwtToken = "";
       if (botDtlMap.containsKey(uploadJwtKey)) {
@@ -209,7 +216,9 @@ private static final Map<String, String> botDtlMap = new HashMap<>();
   }
   // for dev use diffrent account workspace : DB and bot : Exportbot
   else {
-     
+
+   //  need to change the JWT and BotId
+    
          System.setProperty("Upload_JWT", uploadJwtToken);
         System.setProperty("Upload_URL", "https://bots.kore.ai/api/public/uploadfile");
         System.setProperty("Upload_FileContext", "bulkImport");
