@@ -25,12 +25,12 @@ public class ImportBot {
 	public static String configInfoId;
 	
 	static String importType = "ImportBotTasks";
-	static String env = BotConstants.ENV_QA;;
-	static String botName = BotConstants.CONV_BILLING_MGR;
+	static String env = BotConstants.ENV_DEV;;
+	static String botName = BotConstants.CCT_IVR_BILLING;
 	static String exportType = BotConstants.EXP_BOT_TASKS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "conv_billing_mgr-dev_nce-Export_All-20230929022302";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003161720";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -45,7 +45,7 @@ public class ImportBot {
 		}
 		// Load property files based on the env selected
 		Properties prop = new Properties();
-		InputStream inputStream = new FileInputStream(BotConstants.CONFIG_PATH + env +BotConstants.FWSLASH + BotConstants.CONFIG_FILE);
+		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\"+env+"\\BotConfig.properties");
 		prop.load(inputStream);
 		
 		FileUtils.deleteDirectory(new File(BotConstants.IMPORT_DIR));
