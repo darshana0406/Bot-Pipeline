@@ -321,10 +321,10 @@ public class ExportBot {
 
 			git.commit().setMessage("pushing bot configs").call();
 			System.out.println("Files are committed to target repo.");
-			gitTag = botName + "-" + env + "-" + exportType + TIMESTAMPS;
+			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag + "-" + TIMESTAMPS)).call();
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).call();
 			System.out.println("GIT Tag is created: " + gitTag);
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
