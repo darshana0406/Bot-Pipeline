@@ -78,8 +78,8 @@ public class BotConstants {
 	public static final String IMP_BOUNDARY = "Import_boundary";
 	public static final String BOUND_VAL = "------------------------abcdef1234567890";
 	public static final String JSON = "json";
-	public static final String IMPORT_JWT = "Import_JWT";
-	public static final String IMPORT_URL = "Import_URL";
+	public static final String IMPORT_JWT = "ImportJwt";
+	public static final String IMPORT_URL = "ImportUrl";
 	public static final String IMPORT_DIR = "targetImpDir";
 	
 	public static final String CONFIG_PATH = "ConfigPath";

@@ -30,7 +30,7 @@ public class ImportBot {
 	static String exportType = BotConstants.EXP_BOT_TASKS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003171100";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003171956";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -45,23 +45,24 @@ public class ImportBot {
 		}
 		// Load property files based on the env selected
 		Properties prop = new Properties();
-		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\"+env+"\\BotConfig.properties");
+		// InputStream inputStream = new FileInputStream(BotConstants.CONFIG_PATH + env +BotConstants.FWSLASH + "BotConstants.CONFIG_FILE");
+		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\" +env+ "\\BotConfig.properties");
 		prop.load(inputStream);
 		
-		FileUtils.deleteDirectory(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
+		FileUtils.deleteDirectory(new File(BotConstants.IMPORT_DIR));
 
 		String username = prop.getProperty(BotConstants.USERNAME);
 		String password = prop.getProperty(BotConstants.PASSWORD);
 		// Clone the Git repository
 		CloneCommand cloneCommand = Git.cloneRepository();
 		cloneCommand.setURI(prop.getProperty(BotConstants.TARGET_REPO_URL));
-		cloneCommand.setDirectory(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
+		cloneCommand.setDirectory(new File(BotConstants.IMPORT_DIR));
 		cloneCommand.setBranch(tagName);
 		cloneCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password));
 		cloneCommand.call();
 
 		// Checkout the Git tag
-		Git git = Git.open(new File("C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\"));
+		Git git = Git.open(new File(BotConstants.IMPORT_DIR));
 		git.checkout().setName(tagName).call();
 		
 		uploadAPICall(prop);
@@ -80,8 +81,8 @@ public class ImportBot {
 		String workspaceDir = prop.getProperty(BotConstants.IMPORT_DIR);
 		try {
 
-			String[] fileNames = { "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\" +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
-					"C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\Test\\import\\" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
+			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
+					workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
 
 			
 			for (String filePath : fileNames) {
@@ -99,10 +100,13 @@ public class ImportBot {
 
 				URL url = new URL(uploadApiUrl);
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-				connection.setRequestMethod(BotConstants.METHOD_POST);
-				connection.setRequestProperty(BotConstants.AUTH, authToken);
-				connection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.MULTI_FORM_DATA + boundary);
-
+				// connection.setRequestMethod(BotConstants.METHOD_POST);
+				// connection.setRequestProperty(BotConstants.AUTH, authToken);
+				// connection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.MULTI_FORM_DATA + boundary);
+				connection.setRequestMethod("POST");
+				connection.setRequestProperty("auth", authToken);
+				connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+				
 				connection.setDoOutput(true);
 				OutputStream outputStream = connection.getOutputStream();
 				outputStream.write(postData.getBytes());
@@ -162,7 +166,6 @@ public class ImportBot {
 				default:
 					importBody = BotConstants.IMP_ALL_REQ_BODY;
 				}
-				
 	             String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
 	                     + "\"configInfo\": \"" + configInfoId + "\",\n" +importBody;
 				// Export API Call
