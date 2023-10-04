@@ -288,7 +288,7 @@ public class ExportBot {
 			String gitTag = botName;
 			String TIMESTAMPS = dateFormat.format(new Date());
 			String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
-
+			System.out.println("asdfasdfasdf"+workspace + BotConstants.TMP_PATH);
 			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
 			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
 			Git git = Git.cloneRepository().setURI(repoUrl).setDirectory(new File(workspace + BotConstants.TMP_PATH))
