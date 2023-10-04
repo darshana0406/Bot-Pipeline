@@ -308,8 +308,9 @@ public class ExportBot {
 						}
 					}
 				}
+				git.add().addFilepattern(".").setUpdate(true).call();
 			}
-			git.rm().addFilepattern(".").setCached(true).call();
+			// git.rm().addFilepattern(".").setCached(true).call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
