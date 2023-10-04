@@ -23,13 +23,13 @@ public class ImportBot {
 
 	public static String botDefinitionId;
 	public static String configInfoId;
-	static String importType = "ImportBotTasks";
+	static String importType = "ImportNLP";
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
-	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String exportType = BotConstants.EXP_NLP;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231004151111";
+		String tagName = "cct_ivr_billing-dev-ExportNLP-20231004151950";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
