@@ -172,7 +172,38 @@ public class ImportBot {
 				}
 				
 	             String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
-	                     + "\"configInfo\": \"" + configInfoId + "\",\n" +importBody;
+	                     + "\"configInfo\": \"" + configInfoId + "\",\n" + "\"importOptions\": {\n"
+						 + "        \"tasks\": [\n"
+						 + "            \"botTask\",\n"
+						 + "            \"knowledgeGraph\"\n"
+						 + "        ],\n"
+						 + "        \"nlpData\": [\n"
+						 + "            \"training_data\",\n"
+						 + "            \"bot_synonyms\",\n"
+						 + "            \"nlpSettings\",\n"
+						 + "            \"defaultDialog\",\n"
+						 + "            \"standardResponses\",\n"
+						 + "            \"utterances\"\n"
+						 + "        ],\n"
+						 + "        \"settings\": [\n"
+						 + "            \"botSettings\",\n"
+						 + "            \"ivrSettings\",\n"
+						 + "            \"botVariables\",\n"
+						 + "            \"ivrSettings\"\n"
+						 + "        ],\n"
+						 + "        \"options\": {\n"
+						 + "            \"utterances\": {\n"
+						 + "                \"append\": true,\n"
+						 + "                \"replace\": true\n"
+						 + "            }\n"
+						 + "        },\n"
+						 + "        \"botComponents\": [\n"
+						 + "            \"linkedBots\",\n"
+						 + "            \"smallTalk\"\n"
+						 + "        ],\n"
+						 + "        \"customDashboard\": true\n"
+						 + "    }\n"
+						 + "}" ;
 				// Export API Call
 				System.out.println(finalImportBody);
 				String botId = prop.getProperty(botName);

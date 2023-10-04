@@ -311,7 +311,7 @@ public class ExportBot {
 						}
 					}
 				}
-				//
+				git.add().addFilepattern(".").setUpdate(true).call();
 			}
 			// git.rm().addFilepattern(".").setCached(true).call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
