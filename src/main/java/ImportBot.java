@@ -29,7 +29,7 @@ public class ImportBot {
 	static String exportType = BotConstants.EXP_NLP;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportNLP-20231004151950";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231004151111";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
