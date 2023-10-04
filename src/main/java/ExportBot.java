@@ -309,7 +309,7 @@ public class ExportBot {
 					}
 				}
 			}
-			
+			git.rm().addFilepattern(".").call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
@@ -317,7 +317,7 @@ public class ExportBot {
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
 			git.add().addFilepattern(".").call();
-			git.rm().addFilepattern(".").call();
+			
 
 			// git.add().addFilepattern(filePath).call();
 
