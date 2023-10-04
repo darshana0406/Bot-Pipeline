@@ -119,9 +119,9 @@ public class BotConstants {
             + "            \"actions\": [],\n"
             + "            \"dialogs\": []\n"
             + "        },\n"
+            + "        \"customDashboard\": true,\n"
             + "        \"allTasks\": true,\n"
             + "        \"IncludeDependentTasks\": true\n"
-            + "    }\n"
             + "}";
 	
 	public static final String IMP_BOTWHTSTG_REQ_BODY = "\"importOptions\": {\n"

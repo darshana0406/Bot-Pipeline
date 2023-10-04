@@ -30,7 +30,7 @@ public class ImportBot {
 	static String exportType = BotConstants.EXP_BOT_TASKS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003171956";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231003210828";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -169,17 +169,22 @@ public class ImportBot {
 	             String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
 	                     + "\"configInfo\": \"" + configInfoId + "\",\n" +importBody;
 				// Export API Call
+				System.out.println(finalImportBody);
 				String botId = prop.getProperty(botName);
-				String importUrl = prop.getProperty(BotConstants.IMPORT_URL) + botId + BotConstants.IMPORT;
+				
+				String importUrl = prop.getProperty(BotConstants.IMPORT_URL) + "st-c99808ed-b936-5b7d-a49f-a0fad24a1a00" + BotConstants.IMPORT;
 				
 				System.out.println("botId:: " + botId);
 				System.out.println("importUrl:: " + importUrl);
 				
 				URL importUrlObj = new URL(importUrl);
 				HttpURLConnection importConnection = (HttpURLConnection) importUrlObj.openConnection();
-				importConnection.setRequestMethod(BotConstants.METHOD_POST);
-				importConnection.setRequestProperty(BotConstants.AUTH, importJwt);
-				importConnection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.APPLICATION_JSON);
+				// importConnection.setRequestMethod(BotConstants.METHOD_POST);
+				// importConnection.setRequestProperty(BotConstants.AUTH, importJwt);
+				// importConnection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.APPLICATION_JSON);
+				importConnection.setRequestMethod("POST");
+				importConnection.setRequestProperty("auth", importJwt);
+				importConnection.setRequestProperty("content-type", "application/json");
 				importConnection.setDoOutput(true);
 
 				OutputStream impOutStream = importConnection.getOutputStream();

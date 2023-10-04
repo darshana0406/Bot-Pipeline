@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String exportType = BotConstants.EXP_ALL;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -301,6 +301,7 @@ public class ExportBot {
 					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
 						try {
 							FileUtils.deleteDirectory(file);
+							git.rm().addFilepattern(file.getName());
 							System.out.println(" Deleted file:: " + file.getName());
 						} catch (IOException io) {
 							io.printStackTrace();
