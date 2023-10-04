@@ -316,7 +316,7 @@ public class ExportBot {
 			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
-			git.add().addFilepattern(".").call();
+			git.add().addFilepattern(".").setUpdate(true).call();
 			
 
 			// git.add().addFilepattern(filePath).call();
