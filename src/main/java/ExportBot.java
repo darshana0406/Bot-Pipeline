@@ -326,7 +326,7 @@ public class ExportBot {
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).call();
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).setForce(true).call();
 			System.out.println("GIT Tag is created: " + gitTag);
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
