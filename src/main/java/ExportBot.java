@@ -301,7 +301,7 @@ public class ExportBot {
 					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
 						try {
 							FileUtils.deleteDirectory(file);
-							git.rm().addFilepattern(".");
+							
 							System.out.println(" Deleted file:: " + file.getName());
 						} catch (IOException io) {
 							io.printStackTrace();
@@ -309,6 +309,7 @@ public class ExportBot {
 					}
 				}
 			}
+			git.add().addFilepattern(".");
 
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
