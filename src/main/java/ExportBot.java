@@ -92,10 +92,13 @@ public class ExportBot {
 			switch (exportType) {
 			case (BotConstants.EXP_NLP):
 				exportBody = BotConstants.EXP_NLP_REQ_BODY;
+				break;
 			case (BotConstants.EXP_BOT_TASKS):
 				exportBody =  BotConstants.EXP_BOTTSKS_REQ_BODY;
+				break;
 			case (BotConstants.EXP_WHT_SETTINGS):
 				exportBody =  BotConstants.EXP_WHTSTG_REQ_BODY;
+				break;
 			default:
 				exportBody = BotConstants.EXP_ALL_REQ_BODY;
 			}
