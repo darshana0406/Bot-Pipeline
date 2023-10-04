@@ -23,13 +23,13 @@ public class ImportBot {
 
 	public static String botDefinitionId;
 	public static String configInfoId;
-	static String importType = "ExportWithOutSettings";
+	static String importType = "ImportBotTasks";
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
-	static String exportType = BotConstants.EXP_WHT_SETTINGS;
+	static String exportType = BotConstants.EXP_BOT_TASKS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportWithOutSettings-20231004165154";
+		String tagName = "cct_ivr_billing-dev-ExportBotTasks-20231004170041";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -48,20 +48,20 @@ public class ImportBot {
 		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\" +env+ "\\BotConfig.properties");
 		prop.load(inputStream);
 		
-		FileUtils.deleteDirectory(new File(BotConstants.IMPORT_DIR));
+		FileUtils.deleteDirectory(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
 
 		String username = prop.getProperty(BotConstants.USERNAME);
 		String password = prop.getProperty(BotConstants.PASSWORD);
 		// Clone the Git repository
 		CloneCommand cloneCommand = Git.cloneRepository();
 		cloneCommand.setURI(prop.getProperty(BotConstants.TARGET_REPO_URL));
-		cloneCommand.setDirectory(new File(BotConstants.IMPORT_DIR));
+		cloneCommand.setDirectory(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
 		cloneCommand.setBranch(tagName);
 		cloneCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password));
 		cloneCommand.call();
 
 		// Checkout the Git tag
-		Git git = Git.open(new File(BotConstants.IMPORT_DIR));
+		Git git = Git.open(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
 		git.checkout().setName(tagName).call();
 		
 		uploadAPICall(prop);
@@ -80,8 +80,8 @@ public class ImportBot {
 		String workspaceDir = prop.getProperty(BotConstants.IMPORT_DIR);
 		try {
 
-			String[] fileNames = { workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
-					workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
+			String[] fileNames = { workspaceDir + "/"+ botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
+					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
 
 			
 			for (String filePath : fileNames) {
