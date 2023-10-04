@@ -296,20 +296,20 @@ public class ExportBot {
 			// Delete all folders from target repo except .git older
 			File[] files = new File(workspace + BotConstants.TMP_PATH).listFiles();
 
-			// if (files != null) {
-			// 	for (File file : files) {
-			// 		if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
-			// 			try {
-			// 				FileUtils.deleteDirectory(file);
+			if (files != null) {
+				for (File file : files) {
+					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
+						try {
+							FileUtils.deleteDirectory(file);
 							
-			// 				System.out.println(" Deleted file:: " + file.getName());
-			// 			} catch (IOException io) {
-			// 				io.printStackTrace();
-			// 			}
-			// 		}
-			// 	}
-			// }
-			// git.rm().addFilepattern(".").call();
+							System.out.println(" Deleted file:: " + file.getName());
+						} catch (IOException io) {
+							io.printStackTrace();
+						}
+					}
+				}
+			}
+			git.rm().addFilepattern(".").call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
