@@ -122,8 +122,8 @@ public class BotConstants {
             + "        \"customDashboard\": true,\n"
             + "        \"allTasks\": true,\n"
             + "        \"IncludeDependentTasks\": true\n"
+            + "    }\n"
             + "}";
-	
 	public static final String IMP_BOTWHTSTG_REQ_BODY = "\"importOptions\": {\n"
             + "        \"tasks\": [\n"
             + "            \"botTask\",\n"
