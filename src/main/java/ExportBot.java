@@ -309,7 +309,7 @@ public class ExportBot {
 					}
 				}
 			}
-			git.rm().addFilepattern("cct_ivr_billing/.").call();
+			git.rm().addFilepattern(workspace + BotConstants.TMP_PATH+"/.").call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
