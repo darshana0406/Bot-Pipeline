@@ -29,7 +29,7 @@ public class ImportBot {
 	static String exportType = BotConstants.EXP_WHT_SETTINGS;
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportWithOutSettings-20231004164437";
+		String tagName = "cct_ivr_billing-dev-ExportWithOutSettings-20231004165154";
 
 		String[] values = tagName.split(BotConstants.HYPHEN);
 		String botName = values[0];
@@ -80,7 +80,7 @@ public class ImportBot {
 		String workspaceDir = prop.getProperty(BotConstants.IMPORT_DIR);
 		try {
 
-			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
+			String[] fileNames = { workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
 					workspaceDir + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
 
 			

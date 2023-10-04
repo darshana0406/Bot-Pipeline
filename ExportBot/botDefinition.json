@@ -869,8 +869,6 @@
     "recentBotLimit": 5,
     "isCsMatchEnabled": false,
     "defaultDialogId": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
-    "botSentimentEvents": [],
-    "enableNegativePatterns": false,
     "advancedNLSettings": [
         {
             "_id": "anls-6e6fb8a4-b1fe-5015-83bb-dc486680df7b",
@@ -932,141 +930,11 @@
             "lastModifiedOn": "2023-09-10T10:37:14.820Z"
         }
     ],
-    "botEvents": {
-        "INTENT_UNIDENTIFIED": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "3cd45fb6-1aae-54dc-bb15-436344e0b622",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": null,
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "WELCOME_MESSAGE_EVENT": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": {
-                "greetings": "respondToUserInput",
-                "faq": "respondToUserInput",
-                "task": "respondToUserInput"
-            },
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "ON_CONNECT_EVENT": {
-            "enabled": true,
-            "action": "triggerDialog",
-            "task": "716a6e33-96fa-5cb9-95d9-078bda0ba190",
-            "linkedBotStreamId": null,
-            "script": null,
-            "msg": [],
-            "manageFirstMessage": null,
-            "event_config": null,
-            "pre_conditions": null,
-            "advance_settings": null,
-            "welcomeIvrOptions": null
-        },
-        "REPEAT_RESPONSE_EVENT": {
-            "enabled": false,
-            "action": "showMsg",
-            "msg": [
-                {
-                    "localeData": {
-                        "en": {
-                            "type": "basic",
-                            "text": "Sure%2C%20I%20will%20repeat%20it%20for%20you"
-                        }
-                    },
-                    "vNameSpace": [],
-                    "createdBy": "u-58d3b65a-b4f5-5008-bd43-804bffe920cf",
-                    "createdOn": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
-                    "channel": "default",
-                    "lModBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "lMod": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "__v": 0
-                }
-            ],
-            "pre_conditions": {
-                "channels": [
-                    "ivrVoice",
-                    "audiocodes",
-                    "twiliovoice"
-                ]
-            },
-            "advance_settings": {
-                "limit": 5
-            },
-            "event_config": "lastBotResponse"
-        },
-        "TASK_FAILURE_EVENT": {
-            "enabled": true,
-            "action": "showMsg",
-            "task": null,
-            "script": ".",
-            "msg": [
-                {
-                    "__v": 0,
-                    "channel": "default",
-                    "createdBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "createdOn": "Fri Aug 18 2023 11:21:13 GMT+0000 (Coordinated Universal Time)",
-                    "lMod": "Thu Sep 28 2023 17:04:46 GMT+0000 (Coordinated Universal Time)",
-                    "lModBy": "Fri Aug 18 2023 11:20:33 GMT+0000 (Coordinated Universal Time)",
-                    "localeData": {
-                        "en": {
-                            "type": "basic",
-                            "text": "I%20am%20sorry%2C%20something%20went%20wrong%20and%20I%20had%20to%20discard%20your%20task.%20Please%20retry."
-                        }
-                    },
-                    "streamId": "st-e5669197-991d-5971-9417-a422368a0805",
-                    "vNameSpace": []
-                }
-            ],
-            "welcomeIvrOptions": []
-        }
-    },
+    "botEvents": {},
     "idpConfigurations": [],
     "actions": [],
     "alerts": [],
-    "patterns": [
-        {
-            "localeData": {
-                "en": {}
-            },
-            "refId": "1653d709-a74f-54e4-bf75-c992175fbacc",
-            "taskName": "Fallback_Task",
-            "taskType": "intent",
-            "nodeType": "dialog"
-        },
-        {
-            "localeData": {
-                "en": {}
-            },
-            "refId": "db3ef9c2-6585-5bc5-bc8e-c2f7143ba41a",
-            "taskName": "Sep28th",
-            "taskType": "intent",
-            "nodeType": "dialog"
-        },
-        {
-            "localeData": {
-                "en": {}
-            },
-            "refId": "31d774ab-9579-5641-86ca-1e1d18e74816",
-            "taskName": "Welcome_Task",
-            "taskType": "intent",
-            "nodeType": "dialog"
-        }
-    ],
+    "patterns": [],
     "dialogComponents": [
         {
             "_id": "dc-7663df38-a4d1-5e37-b612-25ac9397629b",
@@ -2042,17 +1910,7 @@
     "customDashboards": [],
     "paramMaps": [],
     "taskDgParamMaps": [],
-    "sentences": [
-        {
-            "_id": "64df576225bf6b552b5332c2",
-            "taskId": "dc-b25629ed-fbc7-524e-9f3e-2080e4f07a55",
-            "sentence": "welcomtask",
-            "taskName": "Fallback_Task",
-            "type": "DialogIntent",
-            "entities": [],
-            "language": "en"
-        }
-    ],
+    "sentences": [],
     "koraResponses": [],
     "customTemplates": [],
     "mlParams": [
@@ -2105,15 +1963,7 @@
             "knowledgeGraph",
             "smallTalk"
         ],
-        "nlpData": [
-            "training_data",
-            "bot_synonyms",
-            "defaultDialog",
-            "nlpSettings",
-            "utterances",
-            "patterns",
-            "standardResponses"
-        ],
+        "nlpData": [],
         "settings": [],
         "subTasks": {
             "dialogs": [
@@ -2132,5 +1982,5 @@
     },
     "environmentVersionInfo": "9.1.7",
     "traits": [],
-    "encryptedHash": "ad48ec9b901d238800fd016b6cb220f9"
+    "encryptedHash": "69ba86e448ee758a724daa3bf42ba732"
 }
