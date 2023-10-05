@@ -21,6 +21,7 @@ import java.util.zip.ZipInputStream;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.PushCommand;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.transport.RefSpec;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
@@ -28,7 +29,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String exportType = BotConstants.EXP_NLP;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -351,9 +352,12 @@ public class ExportBot {
 			git.commit().setMessage("pushing all files into repo").call();
 			System.out.println("Files are committed to main repo.");
 			// System.out.println("Files are committed to main repo." + botName + "/" + env + "/" + exportType);
-
-			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+			PushCommand push = git.push();
+			push.setPushAll();
+			push.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+			// git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+			// 		.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			System.out.println("Files are pushed to main branch of target repo.");
 		} catch (Exception e) {
 			e.getMessage();
