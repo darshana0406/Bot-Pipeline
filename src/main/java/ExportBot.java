@@ -335,14 +335,9 @@ public class ExportBot {
 			System.out.println("GIT Tag is created: " + gitTag);
 
 			FileUtils.copyDirectory(new File(workspace + "/repo" ), new File(
-					workspace + "/" + BotConstants.TMP_PATH ));
+					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
-			// FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
-			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
-
-			// FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
-			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
-
+			
 			git.add().addFilepattern(".").setUpdate(false).call();
 			
 			git.commit().setMessage("pushing all files into repo").call();
