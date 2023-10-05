@@ -347,17 +347,13 @@ public class ExportBot {
 					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
 			// git.add().addFilepattern(tempPath).setUpdate(true).call();
-			git.add().addFilepattern(".").setUpdate(true).call();
+			git.add().addFilepattern(".").setUpdate(false).call();
 			
 			git.commit().setMessage("pushing all files into repo").call();
 			System.out.println("Files are committed to main repo.");
 			// System.out.println("Files are committed to main repo." + botName + "/" + env + "/" + exportType);
-			PushCommand push = git.push();
-			push.setPushAll();
-			push.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
-			// git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-			// 		.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+			.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			System.out.println("Files are pushed to main branch of target repo.");
 		} catch (Exception e) {
 			e.getMessage();
