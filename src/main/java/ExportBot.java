@@ -29,7 +29,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_ALL;
+	static String exportType = BotConstants.EXP_WHT_SETTINGS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -290,6 +290,7 @@ public class ExportBot {
 			// String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
 			System.out.println(workspace + BotConstants.TMP_PATH);
 			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
+			FileUtils.deleteDirectory(new File(workspace + "/repo"));
 			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
 			Git git = Git.cloneRepository().setURI(repoUrl).setDirectory(new File(workspace + BotConstants.TMP_PATH))
 					.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password)).call();
