@@ -29,7 +29,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_NLP;
+	static String exportType = BotConstants.EXP_BOT_TASKS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
