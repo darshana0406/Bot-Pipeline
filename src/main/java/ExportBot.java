@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_NLP;
+	static String exportType = BotConstants.EXP_BOT_TASKS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -333,8 +333,8 @@ public class ExportBot {
 			System.out.println("Files are committed to target repo." + botName + "/" + env + "/" + exportType);
 
 
-			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+			// git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+			// 		.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			
