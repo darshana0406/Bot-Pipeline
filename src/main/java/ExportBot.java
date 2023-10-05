@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_ALL;
+	static String exportType = BotConstants.EXP_WHT_SETTINGS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -326,7 +326,7 @@ public class ExportBot {
 			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
-			git.add().addFilepattern(".").call();
+			// git.add().addFilepattern(".").call();
 			
 
 			// git.add().addFilepattern(filePath).call();
