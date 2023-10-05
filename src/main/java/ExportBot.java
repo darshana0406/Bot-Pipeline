@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_NLP;
+	static String exportType = BotConstants.EXP_BOT_TASKS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -290,7 +290,7 @@ public class ExportBot {
 			String workspace = prop.getProperty(BotConstants.WS_LOCATION);
 			String gitTag = botName;
 			String TIMESTAMPS = dateFormat.format(new Date());
-			String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
+			// String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
 			System.out.println("asdfasdfasdf"+workspace + BotConstants.TMP_PATH);
 			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
 			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
@@ -298,14 +298,19 @@ public class ExportBot {
 					.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password)).call();
 			// Delete all folders from target repo except .git older
 			File[] files = new File(workspace + BotConstants.TMP_PATH).listFiles();
+			String filePath = workspace + BotConstants.TMP_PATH+"/Test";
 
 			if (files != null) {
 				for (File file : files) {
 					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
 						try {
-							FileUtils.deleteDirectory(file);
 							
+							if(!file.getName().equals(botName)) {
+								FileUtils.copyDirectory(file, new File(filePath));
+							}
+							FileUtils.deleteDirectory(file);
 							System.out.println(" Deleted file:: " + file.getName());
+							
 						} catch (IOException io) {
 							io.printStackTrace();
 						}
@@ -329,9 +334,12 @@ public class ExportBot {
 			System.out.println("Files are committed to target repo.");
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
+			
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).setForce(true).call();
 			System.out.println("GIT Tag is created: " + gitTag);
+
+			git.add().addFilepattern(filePath).call();
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
