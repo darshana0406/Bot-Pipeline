@@ -319,6 +319,32 @@ public class ExportBot {
 				git.add().addFilepattern(".").setUpdate(false).call();
 			}
 			// git.rm().addFilepattern(".").setCached(true).call();
+			git.commit().setMessage("pushing bot configs").call();
+			System.out.println("Files are committed to target repo.");
+			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+			System.out.println("Files are pushed to main branch of target repo.");
+			git.checkout().setName("javamain").call();
+
+			if (files != null) {
+				for (File file : files) {
+					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
+						try {
+							
+							if(!file.getName().equals(botName)) {
+								FileUtils.copyDirectory(file, new File(filePath));
+							}
+							FileUtils.deleteDirectory(file);
+							System.out.println(" Deleted file:: " + file.getName());
+							
+						} catch (IOException io) {
+							io.printStackTrace();
+						}
+					}
+				}
+				git.add().addFilepattern(".").setUpdate(true).call();
+			}
+
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
@@ -330,8 +356,7 @@ public class ExportBot {
 
 			// git.add().addFilepattern(filePath).call();
 
-			git.commit().setMessage("pushing bot configs").call();
-			System.out.println("Files are committed to target repo.");
+			
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			
@@ -342,7 +367,7 @@ public class ExportBot {
 			git.add().addFilepattern(filePath).call();
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
-					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec("javamain")).call();
 			System.out.println("Files are pushed to main branch of target repo.");
 		} catch (Exception e) {
 			e.getMessage();
