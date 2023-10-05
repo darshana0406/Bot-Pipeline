@@ -303,7 +303,7 @@ public class ExportBot {
 					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
 						try {							
 							FileUtils.copyDirectory(file, new File(filePath));	
-							System.out.println("copied folders" + file.getName());
+							System.out.println("copied folders " + file.getName());
 
 							FileUtils.deleteDirectory(file);
 							System.out.println(" Deleted file:: " + file.getName());
