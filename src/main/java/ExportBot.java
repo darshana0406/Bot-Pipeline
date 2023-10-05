@@ -336,11 +336,11 @@ public class ExportBot {
 			FileUtils.copyDirectory(new File(workspace + "/repo/" + env ), new File(
 					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
-			// FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
-			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
+			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
+					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
 
-			// FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
-			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
+			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
+					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
 			git.add().addFilepattern(".").setUpdate(false).call();
 			
