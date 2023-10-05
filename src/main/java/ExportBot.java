@@ -317,7 +317,7 @@ public class ExportBot {
 						}
 					}
 				}
-				// git.add().addFilepattern(".").setUpdate(true).call();
+				git.add().addFilepattern(".").setUpdate(true).call();
 			}
 			// git.rm().addFilepattern(".").setCached(true).call();
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
@@ -332,7 +332,9 @@ public class ExportBot {
 			// git.add().addFilepattern(filePath).call();
 
 			git.commit().setMessage("pushing bot configs").call();
-			System.out.println("Files are committed to target repo.");
+			System.out.println("Files are committed to target repo." + botName + "/" + env + "/" + exportType);
+
+
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
@@ -350,6 +352,8 @@ public class ExportBot {
 			git.add().addFilepattern(tempPath).call();
 			git.commit().setMessage("pushing all files into repo").call();
 			System.out.println("Files are committed to main repo.");
+			// System.out.println("Files are committed to main repo." + botName + "/" + env + "/" + exportType);
+
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			System.out.println("Files are pushed to main branch of target repo.");
