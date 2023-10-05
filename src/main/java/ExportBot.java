@@ -29,7 +29,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_WHT_SETTINGS;
+	static String exportType = BotConstants.EXP_ALL;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -290,7 +290,6 @@ public class ExportBot {
 			// String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
 			System.out.println(workspace + BotConstants.TMP_PATH);
 			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
-			FileUtils.deleteDirectory(new File(workspace + "/repo"));
 			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
 			Git git = Git.cloneRepository().setURI(repoUrl).setDirectory(new File(workspace + BotConstants.TMP_PATH))
 					.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password)).call();
@@ -304,7 +303,6 @@ public class ExportBot {
 					if (file.isDirectory() && !file.getName().equals(BotConstants.GIT_EXN)) {
 						try {							
 							FileUtils.copyDirectory(file, new File(filePath));	
-							System.out.println("copied folders " + file.getName());
 
 							FileUtils.deleteDirectory(file);
 							System.out.println(" Deleted file:: " + file.getName());
@@ -335,10 +333,15 @@ public class ExportBot {
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).setForce(true).call();
 			System.out.println("GIT Tag is created: " + gitTag);
 
-			FileUtils.copyDirectory(new File(workspace + "/repo" ), new File(
-					workspace + "/" + BotConstants.TMP_PATH));
+			FileUtils.copyDirectory(new File(workspace + "/repo/" + env ), new File(
+					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
-			
+			// FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
+			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
+
+			// FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
+			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
+
 			git.add().addFilepattern(".").setUpdate(false).call();
 			
 			git.commit().setMessage("pushing all files into repo").call();
