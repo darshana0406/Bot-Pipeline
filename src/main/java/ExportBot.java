@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_WHT_SETTINGS;
+	static String exportType = BotConstants.EXP_NLP;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -339,7 +339,10 @@ public class ExportBot {
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(gitTag)).setForce(true).call();
 			System.out.println("GIT Tag is created: " + gitTag);
 
-			git.add().addFilepattern(filePath).call();
+			FileUtils.copyDirectory(new File(workspace + "/repo/" + env ), new File(
+					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
+
+			git.add().addFilepattern(".").call();
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
