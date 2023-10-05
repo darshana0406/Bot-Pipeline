@@ -326,13 +326,15 @@ public class ExportBot {
 			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
-			// git.add().addFilepattern(".").call();
+			git.add().addFilepattern(".").call();
 			
 
 			// git.add().addFilepattern(filePath).call();
 
 			git.commit().setMessage("pushing bot configs").call();
 			System.out.println("Files are committed to target repo.");
+			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
+					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
 			gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			
@@ -342,6 +344,8 @@ public class ExportBot {
 
 			FileUtils.copyDirectory(new File(workspace + "/repo/" + env ), new File(
 					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
+
+			
 
 			git.add().addFilepattern(tempPath).call();
 			git.commit().setMessage("pushing all files into repo").call();
