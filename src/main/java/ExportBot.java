@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_NLP;
+	static String exportType = BotConstants.EXP_BOT_TASKS;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -299,6 +299,7 @@ public class ExportBot {
 			// Delete all folders from target repo except .git older
 			File[] files = new File(workspace + BotConstants.TMP_PATH).listFiles();
 			String filePath = workspace + "/repo";
+			String tempPath = workspace + BotConstants.TMP_PATH;
 
 			if (files != null) {
 				for (File file : files) {
@@ -342,7 +343,7 @@ public class ExportBot {
 			FileUtils.copyDirectory(new File(workspace + "/repo/" + env ), new File(
 					workspace + "/" + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
-			git.add().addFilepattern(".").call();
+			git.add().addFilepattern(tempPath).call();
 
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
 					.setRemote(BotConstants.ORIGIN).setRefSpecs(new RefSpec(BotConstants.MAIN)).call();
