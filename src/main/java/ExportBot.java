@@ -28,7 +28,7 @@ import org.json.JSONObject;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String exportType = BotConstants.EXP_ALL;
 	static String env = BotConstants.ENV_DEV;;
 	static String botName = BotConstants.CCT_IVR_BILLING;
 	
@@ -327,9 +327,7 @@ public class ExportBot {
 					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
 			git.add().addFilepattern(".").call();
-			// git.add().addFilepattern(".").setUpdate(true).call();
-
-			// git.add().addFilepattern(filePath).call();
+		
 
 			git.commit().setMessage("pushing bot configs").call();
 			System.out.println("Files are committed to target repo." + botName + "/" + env + "/" + exportType);
