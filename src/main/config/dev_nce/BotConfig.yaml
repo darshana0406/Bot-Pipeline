@@ -1,0 +1,101 @@
+Demobot1:
+
+   botId: st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWI2ZDY4Njk3LTA1ZmEtNTQwNC1iNzg4LTIxNWE3MWUwMjc0OSJ9.bRkzPwrHF2aWLhvS3e6iEI72XVsk6nuUVPWl-z0VaFQ
+   exportUrl:  https://bots.kore.ai/api/public/bot/
+   exportStatusUrl: https://bots.kore.ai/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   importUrl: https://bots.kore.ai/api/public/bot/
+   targetImpDir: C:/ProgramData/Jenkins/.jenkins/workspace/Test/import/
+   uploadUrl: https://bots.kore.ai/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   username: darshana0406
+   password: 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
+   wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
+   targetRepoUrl:  https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
+   
+TestBot2:
+   botId: st-668014f0-8f02-5ae3-92d9-a51170545c5d
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUwZDA1N2YwLWY2MDUtNTljYS05OGFjLWI5MWJhMGQ3MmVlMiJ9.xmrKV3z7a9yoDlG7geOlCbaxgzWzVvvXM40LhdJya1A
+   exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   exportStatusUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   importUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   targetImpDir: c:\\Users\\P3203816\\Videos\\import
+   uploadUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   username: c-meenakshi.kaeley
+   password: 1gJciYHc32Fi9_mH6Qch
+   wsLocation: c:\\Users\\P3203816\\Videos
+   targetRepoUrl: https://c-meenakshi.kaeley:1gJciYHc32Fi9_mH6Qch@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git
+
+NewBot:
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   importUrl: https://bots.kore.ai/api/public/bot/
+   uploadUrl: https://bots.kore.ai/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   targetImpDir: C:/ProgramData/Jenkins/.jenkins/workspace/Test/import/
+   username: darshana0406
+   password: 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
+   wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
+   targetRepoUrl: https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
+
+cct_ivr_conversational_appt_manager:
+   botId: st-a9016b85-c2d5-5870-9e5a-25b47427485f
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTg4YzU0NDBkLTY1ODAtNTY2NC1hNDc4LTZjZTM1ZDI3OGViNyJ9.VNw4S2ZTH504U2eodWeXAGM3Ia6Wzj6g2GQMN3SznZ0
+   exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   exportStatusUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   importUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   targetImpDir: c:\\Users\\P3203816\\Videos\\import
+   uploadUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   username: c-meenakshi.kaeley
+   password: 1gJciYHc32Fi9_mH6Qch
+   wsLocation: c:\\Users\\P3203816\\Videos
+   targetRepoUrl: https://c-meenakshi.kaeley:1gJciYHc32Fi9_mH6Qch@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git
+
+cct_ivr_conversational_billing_manager:
+   botId: st-53480da9-e95f-517c-aeea-0f0ef56a445f
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTZmMmViZjVlLWY3YjktNWI3MC1hZTBjLTc1Y2U2OGU2OTMyOCJ9.7AQuXphonr8rd_AYO6GNbgRePvKKR3ncr6gcbyfqYh0
+   exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   exportStatusUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   importUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   targetImpDir: c:\\Users\\P3203816\\Videos\\import
+   uploadUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   username: c-meenakshi.kaeley
+   password: 1gJciYHc32Fi9_mH6Qch
+   wsLocation: c:\\Users\\P3203816\\Videos
+   targetRepoUrl: https://c-meenakshi.kaeley:1gJciYHc32Fi9_mH6Qch@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git
+
+cct_ivr_routing:
+   botId: st-626e1d64-5b9e-5e94-9b42-de5818b0bfb0
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTM2OTVjNzc1LWUxODUtNTk2My1iOWJhLTNiZmE1YmUxMjMwOCJ9.-ULngJpxWer7yq3L7ac4BF44RL-LeTMn9DeMU6WtPSE
+   exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   exportStatusUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   importUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   targetImpDir: c:\\Users\\P3203816\\Videos\\import
+   uploadUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   username: c-meenakshi.kaeley
+   password: 1gJciYHc32Fi9_mH6Qch
+   wsLocation: c:\\Users\\P3203816\\Videos
+   targetRepoUrl: https://c-meenakshi.kaeley:1gJciYHc32Fi9_mH6Qch@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git
+
+copy_cct_ivr_billing:
+   botId: st-c5291cda-4cd7-5075-93a2-6c3283d36335
+   exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLWU2MmQ0Y2U4LTFlMjktNTJkMy1iZDdiLTM2ZTYwYmQwOWJkNiJ9.K00v0pMgcdjATNq06UVqQsPvl200kgwU7302VRupCYs
+   exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   exportStatusUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   importUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/
+   targetImpDir: c:\\Users\\P3203816\\Videos\\import
+   uploadUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwiYXBwSWQiOiJjcy1iZjc3Yzg5NS1kYmQ1LTVkOGItOWE1Yy01ZjhmMzFjY2FlNjgifQ.dVGTONFvHoAZTQ5GH0Nm3IYmQo-ehKwC7_ldpGDkfs4
+   username: c-meenakshi.kaeley
+   password: 1gJciYHc32Fi9_mH6Qch
+   wsLocation: c:\\Users\\P3203816\\Videos
+   targetRepoUrl: https://c-meenakshi.kaeley:1gJciYHc32Fi9_mH6Qch@gitlab.spectrumflow.net/c-meenakshi.kaeley/cct_ivr_bots_automation.git
