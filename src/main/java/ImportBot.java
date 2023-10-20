@@ -1,9 +1,6 @@
-// package cicd;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -11,77 +8,115 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Properties;
+import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.eclipse.jgit.api.CloneCommand;
 import org.eclipse.jgit.api.Git;
 import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 import org.json.JSONObject;
+import org.yaml.snakeyaml.Yaml;
 
 public class ImportBot {
 
 	public static String botDefinitionId;
 	public static String configInfoId;
+	
 	static String importType = "ImportAll";
-	static String env = BotConstants.ENV_DEV;;
-	static String botName = BotConstants.CCT_IVR_BILLING;
+	static String env = BotConstants.ENV_DEV;
 	static String exportType = BotConstants.EXP_ALL;
+	static String newBot = BotConstants.NEWBOT;
+	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "cct_ivr_billing-dev-ExportAll-20231004180753";
-
-		String[] values = tagName.split(BotConstants.HYPHEN);
-		String botName = values[0];
-		String exportType = values[2];
-
+		String tagName = "TestBot1-dev_nce-Export_All-20231019014144";
+		String srcBotName = "";
+		String targetBotName = "";
 		if (args.length > 0) {
 			importType = args[0];
 			env = args[1];
+			tagName = args[2];
+			targetBotName = args[3];
+			newBot =args[4];
+
 			System.out.println("Chosen Value: " + importType);
 		} else {
 			System.out.println("No chosen value provided.");
 		}
-		// Load property files based on the env selected
-		Properties prop = new Properties();
-		// InputStream inputStream = new FileInputStream(BotConstants.CONFIG_PATH + env +BotConstants.FWSLASH + "BotConstants.CONFIG_FILE");
-		InputStream inputStream = new FileInputStream("C:\\Users\\gg\\Documents\\Darshana-infy\\Bot-Pipeline\\src\\main\\config\\" +env+ "\\BotConfig.properties");
-		prop.load(inputStream);
-		
-		FileUtils.deleteDirectory(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
+		String[] values = tagName.split(BotConstants.HYPHEN);
+		srcBotName = values[0];
+		exportType = values[2];
+		System.out.println("Source BotName" + srcBotName);
 
-		String username = prop.getProperty(BotConstants.USERNAME);
-		String password = prop.getProperty(BotConstants.PASSWORD);
+		//String[] envArray = env.split(BotConstants.UNDER_SCORE);
+		//String region = envArray[1];
+
+		//System.out.println("Region" + region);
+		
+		//Yaml Coniguration
+		String yamlConfig = BotConstants.BOTCONFIG;
+		InputStream inputStream = new FileInputStream(new File("/apps/bss/jenkins_slave/workspace/cct_ivr_kore_bot_export_import/src/main/config/"+env+"/"+yamlConfig));
+		Yaml yaml = new Yaml();
+		Map<String, Object> configMap = (Map<String, Object>) yaml.load(inputStream);
+		Map<String, Object> botConfigMap;
+		//Map<String, Object> botConfigRegMap = (Map<String, Object>) configMap.get(region);
+		// Map<String, Object> botConfigMap = (Map<String, Object>) botConfigRegMap.get(region);
+		//System.out.println("Yaml:::" +configMap);	
+		//	System.out.println("BotConfigRegMap-" + botConfigRegMap);
+		System.out.println ("newBot " + newBot);
+		//Retrieving 
+		if(newBot !="" && newBot!= null && newBot.length()>1) {
+			botConfigMap = (Map<String, Object>)configMap.get(BotConstants.NEWBOT);
+		}
+		else {
+			botConfigMap = (Map<String, Object>) configMap.get(targetBotName.replaceAll("\\s",""));
+			
+		}
+
+		//Map<String, Object> botConfigMap = (Map<String, Object>) configMap.get(targetBotName.replaceAll("\\s",""));
+
+		
+		System.out.println("botConfigMap:::" +botConfigMap);
+		String importPath = (String)botConfigMap.get(BotConstants.IMPORT_DIR);
+		FileUtils.deleteDirectory(new File(importPath));
+
+		String username = (String)botConfigMap.get(BotConstants.USERNAME);
+		String password = (String)botConfigMap.get(BotConstants.PASSWORD);
 		// Clone the Git repository
 		CloneCommand cloneCommand = Git.cloneRepository();
-		cloneCommand.setURI(prop.getProperty(BotConstants.TARGET_REPO_URL));
-		cloneCommand.setDirectory(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
+		cloneCommand.setURI((String)botConfigMap.get(BotConstants.TARGET_REPO_URL));
+		cloneCommand.setDirectory(new File(importPath));
 		cloneCommand.setBranch(tagName);
 		cloneCommand.setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password));
 		cloneCommand.call();
 
 		// Checkout the Git tag
-		Git git = Git.open(new File(prop.getProperty(BotConstants.IMPORT_DIR)));
+		Git git = Git.open(new File(importPath));
 		git.checkout().setName(tagName).call();
 		
-		uploadAPICall(prop);
-
-
+		uploadAPICall(botConfigMap, srcBotName, newBot);
+		System.out.println("Target botName" + targetBotName);
 	}
 	
-	public static void uploadAPICall(Properties prop) throws Exception {
+	public static void uploadAPICall(Map<String, Object> botConfigMap, String botName, String newBot) throws Exception {
 
-		String uploadApiUrl = prop.getProperty(BotConstants.UPLOAD_URL);
-		String authToken = prop.getProperty(BotConstants.UPLOAD_JWT);
+		String uploadApiUrl = (String)botConfigMap.get(BotConstants.UPLOAD_URL);
+		String authToken = (String)botConfigMap.get(BotConstants.UPLOAD_JWT);
 
-		String fileContext = prop.getProperty(BotConstants.UPLOAD_FILE_CONTEXT);
-		String fileExtension = prop.getProperty(BotConstants.UPLOAD_FILE_EXTN);
-		String boundary = prop.getProperty(BotConstants.UPLOAD_BOUNDARY);
-		String workspaceDir = prop.getProperty(BotConstants.IMPORT_DIR);
+		String fileContext = BotConstants.BULK_IMPORT;
+		String fileExtension = BotConstants.UPLOAD_FILE_EXTN;
+		String boundary = BotConstants.UPLOAD_BOUNDARY;
+		String workspaceDir = (String)botConfigMap.get(BotConstants.IMPORT_DIR);
+		String icon = BotConstants.EMPTY_STRING;
 		try {
+			if("TestBot1".equals (botName)) {
+				botName = BotConstants.CONV_BILLING_MGR;
+			}
 
-			String[] fileNames = { workspaceDir + "/"+ botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
-					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json" };
+			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
+					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json",
+					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/icon.png" };
+				
 
 			
 			for (String filePath : fileNames) {
@@ -99,13 +134,12 @@ public class ImportBot {
 
 				URL url = new URL(uploadApiUrl);
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-				// connection.setRequestMethod(BotConstants.METHOD_POST);
-				// connection.setRequestProperty(BotConstants.AUTH, authToken);
-				// connection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.MULTI_FORM_DATA + boundary);
-				connection.setRequestMethod("POST");
-				connection.setRequestProperty("auth", authToken);
-				connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 				
+				connection.setRequestMethod("POST");
+                connection.setRequestProperty("auth", authToken);
+                connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+				
+
 				connection.setDoOutput(true);
 				OutputStream outputStream = connection.getOutputStream();
 				outputStream.write(postData.getBytes());
@@ -132,14 +166,22 @@ public class ImportBot {
 				if (filePath.contains(BotConstants.BOT_DEFINITION)) {
 					botDefinitionId = jsonObj.getString(BotConstants.FILE_ID);
 					System.out.println("botdefinitionId: " + botDefinitionId);
-				} else {
-					configInfoId = jsonObj.getString(BotConstants.FILE_ID);
-				}
+				}	
+				else if (filePath.contains(BotConstants.CONFIG)) {
+						configInfoId = jsonObj.getString(BotConstants.FILE_ID);
+				}else {						
+						icon = jsonObj.getString(BotConstants.FILE_ID);
+					}
 			}
 			System.out.println("botdefinitionId: " + botDefinitionId);
 			System.out.println("configId: " + configInfoId);
+			System.out.println("Icon: " + icon);
 
-			importBotAPICall(prop,botDefinitionId,configInfoId);
+			if(newBot !="" && newBot!= null && newBot.length()>1) {
+				importNewBotAPICall(botConfigMap, botDefinitionId, configInfoId, icon, newBot);
+			} else {
+				importExistingBotAPICall(botConfigMap, botDefinitionId, configInfoId);
+			}
 
 		} catch (Exception e) {
 			e.getMessage();
@@ -148,14 +190,12 @@ public class ImportBot {
 	}
 
 	 
-	 public static void importBotAPICall(Properties prop,String botDefinitionId,String configInfoId) throws Exception {
+	 public static void importExistingBotAPICall(Map<String, Object> botConfigMap,String botDefinitionId,String configInfoId) throws Exception {
 			// Access the environment variable
-			String importJwt = prop.getProperty(BotConstants.IMPORT_JWT);
+			String importJwt = (String)botConfigMap.get(BotConstants.IMPORT_JWT);
 			String importBody = BotConstants.EMPTY_STRING;
 			
 			try {
-				
-				System.out.println("importType: " + importType);
 				//Populate import Body based on the import type passed
 				switch (importType) {
 				case (BotConstants.IMP_NLP):
@@ -172,55 +212,62 @@ public class ImportBot {
 				}
 				
 	             String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
-	                     + "\"configInfo\": \"" + configInfoId + "\",\n" + "\"importOptions\": {\n"
-						 + "        \"tasks\": [\n"
-						 + "            \"botTask\",\n"
-						 + "            \"knowledgeGraph\"\n"
-						 + "        ],\n"
-						 + "        \"nlpData\": [\n"
-						 + "            \"training_data\",\n"
-						 + "            \"bot_synonyms\",\n"
-						 + "            \"nlpSettings\",\n"
-						 + "            \"defaultDialog\",\n"
-						 + "            \"standardResponses\",\n"
-						 + "            \"utterances\"\n"
-						 + "        ],\n"
-						 + "        \"settings\": [\n"
-						 + "            \"botSettings\",\n"
-						 + "            \"ivrSettings\",\n"
-						 + "            \"botVariables\",\n"
-						 + "            \"ivrSettings\"\n"
-						 + "        ],\n"
-						 + "        \"options\": {\n"
-						 + "            \"utterances\": {\n"
-						 + "                \"append\": true,\n"
-						 + "                \"replace\": true\n"
-						 + "            }\n"
-						 + "        },\n"
-						 + "        \"botComponents\": [\n"
-						 + "            \"linkedBots\",\n"
-						 + "            \"smallTalk\"\n"
-						 + "        ],\n"
-						 + "        \"customDashboard\": true\n"
-						 + "    }\n"
-						 + "}" ;
-				// Export API Call
+	                     + "\"configInfo\": \"" + configInfoId + "\",\n" +importBody;
 				System.out.println(finalImportBody);
-				String botId = prop.getProperty(botName);
-				
-				String importUrl = prop.getProperty(BotConstants.IMPORT_URL) + "st-c99808ed-b936-5b7d-a49f-a0fad24a1a00" + BotConstants.IMPORT;
+				// Import API Call
+				String botId = (String)botConfigMap.get(BotConstants.BOTID);
+				//String botId = (String)botConfigMap.get(targetBotName.replaceAll("\\s",""));
+				String importUrl = (String)botConfigMap.get(BotConstants.IMPORT_URL) + botId + "/" + BotConstants.IMPORT;
 				
 				System.out.println("botId:: " + botId);
 				System.out.println("importUrl:: " + importUrl);
 				
 				URL importUrlObj = new URL(importUrl);
 				HttpURLConnection importConnection = (HttpURLConnection) importUrlObj.openConnection();
-				// importConnection.setRequestMethod(BotConstants.METHOD_POST);
-				// importConnection.setRequestProperty(BotConstants.AUTH, importJwt);
-				// importConnection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.APPLICATION_JSON);
+				
 				importConnection.setRequestMethod("POST");
-				importConnection.setRequestProperty("auth", importJwt);
-				importConnection.setRequestProperty("content-type", "application/json");
+                importConnection.setRequestProperty("auth", importJwt);
+                importConnection.setRequestProperty("content-type", "application/json");
+				
+				importConnection.setDoOutput(true);
+
+				OutputStream impOutStream = importConnection.getOutputStream();
+
+				impOutStream.write(finalImportBody.getBytes());
+				impOutStream.flush();
+				impOutStream.close();
+				System.out.println("Import  API Response Code :: " + importConnection.getResponseCode());
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				e.getMessage();
+				e.printStackTrace();
+			}
+	    }
+
+		public static void importNewBotAPICall(Map<String, Object> botConfigMap,String botDefinitionId,String configInfoId,String icon, String newBot) throws Exception {
+			// Access the environment variable
+			String importJwt = (String)botConfigMap.get(BotConstants.IMPORT_JWT);
+									
+			try {
+				
+	             String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
+	                     + "\"configInfo\": \"" + configInfoId + "\",\n"
+	                     + " \"icon\": \"" + icon+ "\",\n"
+	                     + " \"name\": \"" + newBot+ "\"\n}";
+				// Export API Call
+				//String botId = (String)configMap.get(targetBotName);
+				//String botId = (String)botConfigMap.get(BotConstants.BOTID);
+				String importUrl = (String)botConfigMap.get(BotConstants.IMPORT_URL) + BotConstants.IMPORT;
+				
+				//System.out.println("botId:: " + botId);
+				System.out.println("importUrl:: " + importUrl);
+				System.out.println("finalImportBody: " + finalImportBody);
+				
+				URL importUrlObj = new URL(importUrl);
+				HttpURLConnection importConnection = (HttpURLConnection) importUrlObj.openConnection();
+				importConnection.setRequestMethod(BotConstants.METHOD_POST);
+				importConnection.setRequestProperty(BotConstants.AUTH, importJwt);
+				importConnection.setRequestProperty(BotConstants.CONTENT_TYPE, BotConstants.APPLICATION_JSON);
 				importConnection.setDoOutput(true);
 
 				OutputStream impOutStream = importConnection.getOutputStream();
@@ -236,3 +283,4 @@ public class ImportBot {
 			}
 	    }
 }
+
