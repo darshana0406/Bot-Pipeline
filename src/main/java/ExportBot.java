@@ -28,7 +28,7 @@ import org.yaml.snakeyaml.Yaml;
 
 public class ExportBot {
 	
-	static String exportType = BotConstants.EXP_BOT_TASKS;
+	static String exportType = BotConstants.EXP_NLP;
 	static String env = BotConstants.ENV_DEV;
 		
 	public static void main(String[] args) throws IOException, GitAPIException {

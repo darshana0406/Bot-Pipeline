@@ -22,14 +22,15 @@ public class ImportBot {
 	public static String botDefinitionId;
 	public static String configInfoId;
 	
-	static String importType = "ImportAll";
+	static String importType = "ImportBotTasks";
 	static String env = BotConstants.ENV_DEV;
 	static String exportType = BotConstants.EXP_ALL;
-	static String newBot = BotConstants.NEWBOT;
+	// static String newBot = BotConstants.NEWBOT;
+	static String newBot = "abcd";
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "TestBot1-dev_nce-Export_All-20231019014144";
+		String tagName = "Demobot1-dev_nce-Export_BotTasks-20231020162552";
 		String srcBotName = "";
 		String targetBotName = "";
 		if (args.length > 0) {
@@ -55,7 +56,7 @@ public class ImportBot {
 		
 		//Yaml Coniguration
 		String yamlConfig = BotConstants.BOTCONFIG;
-		InputStream inputStream = new FileInputStream(new File("/apps/bss/jenkins_slave/workspace/cct_ivr_kore_bot_export_import/src/main/config/"+env+"/"+yamlConfig));
+		InputStream inputStream = new FileInputStream(new File("C:/Users/gg/Documents/Darshana-infy/Bot-Pipeline/src/main/config/"+env+"/"+yamlConfig));
 		Yaml yaml = new Yaml();
 		Map<String, Object> configMap = (Map<String, Object>) yaml.load(inputStream);
 		Map<String, Object> botConfigMap;
