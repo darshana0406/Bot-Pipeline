@@ -22,7 +22,7 @@ public class ImportBot {
 	public static String botDefinitionId;
 	public static String configInfoId;
 	
-	static String importType = "ImportNLP";
+	static String importType = "ImportAll";
 	static String env = BotConstants.ENV_DEV;
 	static String exportType = BotConstants.EXP_ALL;
 	// static String newBot = BotConstants.NEWBOT;
@@ -30,7 +30,7 @@ public class ImportBot {
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "Demobot1-dev_nce-export-20231023165625";
+		String tagName = "Demobot1-dev_nce-export-20231023174529";
 		String srcBotName = "Demobot1";
 		String targetBotName = "abcd";
 		if (args.length > 0) {
