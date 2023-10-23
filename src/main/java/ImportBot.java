@@ -26,13 +26,13 @@ public class ImportBot {
 	static String env = BotConstants.ENV_DEV;
 	static String exportType = BotConstants.EXP_ALL;
 	// static String newBot = BotConstants.NEWBOT;
-	static String newBot = "abcd";
+	static String newBot = "a";
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "Demobot1-dev_nce-export-20231020163158";
-		String srcBotName = "";
-		String targetBotName = "";
+		String tagName = "Demobot1-dev_nce-export-20231023165625";
+		String srcBotName = "Demobot1";
+		String targetBotName = "abcd";
 		if (args.length > 0) {
 			importType = args[0];
 			env = args[1];
@@ -110,9 +110,9 @@ public class ImportBot {
 		String workspaceDir = (String)botConfigMap.get(BotConstants.IMPORT_DIR);
 		String icon = BotConstants.EMPTY_STRING;
 		try {
-			if("Demobot1".equals (botName)) {
-				botName = BotConstants.CONV_BILLING_MGR;
-			}
+			// if("Demobot1".equals (botName)) {
+			// 	botName = BotConstants.CONV_BILLING_MGR;
+			// }
 
 			switch (importType) {
 				case (BotConstants.IMP_NLP):
@@ -127,10 +127,12 @@ public class ImportBot {
 				default:
 					exportType = BotConstants.EXP_ALL;
 				}	
-
-			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/botDefinition.json",
-					workspaceDir + "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/config.json",
-					workspaceDir + "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/icon.png" };
+				if(newBot !="" && newBot!= null && newBot.length()>1) {
+					exportType = BotConstants.EXP_ALL;
+				}
+			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" +  exportType + "/ExportBot/botDefinition.json",
+					workspaceDir + "/" + botName + "/" + env + "/" +  exportType + "/ExportBot/config.json",
+					workspaceDir + "/" + botName + "/" + env + "/" +  exportType + "/ExportBot/icon.png" };
 				
 			
 			for (String filePath : fileNames) {

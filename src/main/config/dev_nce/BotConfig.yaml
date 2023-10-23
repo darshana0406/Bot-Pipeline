@@ -40,6 +40,18 @@ NewBot:
    wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
    targetRepoUrl: https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
 
+abcd:
+   botId: st-60f8adf8-4091-5df1-b38c-aa861733ee1d
+   importJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   importUrl: https://bots.kore.ai/api/public/bot/
+   uploadUrl: https://bots.kore.ai/api/public/uploadfile
+   uploadJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUzYmZjNmEzLThkMTAtNTFiYS05NzZjLTVhOTMxYzg0Mzc4YSJ9.XKs7o1es4pSUIzgc9z7lZQAuZHVhif6Aq12zni8FPAw
+   targetImpDir: C:/ProgramData/Jenkins/.jenkins/workspace/Test/import/
+   username: darshana0406
+   password: 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
+   wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
+   targetRepoUrl: https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
+
 cct_ivr_conversational_appt_manager:
    botId: st-a9016b85-c2d5-5870-9e5a-25b47427485f
    exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTg4YzU0NDBkLTY1ODAtNTY2NC1hNDc4LTZjZTM1ZDI3OGViNyJ9.VNw4S2ZTH504U2eodWeXAGM3Ia6Wzj6g2GQMN3SznZ0
