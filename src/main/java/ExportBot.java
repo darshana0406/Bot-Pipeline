@@ -105,7 +105,7 @@ public class ExportBot {
 
                   // Unzip the files to local workspace
                   String zipFile = BotConstants.FULL_EXP_FILE;
-                  String fullExpdestDir = BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
+                  String fullExpdestDir = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
                   unzip(zipFile, fullExpdestDir);
                   System.out.println("Files unzipped to " + fullExpdestDir);
                   System.out.println("******** EXP_ALL Completed **********");
@@ -126,7 +126,7 @@ public class ExportBot {
 
                   // Unzip the files to local workspace
                   //String zipFile = BotConstants.FULL_EXP_FILE;
-                  String nlpdestDir = BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT;
+                  String nlpdestDir = env + "/" + BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT;
                   unzip(zipFile, nlpdestDir);
                   System.out.println("Files unzipped to " + nlpdestDir);
                   
@@ -147,7 +147,7 @@ public class ExportBot {
 
                   // Unzip the files to local workspace
                   //String zipFile = BotConstants.FULL_EXP_FILE;
-                  String expBotdestDir = BotConstants.EXP_BOT_TASKS + "/" + BotConstants.EXPORTBOT;
+                  String expBotdestDir = env + "/" + BotConstants.EXP_BOT_TASKS + "/" + BotConstants.EXPORTBOT;
                   unzip(zipFile, expBotdestDir);
                   System.out.println("Files unzipped to " + expBotdestDir);
                   System.out.println("******** EXP_BOT_TASKS Completed **********");
@@ -169,7 +169,7 @@ public class ExportBot {
 
                   // Unzip the files to local workspace
                   //String zipFile = BotConstants.FULL_EXP_FILE;
-                  String whtStgdestDir = BotConstants.EXP_WHT_SETTINGS + "/" +BotConstants.EXPORTBOT;
+                  String whtStgdestDir = env + "/" + BotConstants.EXP_WHT_SETTINGS + "/" +BotConstants.EXPORTBOT;
                   unzip(zipFile, whtStgdestDir);
                   System.out.println("Files unzipped to " + whtStgdestDir);
                   System.out.println("******** Starting EXP_WHT_SETTINGS **********");
@@ -382,7 +382,8 @@ public class ExportBot {
 			SimpleDateFormat dateFormat = new SimpleDateFormat(BotConstants.TS_FORMAT);
 			String workspace = (String)botConfigMap.get(BotConstants.WS_LOCATION);
 			String TIMESTAMPS = dateFormat.format(new Date());
-			String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
+			// String filePath = botName + "/" + env + "/" + exportType + "/ExportBot";
+			String filePath = botName + "/" + env;
 
 			FileUtils.deleteDirectory(new File(workspace + BotConstants.TMP_PATH));
 			FileUtils.forceMkdir(new File(workspace + BotConstants.TMP_PATH));
@@ -407,11 +408,17 @@ public class ExportBot {
 			//to add only updated folders in the tag
 			git.add().addFilepattern(".").setUpdate(true).call();
 
+			// FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
+			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
+
+			// FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
+			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
+
 			FileUtils.copyDirectory(new File(workspace + "/ExportBot"), new File(
-					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/ExportBot"));
+					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env));
 
 			FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
-					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
+					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
 			git.add().addFilepattern(".").call();
 
