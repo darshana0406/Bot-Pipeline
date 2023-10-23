@@ -99,7 +99,7 @@ public class ExportBot {
                   
                   //Download the source files using downloadUrl
                   URL downloadAllUrlObj = new URL(expAllDwnUrl);
-                  downloadFile(downloadAllUrlObj, BotConstants.FULL_EXP_FILE);
+                  downloadFile(downloadAllUrlObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
                   System.out.println("FullExp File Downloaded in current working directory");
                   Thread.sleep(1500);
 
@@ -120,7 +120,7 @@ public class ExportBot {
 
                   //Download the source files using downloadUrl
                   URL downloadUrlNlp = new URL(expNlpDwnUrl);
-                  downloadFile(downloadUrlNlp, BotConstants.FULL_EXP_FILE);
+                  downloadFile(downloadUrlNlp, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
                   System.out.println("NLP File Downloaded in current working directory");
                   Thread.sleep(1500);
 
@@ -141,7 +141,7 @@ public class ExportBot {
                   
                   //Download the source files using downloadUrl
                   URL botTskdownloadUrlObj = new URL(botTaskdownloadUrl);
-                  downloadFile(botTskdownloadUrlObj, BotConstants.FULL_EXP_FILE);
+                  downloadFile(botTskdownloadUrlObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
 
@@ -163,7 +163,7 @@ public class ExportBot {
 
                   //Download the source files using downloadUrl
                   URL whtStgdownloadObj= new URL(whtStgdownloadUrl);
-                  downloadFile(whtStgdownloadObj, BotConstants.FULL_EXP_FILE);
+                  downloadFile(whtStgdownloadObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
 
