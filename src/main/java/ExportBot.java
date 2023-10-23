@@ -414,7 +414,7 @@ public class ExportBot {
 			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env + "/" + exportType + "/fullexport.zip"));
 
 			FileUtils.copyDirectory(new File(workspace + env), new File(
-					workspace + BotConstants.TMP_PATH + "/" + botName + "/"));
+					workspace + BotConstants.TMP_PATH + "/" + botName + "/" + env ));
 
 			// FileUtils.copyFile(new File(workspace + "/fullexport.zip"), new File(
 			// 		workspace + BotConstants.TMP_PATH + "/" + botName + "/"  ));
