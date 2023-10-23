@@ -30,7 +30,7 @@ public class ImportBot {
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "Demobot1-dev_nce-Export_NLPData-20231020163158";
+		String tagName = "Demobot1-dev_nce-export-20231020163158";
 		String srcBotName = "";
 		String targetBotName = "";
 		if (args.length > 0) {
@@ -114,11 +114,24 @@ public class ImportBot {
 				botName = BotConstants.CONV_BILLING_MGR;
 			}
 
-			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + exportType + "/ExportBot/botDefinition.json",
-					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/config.json",
-					workspaceDir + "/" + botName + "/" + env + "/" + exportType + "/ExportBot/icon.png" };
-				
+			switch (importType) {
+				case (BotConstants.IMP_NLP):
+					exportType = BotConstants.EXP_NLP;
+					break;
+				case (BotConstants.IMP_BOT_TASKS):
+					exportType = BotConstants.EXP_BOT_TASKS;
+					break;
+				case (BotConstants.IMP_WHT_SETTINGS):
+					exportType = BotConstants.EXP_WHT_SETTINGS;
+					break;
+				default:
+					exportType = BotConstants.EXP_ALL;
+				}	
 
+			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/botDefinition.json",
+					workspaceDir + "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/config.json",
+					workspaceDir + "/" + botName + "/" + env + "/" + "export/" + exportType + "/ExportBot/icon.png" };
+				
 			
 			for (String filePath : fileNames) {
 				String postData = "--" + boundary + "\r\n"

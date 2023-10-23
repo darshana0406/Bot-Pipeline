@@ -437,7 +437,7 @@ public class ExportBot {
 
 			git.commit().setMessage("pushing bot configs").call();
 			System.out.println("Files are committed to target repo.");
-			String gitTag = botName.replaceAll("\\s","") + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
+			String gitTag = botName.replaceAll("\\s","") + "-" + env + "-" + "export" + "-" + TIMESTAMPS;
 			//String gitTag = botName + "-" + env + "-" + exportType + "-" + TIMESTAMPS;
 			git.tag().setName(gitTag).setMessage("tag " + gitTag).call();
 			git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(username, password))
