@@ -99,10 +99,14 @@ public class ExportBot {
                   
                   //Download the source files using downloadUrl
                   URL downloadAllUrlObj = new URL(expAllDwnUrl);
+				//   String dowloadpath =  env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT +  "/" + "FullExport/" + BotConstants.FULL_EXP_FILE;
                   downloadFile(downloadAllUrlObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("FullExp File Downloaded in current working directory");
                   Thread.sleep(1500);
-
+				
+				  FileUtils.copyFile(new File(BotConstants.FULL_EXP_FILE), new File(
+					env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT +  "/" + "FullExport/" + BotConstants.FULL_EXP_FILE ));
+				  
                   // Unzip the files to local workspace
                   String zipFile = BotConstants.FULL_EXP_FILE;
                   String fullExpdestDir = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
@@ -120,6 +124,7 @@ public class ExportBot {
 
                   //Download the source files using downloadUrl
                   URL downloadUrlNlp = new URL(expNlpDwnUrl);
+				  
                   downloadFile(downloadUrlNlp, BotConstants.FULL_EXP_FILE);
                   System.out.println("NLP File Downloaded in current working directory");
                   Thread.sleep(1500);
