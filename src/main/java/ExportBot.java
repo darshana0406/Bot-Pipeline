@@ -105,7 +105,7 @@ public class ExportBot {
                   Thread.sleep(1500);
 				
 				  FileUtils.copyFile(new File(BotConstants.FULL_EXP_FILE), new File(
-					env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT +  "/" + "FullExport/" + BotConstants.FULL_EXP_FILE ));
+					env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT +  "/"  + BotConstants.FULL_EXP_FILE ));
 				  
                   // Unzip the files to local workspace
                   String zipFile = BotConstants.FULL_EXP_FILE;
@@ -129,6 +129,9 @@ public class ExportBot {
                   System.out.println("NLP File Downloaded in current working directory");
                   Thread.sleep(1500);
 
+				FileUtils.copyFile(new File(BotConstants.FULL_EXP_FILE), new File(
+					env + "/" + BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT +  "/"  + BotConstants.FULL_EXP_FILE ));
+
                   // Unzip the files to local workspace
                   String nlpdestDir = env + "/" + BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT;
                   unzip(zipFile, nlpdestDir);
@@ -148,6 +151,9 @@ public class ExportBot {
                   downloadFile(botTskdownloadUrlObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
+
+					FileUtils.copyFile(new File(BotConstants.FULL_EXP_FILE), new File(
+					env + "/" + BotConstants.EXP_BOT_TASKS + "/" + BotConstants.EXPORTBOT +  "/"  + BotConstants.FULL_EXP_FILE ));
 
                   // Unzip the files to local workspace
                   //String zipFile = BotConstants.FULL_EXP_FILE;
@@ -170,6 +176,9 @@ public class ExportBot {
                   downloadFile(whtStgdownloadObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
+
+				  FileUtils.copyFile(new File(BotConstants.FULL_EXP_FILE), new File(
+					env + "/" + BotConstants.EXP_WHT_SETTINGS + "/" + BotConstants.EXPORTBOT +  "/"  + BotConstants.FULL_EXP_FILE ));
 
                   // Unzip the files to local workspace
                   //String zipFile = BotConstants.FULL_EXP_FILE;
