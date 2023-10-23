@@ -104,7 +104,7 @@ public class ExportBot {
                   Thread.sleep(1500);
 
                   // Unzip the files to local workspace
-                  String zipFile = BotConstants.FULL_EXP_FILE;
+                  String zipFile = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE;
                   String fullExpdestDir = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
                   unzip(zipFile, fullExpdestDir);
                   System.out.println("Files unzipped to " + fullExpdestDir);
