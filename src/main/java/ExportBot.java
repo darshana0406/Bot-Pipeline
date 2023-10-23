@@ -99,12 +99,12 @@ public class ExportBot {
                   
                   //Download the source files using downloadUrl
                   URL downloadAllUrlObj = new URL(expAllDwnUrl);
-                  downloadFile(downloadAllUrlObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
+                  downloadFile(downloadAllUrlObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("FullExp File Downloaded in current working directory");
                   Thread.sleep(1500);
 
                   // Unzip the files to local workspace
-                  String zipFile = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE;
+                  String zipFile = BotConstants.FULL_EXP_FILE;
                   String fullExpdestDir = env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
                   unzip(zipFile, fullExpdestDir);
                   System.out.println("Files unzipped to " + fullExpdestDir);
@@ -120,12 +120,11 @@ public class ExportBot {
 
                   //Download the source files using downloadUrl
                   URL downloadUrlNlp = new URL(expNlpDwnUrl);
-                  downloadFile(downloadUrlNlp, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
+                  downloadFile(downloadUrlNlp, BotConstants.FULL_EXP_FILE);
                   System.out.println("NLP File Downloaded in current working directory");
                   Thread.sleep(1500);
 
                   // Unzip the files to local workspace
-                  //String zipFile = BotConstants.FULL_EXP_FILE;
                   String nlpdestDir = env + "/" + BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT;
                   unzip(zipFile, nlpdestDir);
                   System.out.println("Files unzipped to " + nlpdestDir);
@@ -141,7 +140,7 @@ public class ExportBot {
                   
                   //Download the source files using downloadUrl
                   URL botTskdownloadUrlObj = new URL(botTaskdownloadUrl);
-                  downloadFile(botTskdownloadUrlObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
+                  downloadFile(botTskdownloadUrlObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
 
@@ -163,7 +162,7 @@ public class ExportBot {
 
                   //Download the source files using downloadUrl
                   URL whtStgdownloadObj= new URL(whtStgdownloadUrl);
-                  downloadFile(whtStgdownloadObj, env + "/" + BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT + "/" + BotConstants.FULL_EXP_FILE);
+                  downloadFile(whtStgdownloadObj, BotConstants.FULL_EXP_FILE);
                   System.out.println("File Downloaded in current working directory");
                   Thread.sleep(1500);
 
