@@ -22,7 +22,7 @@ public class ImportBot {
 	public static String botDefinitionId;
 	public static String configInfoId;
 	
-	static String importType = "ImportBotTasks";
+	static String importType = "ImportNLP";
 	static String env = BotConstants.ENV_DEV;
 	static String exportType = BotConstants.EXP_ALL;
 	// static String newBot = BotConstants.NEWBOT;
@@ -30,7 +30,7 @@ public class ImportBot {
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "Demobot1-dev_nce-Export_BotTasks-20231020162552";
+		String tagName = "Demobot1-dev_nce-Export_NLPData-20231020163158";
 		String srcBotName = "";
 		String targetBotName = "";
 		if (args.length > 0) {
@@ -110,7 +110,7 @@ public class ImportBot {
 		String workspaceDir = (String)botConfigMap.get(BotConstants.IMPORT_DIR);
 		String icon = BotConstants.EMPTY_STRING;
 		try {
-			if("TestBot1".equals (botName)) {
+			if("Demobot1".equals (botName)) {
 				botName = BotConstants.CONV_BILLING_MGR;
 			}
 

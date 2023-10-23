@@ -1,0 +1,4719 @@
+{
+    "_id": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+    "refId": "71d2f2c8-d290-55ef-bb45-331a9f48a2b9",
+    "notifyUserViaEmail": true,
+    "purpose": "customer",
+    "hasUserEndpoint": false,
+    "offKoraConfirmation": false,
+    "skipMakeEditLinks": false,
+    "type": "default",
+    "variables": [],
+    "showInMp": false,
+    "defaultLanguage": "en",
+    "supportedLanguages": [
+        "en"
+    ],
+    "languagePreferences": {
+        "type": "perVolley"
+    },
+    "ivrSettings": null,
+    "twilioVoiceSettings": null,
+    "strict_pii": false,
+    "languageConfigurations": {
+        "en": {
+            "enabled": true
+        }
+    },
+    "channels": [],
+    "audioCodesSettings": null,
+    "korevgSettings": null,
+    "vNameSpace": [],
+    "krVNameSpace": [
+        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+    ],
+    "evVNameSpace": [
+        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+    ],
+    "color": "#009dab",
+    "enableInputTranslation": false,
+    "multiLingualConfigurations": {
+        "en": {
+            "nluLanguage": "en",
+            "inputTranslation": false,
+            "responseTranslation": false
+        }
+    },
+    "isSmartAssist": false,
+    "sBannerColor": "#009dab",
+    "bBannerColor": "#009dab",
+    "categoryIds": [
+        "451902a073c071463e2fe7f6"
+    ],
+    "class": [],
+    "featured": false,
+    "sendVcf": false,
+    "isNLEnabled": true,
+    "interruptsEnabled": true,
+    "externalNluAdapters": [],
+    "sessionInactiveTime": 900000,
+    "sessionClosureProcess": 1,
+    "skipSessionMessage": false,
+    "clearAllAuthTokens": false,
+    "runCustomScript": {
+        "enable": false,
+        "script": ""
+    },
+    "isDeflect": false,
+    "languagesToBeIgnored": [],
+    "localeData": {
+        "en": {
+            "name": "Demobot1",
+            "errorCodes": {
+                "pollError": []
+            },
+            "isSmalltalkMigrated": true,
+            "description": "Use this option when none of the predefined purposes match your bot’s purpose.",
+            "nlMeta": {
+                "mlUtterances": 116,
+                "patterns": 0,
+                "synonyms": 708
+            },
+            "keywords": [],
+            "synonyms": {
+                "create": [
+                    "new",
+                    "add",
+                    "assemble",
+                    "build",
+                    "compose",
+                    "construct",
+                    "contrive",
+                    "create",
+                    "design",
+                    "generate",
+                    "instantiate",
+                    "invent",
+                    "make",
+                    "manufacture",
+                    "produce",
+                    "synthesize",
+                    "synthetise",
+                    "synthetize",
+                    "write"
+                ],
+                "alter": [
+                    "adjust",
+                    "alter",
+                    "amend",
+                    "renovate",
+                    "revise",
+                    "modify",
+                    "revamp",
+                    "reshape",
+                    "reconstruct",
+                    "recast",
+                    "change",
+                    "update"
+                ],
+                "add": [
+                    "insert",
+                    "append",
+                    "attach",
+                    "add"
+                ],
+                "delete": [
+                    "abolish",
+                    "annihilate",
+                    "delete",
+                    "demolish",
+                    "destroy",
+                    "efface",
+                    "erase",
+                    "eliminate",
+                    "obliterate"
+                ],
+                "get": [
+                    "find",
+                    "garner",
+                    "gather",
+                    "get",
+                    "grab",
+                    "obtain",
+                    "retrieve",
+                    "show",
+                    "display",
+                    "give"
+                ],
+                "list": [
+                    "enumerate",
+                    "list",
+                    "name",
+                    "tell"
+                ],
+                "comment": [
+                    "comment",
+                    "annotate",
+                    "describe"
+                ],
+                "pick": [
+                    "choose",
+                    "decide",
+                    "handpick",
+                    "pick",
+                    "prefer",
+                    "recommend",
+                    "select",
+                    "suggest"
+                ],
+                "request": [
+                    "ask",
+                    "request"
+                ],
+                "post": [
+                    "post",
+                    "put",
+                    "place",
+                    "submit"
+                ],
+                "top": [
+                    "top",
+                    "valuable",
+                    "best",
+                    "foremost",
+                    "peak"
+                ],
+                "recent": [
+                    "recent",
+                    "new"
+                ],
+                "customer": [
+                    "customer",
+                    "client",
+                    "user"
+                ],
+                "info": [
+                    "detail",
+                    "specific",
+                    "information",
+                    "info"
+                ],
+                "rank": [
+                    "rating",
+                    "rate",
+                    "rank"
+                ],
+                "item": [
+                    "stock",
+                    "inventory",
+                    "item",
+                    "product"
+                ],
+                "~you": [
+                    "you",
+                    "u"
+                ],
+                "~your": [
+                    "Your"
+                ],
+                "~emohowzit": [
+                    "< how is it going >",
+                    "< whazzupp >",
+                    "< ca va >",
+                    "< what'up >",
+                    "< how are u doing >",
+                    "< how_are_you >",
+                    "< how have u been today >",
+                    "< watsup >",
+                    "< how is by you >",
+                    "< what is going on >",
+                    "< how have u been doing today >",
+                    "< how do u do >",
+                    "< is everything OK >",
+                    "< how are you today >",
+                    "< how is your day >",
+                    "< how_are_u >",
+                    "< how have u been doing >",
+                    "< how goes things >",
+                    "< how is life >",
+                    "< how_have_u_been_doing >",
+                    "< howzit >",
+                    "< how goes >",
+                    "< how are u today >",
+                    "< heya >",
+                    "< how_do_u_do >",
+                    "< what is the word >",
+                    "< how have u been >",
+                    "< what up >",
+                    "< what is happening >",
+                    "< whatcha upto >",
+                    "< how are you >",
+                    "< what is up >",
+                    "< how you feeling >",
+                    "< how are things >",
+                    "< comment est vous >",
+                    "< how_are_u_doing >",
+                    "< how are u doing today >",
+                    "< how are u >",
+                    "< is everything alright >",
+                    "< what is the latest word >",
+                    "< how is everything >",
+                    "< how have you been doing >",
+                    "< what is up today >",
+                    "< wassup >",
+                    "< what is new >",
+                    "< how you doing >",
+                    "< how do you do >",
+                    "< how goes it >",
+                    "< how is tricks >",
+                    "< how have you been >",
+                    "< how_have_u_been >",
+                    "< comment ca va >"
+                ],
+                "~emohello": [
+                    "< good to meet you >",
+                    "< greetings >",
+                    "< konban wa >",
+                    "< nice to see you >",
+                    "< hey there >",
+                    "< top of the morning to you >",
+                    "< nice to meet you >",
+                    "< hella >",
+                    "< Hi >",
+                    "< konbanwa >",
+                    "< mornin' >",
+                    "< hello there >",
+                    "< konnichi wa >",
+                    "< cheers >",
+                    "< salutations >",
+                    "< good morning >",
+                    "< top of the morning >",
+                    "< goodevening >",
+                    "< goodmorning >",
+                    "< aloha >",
+                    "< welcome >",
+                    "< hello >",
+                    "< ohayou >",
+                    "< konnichiwa >",
+                    "< hi there >",
+                    "< hello and welcome >",
+                    "< goodday >",
+                    "< hi_there >",
+                    "< good day >",
+                    "< hey you >",
+                    "< hallo >",
+                    "< goodafternoon >",
+                    "< howdy >",
+                    "< hey >",
+                    "< gidday >",
+                    "< hola >",
+                    "< hiya >",
+                    "< hi >",
+                    "< hi you all >",
+                    "< hey , there >",
+                    "< good evening >",
+                    "< good to see you again >",
+                    "< good afternoon >",
+                    "< hii >",
+                    ":wave:",
+                    ":pray:",
+                    ":right-facing_fist:",
+                    ":handshake:",
+                    ":left-facing_fist:"
+                ],
+                "~emohappy": [
+                    "< whoopie >",
+                    "< nice_one >",
+                    "< yowzit >",
+                    "< :D >",
+                    "< congrats >",
+                    "< boo-yah >",
+                    "< :} >",
+                    "< :] >",
+                    "< hooray >",
+                    "< in-fucking-credible >",
+                    "< yippy >",
+                    "< :) >",
+                    "< attaboy >",
+                    "< congratulations >",
+                    "< hip_hip_hooray >",
+                    "< congratudolences >",
+                    "< attagirl >",
+                    "< bravo >",
+                    "< yahoo >",
+                    "< good_for_you >",
+                    "< nice >",
+                    ":grinning:",
+                    ":grin:",
+                    ":joy:",
+                    ":smiley:",
+                    ":smile:",
+                    ":sweat_smile:",
+                    ":laughing:",
+                    ":satisfied:",
+                    ":wink:",
+                    ":blush:",
+                    ":yum:",
+                    ":heart_eyes:",
+                    ":kissing:",
+                    ":kissing_heart:",
+                    ":stuck_out_tongue:",
+                    ":stuck_out_tongue_winking_eye:",
+                    ":stuck_out_tongue_closed_eyes:",
+                    ":smile_cat:",
+                    ":joy_cat:",
+                    ":smiley_cat:",
+                    ":heart_eyes_cat:",
+                    ":i_love_you_hand_sign:",
+                    ":star-struck:",
+                    ":grinning_face_with_star_eyes:"
+                ],
+                "~positiveackwords": [
+                    "< awesome >",
+                    "< good >",
+                    "< fair_enough >",
+                    "~helpwords",
+                    "< cool >",
+                    "< great >",
+                    ":relieved:",
+                    ":ok_hand:",
+                    ":hugging_face:",
+                    ":woman-bowing:",
+                    ":man-bowing:",
+                    ":bow:",
+                    ":the_horns:"
+                ],
+                "~helpwords": [
+                    "< it_help >",
+                    "< a_help >"
+                ],
+                "~ibedone": [
+                    "< that_is_it >",
+                    "< I_am_done >",
+                    "< it_for_now >",
+                    "~done",
+                    "< that_is_all >"
+                ],
+                "~done": [
+                    "< Done >",
+                    ":+1:",
+                    ":thumbsup:"
+                ],
+                "~emogoodbye": [
+                    "< good_bye >",
+                    "< call_it_a_night >",
+                    "< I_have_to_run >",
+                    "< have_a_better_ >",
+                    "< take_care_of_yourself >",
+                    "< bai_bai >",
+                    "< it_was_nice_to_meet_you >",
+                    "< time_to_be >",
+                    "< have_to_leave >",
+                    "< see_you >",
+                    "< I_need_to_go >",
+                    "< ttyl >",
+                    "< gator >",
+                    "< have_to_stop >",
+                    "< have_a_good_weekend >",
+                    "< later_ >",
+                    "< goodbye >",
+                    "< I_have_to_leave_you >",
+                    "< have_a_great_evening >",
+                    "< good-by >",
+                    "< see_you_later_,_aligator >",
+                    "< Goodnight >",
+                    "< later >",
+                    "< got_to_go >",
+                    "< byebye >",
+                    "< I_am_late_for >",
+                    "< till_we_meet_again >",
+                    "< cya >",
+                    "< until_next_time >",
+                    "< l8r >",
+                    "< gn >",
+                    "< I_will_be_back >",
+                    "< goodnight >",
+                    "< till_next_time >",
+                    "< cu_through_with_you_for_now >",
+                    "< gnstdltbbb >",
+                    "< au_revoir >",
+                    "< bbfn >",
+                    "< bye_bye >",
+                    "< god_bless_you >",
+                    "< l8r_l8r >",
+                    "< toodeloo >",
+                    "< you_all_come_back_now >",
+                    "< farewell >",
+                    "< adieu >",
+                    "< have_a_great_weekend >",
+                    "< see_you_later >",
+                    "< un >",
+                    "< ttfn >",
+                    "< I_must_go >",
+                    "< see_you_soon >",
+                    "< have_a_great_day >",
+                    "< cyal8r >",
+                    "< nighty-night >",
+                    "< logoff >",
+                    "< through_for_now_see_you_later >",
+                    "< I_need_to_go_now >",
+                    "< bye >",
+                    "< toodles >",
+                    "< g_bye >",
+                    "< have_to_boogie >",
+                    "< sleep_tight >",
+                    "< be_seeing_you >",
+                    "< auf_wiedersehen >",
+                    "< talk_to_you_later >",
+                    "< do_not_let_the_bed_bugs_bite >",
+                    "< take_it_easy >",
+                    "< ciao >",
+                    "< it_was_good_meeting_you >",
+                    "< ta-ta-for-now >",
+                    "< sayonara >",
+                    "< I_am_leaving >",
+                    "< bfn >",
+                    "< I_want_to_go_now >",
+                    "< have_a_nice_day >",
+                    "< cheerio >",
+                    "< have_to_get_going >",
+                    "< have_a_nice_night >",
+                    "< see_you_tomorrow >",
+                    "< so_long >",
+                    "< good_night >",
+                    "< have_a_good_evening >",
+                    "< have_to_go >",
+                    "< till_another_time >",
+                    "< good-bye >",
+                    "< catch-you-later >",
+                    "< gtg >",
+                    "< another_time >",
+                    "< take_care >",
+                    "< have_to_quit >",
+                    "< it_was_good_to_meet_you >",
+                    "< it_was_nice_meeting_you >",
+                    "< have_a_good_one >",
+                    "< adios >",
+                    "< I_must_go_now >",
+                    "< tnt >",
+                    "< logout >",
+                    "< got_to_run >",
+                    "< ta_ta >",
+                    "< nite-nite >",
+                    "< toodle_pip >",
+                    "< time_to_go >"
+                ],
+                "~yes": [
+                    "< ay >",
+                    "< so will you >",
+                    "< nod >",
+                    "< my pleasure >",
+                    "< I guess so >",
+                    "< okey >",
+                    "< especially >",
+                    "< absolutely >",
+                    "< one hundred percent >",
+                    "< could not have said it better >",
+                    "< most certainly >",
+                    "< mostly >",
+                    "< exactly >",
+                    "< but of course >",
+                    "< go ahead >",
+                    "< whatever >",
+                    "< hell yeah >",
+                    "< continue >",
+                    "< I would say so >",
+                    "< uh-huh >",
+                    "< affirmative >",
+                    "< apparently >",
+                    "< sure thing >",
+                    "< will do >",
+                    "< right >",
+                    "< he is >",
+                    "< without a doubt >",
+                    "< yeah sure >",
+                    "< righto >",
+                    "< ack >",
+                    "< undoubtedly >",
+                    "< please do >",
+                    "< yip >",
+                    "< could be >",
+                    "< damn good >",
+                    "< very well indeed >",
+                    "< how true >",
+                    "< I can see that >",
+                    "< aye >",
+                    "< for sure >",
+                    "< highly likely >",
+                    "< that is correct >",
+                    "< naturally >",
+                    "< okay >",
+                    "< do it >",
+                    "< supposedly >",
+                    "< definitely >",
+                    "< that is alright >",
+                    "< you may be right >",
+                    "< they are >",
+                    "< yay >",
+                    "< yes please >",
+                    "< accepted >",
+                    "< I am certain >",
+                    "< yep >",
+                    "< I give consent >",
+                    "< you bet >",
+                    "< well perhaps you are right >",
+                    "< righty-ho >",
+                    "< nods >",
+                    "< let us try >",
+                    "< I totally agree >",
+                    "< only just >",
+                    "< we should try >",
+                    "< fully >",
+                    "< you could say that >",
+                    "< constantly >",
+                    "< unquestionably >",
+                    "< we do >",
+                    "< all right >",
+                    "< certainly >",
+                    "< no objections >",
+                    "< yeah definitely >",
+                    "< right , >",
+                    "< she does >",
+                    "< I consent >",
+                    "< da >",
+                    "< you are right >",
+                    "< extremely >",
+                    "< very well >",
+                    "< makes sense >",
+                    "< in this case >",
+                    "< indubitably >",
+                    "< fantastic >",
+                    "< that is good >",
+                    "< with pleasure >",
+                    "< right on >",
+                    "< yea >",
+                    "< thumbs up >",
+                    "< beyond a doubt >",
+                    "< I do >",
+                    "< it is highly likely >",
+                    "< two thumbs up >",
+                    "< wonderful >",
+                    "< yes >",
+                    "< you may >",
+                    "< I did >",
+                    "< correct >",
+                    "< make it so >",
+                    "< o.k. >",
+                    "< I am sure >",
+                    "< surely >",
+                    "< approved >",
+                    "< O.K. >",
+                    "< okey dokey >",
+                    "< no problem >",
+                    "< oh okay >",
+                    "< yuppers >",
+                    "< OK >",
+                    "< she is >",
+                    "< always >",
+                    "< damn straight >",
+                    "< I am pleased to >",
+                    "< true >",
+                    "< yeppers >",
+                    "< he does >",
+                    "< I think so >",
+                    "< we can try >",
+                    "< oh alright >",
+                    "< probably >",
+                    "< a'right >",
+                    "< I can believe that >",
+                    "< well maybe you are right >",
+                    "< it will be a pleasure to >",
+                    "< positively >",
+                    "< no doubt >",
+                    "< that is right >",
+                    "< be my guest >",
+                    "< I will drink to that >",
+                    "< fortune smiles on that >",
+                    "< it would be a pleasure >",
+                    "< by all means >",
+                    "< right brah >",
+                    "< delighted >",
+                    "< abso-fucking-lutely >",
+                    "< right-o >",
+                    "< they do >",
+                    "< precisely >",
+                    "< thats great yes >",
+                    "< I am listening >",
+                    "< evidently >",
+                    "< thats great , yes >",
+                    "< sounds wonderful >",
+                    "< oh sure >",
+                    "< you may have a point >",
+                    "< a'ight >",
+                    "< I agree >",
+                    "< alright >",
+                    "< 'kay >",
+                    "< it does >",
+                    "< ah yes >",
+                    "< we did >",
+                    "< I am >",
+                    "< si >",
+                    "< I can believe it >",
+                    "< I can try >",
+                    "< ok >",
+                    "< of course >",
+                    "< most assuredly >",
+                    "< agreed >",
+                    "< d'accord >",
+                    "< I understand >",
+                    "< generally >",
+                    "< shure >",
+                    "< yeah >",
+                    "< go ahead with >",
+                    "< sure >",
+                    "< it is >",
+                    "< yup >",
+                    "< yeh >",
+                    "< it will be my pleasure to >",
+                    "< bring it on >",
+                    "< yes really >",
+                    "< I give my consent >",
+                    "< I could not agree with you more >",
+                    "< touche >",
+                    "< perfect >",
+                    "< indeed >",
+                    "< fine >",
+                    "< confirmed >",
+                    "< yah >",
+                    "< i guess >",
+                    "< totally >",
+                    "< completely >",
+                    "< can not argue with that >",
+                    "< indefinitely >",
+                    "< accept >",
+                    "< I have no objection >",
+                    ":thumbsup:",
+                    ":+1:"
+                ],
+                "~no": [
+                    "< it is not >",
+                    "< naah >",
+                    "< it is unlikely >",
+                    "< you must be joking >",
+                    "< there is no reason to think so >",
+                    "< not really >",
+                    "< yeah yeah >",
+                    "< not to speak of >",
+                    "< disagree >",
+                    "< he does not >",
+                    "< naw >",
+                    "< not on your life >",
+                    "< I dont think so >",
+                    "< you can not be serious >",
+                    "< that is impossible >",
+                    "< she is not >",
+                    "< I am not sure I agree >",
+                    "< we do not >",
+                    "< none >",
+                    "< not many >",
+                    "< she does not >",
+                    "< not by any means >",
+                    "< you have got that wrong >",
+                    "< never mind >",
+                    "< I do not >",
+                    "< no I am fine >",
+                    "< nope >",
+                    "< I would not >",
+                    "< bollocks >",
+                    "< come off it >",
+                    "< I do not believe so >",
+                    "< seldom >",
+                    "< no way >",
+                    "< impossible >",
+                    "< you are winding me up >",
+                    "< none of them >",
+                    "< not likely >",
+                    "< noo >",
+                    "< do not be silly >",
+                    "< I think not >",
+                    "< naaah >",
+                    "< neah >",
+                    "< that is unbelievable >",
+                    "< fortune does not smile on that >",
+                    "< I am afraid not >",
+                    "< I am not sure that I >",
+                    "< on the contrary >",
+                    "< no . >",
+                    "< I just do not get it >",
+                    "< if you say so >",
+                    "< uhuh >",
+                    "< unlikely >",
+                    "< not especially >",
+                    "< do not be ridiculous >",
+                    "< unbelievable >",
+                    "< not very often >",
+                    "< I could not disagree more >",
+                    "< you are kidding >",
+                    "< neither of these >",
+                    "< not much >",
+                    "< iie >",
+                    "< me thinks not >",
+                    "< of course not >",
+                    "< not a chance >",
+                    "< doubtful >",
+                    "< not that I know of >",
+                    "< rubbish >",
+                    "< none of these >",
+                    "< not at the moment >",
+                    "< I do not want to >",
+                    "< by no means >",
+                    "< negative >",
+                    "< get out >",
+                    "< no chance >",
+                    "< but of course not >",
+                    "< no >",
+                    "< hardly >",
+                    "< not by a long shot >",
+                    "< false >",
+                    "< fat chance >",
+                    "< not exactly >",
+                    "< but no >",
+                    "< I disagree >",
+                    "< you are dead wrong >",
+                    "< it does not >",
+                    "< improbable >",
+                    "< not particularly >",
+                    "< nah >",
+                    "< no can do >",
+                    "< hell no >",
+                    "< you have got to be kidding >",
+                    "< no I am ok >",
+                    "< not a snowball 's chance in hell >",
+                    "< nuts to you >",
+                    "< did not >",
+                    "< I am afraid I do not agree >",
+                    "< you are joking >",
+                    "< no - >",
+                    "< I doubt it >",
+                    "< uh-uh >",
+                    "< do not be stupid >",
+                    "< not in a million years >",
+                    "< no I am good >",
+                    "< not at all >",
+                    "< they do not >",
+                    "< most certainly not >",
+                    "< I do not think so >",
+                    "< not to my knowledge >",
+                    "< you must be kidding >",
+                    "< I am afraid I disagree with you >",
+                    "< not any of them >",
+                    "< unfortunately not >",
+                    "< I refuse >",
+                    "< oh come on >",
+                    "< thinks not >",
+                    "< I will not >",
+                    "< no thank you >",
+                    "< inconceivable >",
+                    "< horse hockey >",
+                    "< uh-hu >",
+                    "< that is rubbish >",
+                    "< get real >",
+                    "< you are having me on >",
+                    "< I do not believe you >",
+                    "< you are not serious >",
+                    "< strange >",
+                    "< nay >",
+                    "< I do not believe it >",
+                    "< no thanks >",
+                    "< surely not >",
+                    "< not so much >",
+                    "< no , >",
+                    "< they are not >",
+                    "< I do not agree >",
+                    "< does not seem likely >",
+                    "< neither >",
+                    "< do not be absurd >",
+                    "< never >",
+                    "< it is not possible >",
+                    "< he is not >",
+                    "< does not seem possible >",
+                    "< not sure >",
+                    "< no ! >",
+                    "< not a prayer >",
+                    ":thumbsdown:",
+                    ":-1:",
+                    ":man-gesturing-no:",
+                    ":woman-gesturing-no:"
+                ]
+            },
+            "confidenceConfigs": [
+                {
+                    "mode": "ml",
+                    "maxThreshold": 80,
+                    "isActive": true,
+                    "minThreshold": 0.6,
+                    "exactMatchThreshold": 90
+                },
+                {
+                    "mode": "faq",
+                    "minThreshold": 60,
+                    "maxThreshold": 80,
+                    "isActive": true,
+                    "taskMatchTolerance": 5,
+                    "exactMatchThreshold": 95,
+                    "suggestionsCount": 3,
+                    "pathCoverage": 50,
+                    "longResponses": {
+                        "readMore": true
+                    },
+                    "useBotSynonyms": false,
+                    "enPatternLemma": "wordnet",
+                    "subType": "embeddingKG"
+                },
+                {
+                    "mode": "cs",
+                    "minThreshold": 60,
+                    "maxThreshold": 80,
+                    "isActive": true,
+                    "wordCoverage": 60,
+                    "labelMatch": false,
+                    "isFMThreshold": false
+                },
+                {
+                    "mode": "rr",
+                    "isActive": true,
+                    "threshold": 0,
+                    "minThreshold": 0,
+                    "maxThreshold": 0,
+                    "taskMatchTolerance": 2,
+                    "rrVersion": 1,
+                    "isPreferDefinitiveMatch": true,
+                    "intentRescoring": false
+                }
+            ],
+            "nlpVersion": {
+                "current": 3,
+                "original": 3
+            }
+        }
+    },
+    "interruptOptions": {
+        "interruptsEnabled": true,
+        "numTasksToHold": "1",
+        "type": {
+            "option": "developer",
+            "message": ""
+        },
+        "holdUxOptions": {
+            "option": "discardCurrTaskNoNotify",
+            "message": ""
+        },
+        "faqBehaviour": "respondAndResume",
+        "smallTalkBehaviour": "respondAndResume",
+        "showAmbiguous": true
+    },
+    "detectMultiIntent": false,
+    "assignAllChildBots": true,
+    "recentBotLimit": 5,
+    "isCsMatchEnabled": false,
+    "defaultDialogId": "53e14338-0441-5e8a-a885-d990b771e80a",
+    "botSentimentEvents": [],
+    "enableNegativePatterns": false,
+    "advancedNLSettings": [
+        {
+            "_id": "anls-223265dd-f338-560b-9a45-08d306c7c32c",
+            "isCustom": false,
+            "type": 1,
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "language": "en",
+            "nlpEngine": "ML",
+            "configurationKeyName": "network",
+            "configurationValue": "Few-shot Model (Kore.ai Hosted Embeddings)",
+            "requiresTraining": true,
+            "state": "published",
+            "refId": "9bd70d94-59cf-502a-bb52-3e97f5339237",
+            "lastModifiedOn": "2023-06-22T05:40:21.411Z",
+            "__v": 0
+        },
+        {
+            "_id": "anls-2981beda-86a2-546b-8445-1267e2224704",
+            "isCustom": false,
+            "type": 1,
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "language": "en",
+            "nlpEngine": "ML",
+            "configurationKeyName": "ml_suggestion_proximity",
+            "configurationValue": 5,
+            "requiresTraining": false,
+            "state": "published",
+            "refId": "83dae4e0-0e1e-5c4f-87ed-e674cce1487c",
+            "lastModifiedOn": "2023-06-22T05:40:21.422Z",
+            "__v": 0
+        },
+        {
+            "_id": "anls-3744644b-104b-5aea-96a9-8aa98f4c79a9",
+            "isCustom": false,
+            "type": 1,
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "language": "en",
+            "nlpEngine": "FM",
+            "configurationKeyName": "exactTaskNameMatch",
+            "configurationValue": false,
+            "requiresTraining": false,
+            "state": "published",
+            "refId": "0d625a0a-2673-5c5e-8208-18022bcfa846",
+            "lastModifiedOn": "2023-06-22T05:40:21.423Z",
+            "__v": 0
+        },
+        {
+            "_id": "anls-aa8fa4af-8008-437b-984c-2980a427488a",
+            "isCustom": true,
+            "configurationKeyName": "ML_RemovePunctuation",
+            "configurationValue": ".,?!؟",
+            "type": 1,
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "language": "en",
+            "nlpEngine": "ML",
+            "state": "published",
+            "requiresTraining": true,
+            "refId": "48fe5791-22bd-48a7-bf63-90c6b8873f00",
+            "lastModifiedOn": "2023-09-10T10:36:55.822Z"
+        }
+    ],
+    "translationEngines": [],
+    "preBuiltIntegrations": [],
+    "botEvents": {
+        "INTENT_UNIDENTIFIED": {
+            "enabled": true,
+            "action": "triggerDialog",
+            "task": "53e14338-0441-5e8a-a885-d990b771e80a",
+            "linkedBotStreamId": null,
+            "script": null,
+            "msg": [],
+            "manageFirstMessage": null,
+            "welcomeIvrOptions": null
+        },
+        "WELCOME_MESSAGE_EVENT": {
+            "enabled": true,
+            "action": "triggerDialog",
+            "task": "0864af19-4355-5c18-888d-fb91555e7fa2",
+            "linkedBotStreamId": null,
+            "script": null,
+            "msg": [],
+            "manageFirstMessage": {
+                "greetings": "respondToUserInput",
+                "faq": "respondToUserInput",
+                "task": "respondToUserInput"
+            },
+            "welcomeIvrOptions": null
+        },
+        "ON_CONNECT_EVENT": {
+            "enabled": true,
+            "action": "triggerDialog",
+            "task": "0864af19-4355-5c18-888d-fb91555e7fa2",
+            "linkedBotStreamId": null,
+            "script": null,
+            "msg": [],
+            "manageFirstMessage": null,
+            "welcomeIvrOptions": null
+        },
+        "TASK_FAILURE_EVENT": {
+            "enabled": true,
+            "action": "showMsg",
+            "task": null,
+            "script": ".",
+            "msg": [
+                {
+                    "__v": 0,
+                    "channel": "default",
+                    "createdBy": "Thu Jun 22 2023 05:40:21 GMT+0000 (Coordinated Universal Time)",
+                    "createdOn": "Thu Jun 22 2023 05:42:16 GMT+0000 (Coordinated Universal Time)",
+                    "lMod": "Thu Sep 28 2023 17:44:38 GMT+0000 (Coordinated Universal Time)",
+                    "lModBy": "Thu Jun 22 2023 05:40:21 GMT+0000 (Coordinated Universal Time)",
+                    "localeData": {
+                        "en": {
+                            "type": "basic",
+                            "text": "I%20am%20sorry%2C%20something%20went%20wrong%20and%20I%20had%20to%20discard%20your%20task.%20Please%20retry."
+                        }
+                    },
+                    "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+                    "vNameSpace": []
+                }
+            ],
+            "welcomeIvrOptions": []
+        }
+    },
+    "idpConfigurations": [],
+    "actions": [],
+    "alerts": [],
+    "patterns": [
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "de007bf3-baa4-565e-9e1c-da196e02cd17",
+            "taskName": "Test",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "a158f6f1-a2de-582b-8eb1-e0a50291007e",
+            "taskName": "Welcome_Task",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "800eaa36-99a2-5e39-a58a-ab3b64d8bc58",
+            "taskName": "Entity0003",
+            "taskType": "entity",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "55ebda15-0d92-5caf-b448-c817aaac3264",
+            "taskName": "Fallback_Task",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "a7639789-662b-5a5f-b0d5-7f28368a0acd",
+            "taskName": "Entity0001",
+            "taskType": "entity",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "e6e0cee6-724e-5a9b-9828-78ecfb18811a",
+            "taskName": "ViewMyBill",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "4e4fd6d8-fa61-52c6-9115-e26d703914e7",
+            "taskName": "Voice",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "5a7b9921-4d4a-5979-a3ba-a9abdbaa826b",
+            "taskName": "PayBill",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "144cbc64-7368-5cd2-bb24-4304384576e4",
+            "taskName": "InternetTroubleshooting",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "a4a01ccf-3e96-5ade-aae6-ba6cce00d7f7",
+            "taskName": "Entity0002",
+            "taskType": "entity",
+            "nodeType": "dialog"
+        },
+        {
+            "localeData": {
+                "en": {}
+            },
+            "refId": "2ef55c26-b445-55cf-aca9-530175eb1894",
+            "taskName": "1244455r44",
+            "taskType": "intent",
+            "nodeType": "dialog"
+        }
+    ],
+    "dialogComponents": [
+        {
+            "_id": "dc-09347f26-1b85-509a-9a50-6991590e9247",
+            "refId": "86dee4e5-c888-5178-a49f-8116fe4ed76b",
+            "name": "AgentTransfer0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "agentTransfer",
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "AgentTransfer0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "refId": "de007bf3-baa4-565e-9e1c-da196e02cd17",
+            "name": "Test",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+            "localeData": {
+                "en": {
+                    "desc": "Test Dialog",
+                    "intent": "Test"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
+            "refId": "a158f6f1-a2de-582b-8eb1-e0a50291007e",
+            "name": "Welcome_Task",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2",
+            "localeData": {
+                "en": {
+                    "intent": "Welcome Task",
+                    "desc": "Welcome Task"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-67d33da9-ea6a-5579-bea3-0326aafebf8e",
+            "refId": "800eaa36-99a2-5e39-a58a-ab3b64d8bc58",
+            "name": "Entity0003",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0003",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0003"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-6b635838-a11c-551f-a919-ced4ca696cc8",
+            "refId": "55ebda15-0d92-5caf-b448-c817aaac3264",
+            "name": "Fallback_Task",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
+            "localeData": {
+                "en": {
+                    "intent": "Fallback Task",
+                    "desc": "Fallback Task"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-7065819f-f716-5f5c-b15d-8420bb8d58d9",
+            "refId": "d691a714-0247-5be1-8189-a42d814c6d64",
+            "name": "AgemntMSG",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I%20am%20Agent",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "AgemntMSG"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-897dcc65-7237-5c33-9fb3-1134a3a7d67c",
+            "refId": "8016bff7-21d9-549a-ac94-8b5d836f5f67",
+            "name": "WelcomeMsg",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Hi, how can I help you?",
+                            "type": "basic"
+                        }
+                    }
+                },
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Hello, what can I do for you",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "WelcomeMsg"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-8f9209f8-2cde-58d7-8170-768c04350960",
+            "refId": "a7639789-662b-5a5f-b0d5-7f28368a0acd",
+            "name": "Entity0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0001",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+            "refId": "e6e0cee6-724e-5a9b-9828-78ecfb18811a",
+            "name": "ViewMyBill",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "ViewMyBill"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+            "refId": "4e4fd6d8-fa61-52c6-9115-e26d703914e7",
+            "name": "Voice",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "Voice"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "refId": "5a7b9921-4d4a-5979-a3ba-a9abdbaa826b",
+            "name": "PayBill",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "PayBill"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-b310ce0d-ab4f-5e6b-a53a-8b578e928008",
+            "refId": "56981f93-0da4-52b9-8113-646569f5288e",
+            "name": "Message0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample message for Message0001",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Message0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+            "refId": "69ef5da2-e696-5ffb-9a8f-63912562895d",
+            "name": "Service0001",
+            "piiDataEnabled": false,
+            "endPoint": {
+                "host": "122.170.77.44",
+                "port": "8003",
+                "path": "/job/Test/build?token=test.",
+                "protocol": "http",
+                "method": "post",
+                "connectorEnabled": false,
+                "piiDataEnabled": false
+            },
+            "authRequired": false,
+            "payload": {
+                "type": "raw",
+                "value": "%7B%7D"
+            },
+            "headers": {
+                "type": "raw",
+                "value": "{}"
+            },
+            "serviceType": "rest",
+            "idp": "none",
+            "serviceNodeType": "custom",
+            "type": "service",
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Service0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "timeOutError": {
+                "closeConversation": true
+            },
+            "serviceAPITimeout": 20,
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-c7484e87-0470-52f4-859b-dc768c4d0439",
+            "refId": "14466020-2c7f-53b6-b8f2-a200fbbcea47",
+            "name": "BotAction0001",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "botAction",
+            "nodes": [
+                {
+                    "type": "service",
+                    "nodeId": "nd-5196c00f-9acb-535a-974c-c7d55076c241",
+                    "componentId": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-fd3155da-63df-4327-b583-01208d707939",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 0,
+                        "top": 200
+                    },
+                    "level": "root"
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "label": "BotAction0001"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-d3eba954-0da6-5977-9eb9-a9ebadfd1564",
+            "refId": "144cbc64-7368-5cd2-bb24-4304384576e4",
+            "name": "InternetTroubleshooting",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "InternetTroubleshooting"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-e3230925-437f-5a7a-9002-8c8f31dbc3d3",
+            "refId": "a4a01ccf-3e96-5ade-aae6-ba6cce00d7f7",
+            "name": "Entity0002",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "entity",
+            "entityType": "label",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "Sample prompt message for Entity0002",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "errorMessage": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I'm sorry, I am unable to recognize the string. Please enter again.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "Entity0002"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "refId": "2ef55c26-b445-55cf-aca9-530175eb1894",
+            "name": "1244455r44",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "intent",
+            "applyDefaultTemplate": false,
+            "dialogId": "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+            "localeData": {
+                "en": {
+                    "desc": "",
+                    "intent": "1244455r44"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        },
+        {
+            "_id": "dc-fba7728c-f1b7-5faf-ade4-da7041c57957",
+            "refId": "b93c886a-d155-56fb-bad3-92cb1a18c4e5",
+            "name": "FallbackMsg",
+            "piiDataEnabled": false,
+            "serviceNodeType": "custom",
+            "type": "message",
+            "message": [
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I could not understand that. Can you rephrase?",
+                            "type": "basic"
+                        }
+                    }
+                },
+                {
+                    "channel": "default",
+                    "localeData": {
+                        "en": {
+                            "text": "I am unable to find an answer. Please try something else.",
+                            "type": "basic"
+                        }
+                    }
+                }
+            ],
+            "applyDefaultTemplate": false,
+            "localeData": {
+                "en": {
+                    "label": "FallbackMsg"
+                }
+            },
+            "entityFields": {
+                "cityAdvanced": []
+            },
+            "spellcorrectThreshold": 0,
+            "preConditions": [],
+            "vNameSpace": [],
+            "useTaskLevelNs": true,
+            "isSensitive": false
+        }
+    ],
+    "dialogs": [
+        {
+            "_id": "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+            "refId": "83f04e93-fbc8-511e-8056-c74dce398c09",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+                    "transitions": [
+                        {
+                            "default": "nd-msg-9251a036-e4be-4bc0-9517-96eded219091",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-msg-9251a036-e4be-4bc0-9517-96eded219091",
+                    "type": "message",
+                    "componentId": "dc-7065819f-f716-5f5c-b15d-8420bb8d58d9",
+                    "transitions": [
+                        {
+                            "default": "nd-agt-27cc3327-1f80-40b7-96f6-7d40fd67a3f1",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-7fc7778c-5cac-40de-88a2-7bebee3697a4",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-agt-27cc3327-1f80-40b7-96f6-7d40fd67a3f1",
+                    "type": "agentTransfer",
+                    "componentId": "dc-09347f26-1b85-509a-9a50-6991590e9247",
+                    "transitions": [
+                        {
+                            "default": "end",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-92527dca-8395-4d97-8495-02e4e91c13d5",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 380
+                    }
+                }
+            ],
+            "lname": "1244455r44",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "1244455r44",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "followupTaskOptions": {
+                "isFollowUp": false,
+                "message": ""
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "onTaskFailure": {
+                "msg": [],
+                "enabled": false
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "a1981541-a080-5601-9a49-aefd9d41ef3b",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
+            "refId": "53e14338-0441-5e8a-a885-d990b771e80a",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-6b635838-a11c-551f-a919-ced4ca696cc8",
+                    "transitions": [
+                        {
+                            "default": "FallbackMsg",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "top": 170,
+                        "left": 30
+                    },
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "transitions": [
+                        {
+                            "metadata": {
+                                "connId": "dummy3",
+                                "color": "#299d8e"
+                            },
+                            "default": ""
+                        }
+                    ],
+                    "componentId": "dc-fba7728c-f1b7-5faf-ade4-da7041c57957",
+                    "type": "message",
+                    "nodeId": "FallbackMsg",
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "fallback task",
+            "isHidden": true,
+            "localeData": {
+                "en": {
+                    "name": "Fallback Task",
+                    "shortDesc": "Fallback Task"
+                }
+            },
+            "groups": [],
+            "isFollowUp": true,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "4107d373-cc18-55ff-86d3-c6b56b079ede",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+            "refId": "4442ec9b-23bc-5136-8c46-a9debc947431",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-d3eba954-0da6-5977-9eb9-a9ebadfd1564",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-eb4c69bf-1724-41be-b108-a7e134486b17",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-eb4c69bf-1724-41be-b108-a7e134486b17",
+                    "type": "entity",
+                    "componentId": "dc-e3230925-437f-5a7a-9002-8c8f31dbc3d3",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-a2c8477c-c527-48b2-bd70-3e9389da5ecf",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-6d753985-a47c-40a0-9c71-9afdf838ddac",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-a2c8477c-c527-48b2-bd70-3e9389da5ecf",
+                    "type": "entity",
+                    "componentId": "dc-67d33da9-ea6a-5579-bea3-0326aafebf8e",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-467f8769-c26c-4c12-8f65-4603ee95b126",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 380
+                    }
+                }
+            ],
+            "lname": "internettroubleshooting",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "InternetTroubleshooting",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "93b8e0e5-2dfd-5ba1-8700-ff46144cec2f",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+            "refId": "3e83710e-f873-5944-89d9-e523eae07e53",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                }
+            ],
+            "lname": "paybill",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "PayBill",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "4e429496-0f51-52ef-87a9-170fefb229d8",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+            "refId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+                    "transitions": [
+                        {
+                            "default": "nd-bac-dab1fdd1-76ea-4d28-a046-f78383057aee",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 519.1666870117188,
+                        "top": 95.00000762939453
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-bac-dab1fdd1-76ea-4d28-a046-f78383057aee",
+                    "type": "botAction",
+                    "componentId": "dc-c7484e87-0470-52f4-859b-dc768c4d0439",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-55cae517-9d49-4428-be40-35629f15eefd",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 518.3333129882812,
+                        "top": 239.33334350585938
+                    },
+                    "nodes": [
+                        {
+                            "type": "service",
+                            "componentId": "dc-c6065eb1-577d-5519-81f0-0f94a65a342f",
+                            "level": "root",
+                            "nodeId": "nd-5196c00f-9acb-535a-974c-c7d55076c241"
+                        }
+                    ]
+                }
+            ],
+            "lname": "test",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "Test",
+                    "shortDesc": "Test Dialog"
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "4aceed66-dc6f-5a4e-8d9f-b939f48dcf2c",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
+            "refId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+                    "transitions": [
+                        {
+                            "default": "nd-msg-3bb26bde-d121-4d6a-bad5-de33d6aa6b90",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-msg-3bb26bde-d121-4d6a-bad5-de33d6aa6b90",
+                    "type": "message",
+                    "componentId": "dc-b310ce0d-ab4f-5e6b-a53a-8b578e928008",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-feaabbda-d4a7-4f02-9616-a5f69bca2557",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "viewmybill",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "ViewMyBill",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "bcdf814b-7260-5676-9f64-598faa02087b",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+            "refId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+                    "transitions": [
+                        {
+                            "default": "nd-ent-c8b210e7-3b1e-412b-8173-33aecfdb126e",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "left": 30,
+                        "top": 120
+                    },
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "interruptsEnabled": true,
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "precedence": "entityOverIntent",
+                        "eventOptions": {
+                            "defaultMaxRetry": {
+                                "retry_limit": 5,
+                                "action": "endOfDialog"
+                            }
+                        },
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "nd-ent-c8b210e7-3b1e-412b-8173-33aecfdb126e",
+                    "type": "entity",
+                    "componentId": "dc-8f9209f8-2cde-58d7-8170-768c04350960",
+                    "transitions": [
+                        {
+                            "default": "",
+                            "metadata": {
+                                "color": "#676767",
+                                "connId": "dummy-22cb43f2-27b6-4046-b828-3c871d6dc889",
+                                "pathName": "",
+                                "pathsMap": []
+                            }
+                        }
+                    ],
+                    "positionMeta": {
+                        "left": 835,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "voice",
+            "isHidden": false,
+            "localeData": {
+                "en": {
+                    "name": "Voice",
+                    "shortDesc": ""
+                }
+            },
+            "groups": [],
+            "isFollowUp": false,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "660053b5-60ec-5e23-ac33-bac0484e204d",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        },
+        {
+            "_id": "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2",
+            "refId": "0864af19-4355-5c18-888d-fb91555e7fa2",
+            "nodes": [
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "nodeId": "intent0",
+                    "type": "intent",
+                    "componentId": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
+                    "transitions": [
+                        {
+                            "default": "message3",
+                            "metadata": {
+                                "color": "#299d8e",
+                                "connId": "dummy0"
+                            }
+                        }
+                    ],
+                    "metadata": {
+                        "top": 170,
+                        "left": 30
+                    },
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 100
+                    }
+                },
+                {
+                    "nodeOptions": {
+                        "customTags": {
+                            "session": [],
+                            "message": [],
+                            "user": []
+                        },
+                        "transitionType": "auto",
+                        "isRetriesExceeded": false,
+                        "promptOptions": "required",
+                        "reuseMarkedupPhrases": false,
+                        "interruptOptions": {
+                            "priority": "task"
+                        },
+                        "transitionMode": "initiateCurrentTask",
+                        "inputHandlingOptions": "useAsEntityValue",
+                        "reuseOptions": "1",
+                        "userInputCorrection": true,
+                        "noAutoCorrection": false,
+                        "notForReuse": false,
+                        "contextTags": [],
+                        "message": [],
+                        "errorMessage": []
+                    },
+                    "vNameSpace": [],
+                    "preConditions": [],
+                    "useTaskLevelNs": true,
+                    "transitions": [
+                        {
+                            "metadata": {
+                                "connId": "dummy3",
+                                "color": "#299d8e"
+                            },
+                            "default": ""
+                        }
+                    ],
+                    "componentId": "dc-897dcc65-7237-5c33-9fb3-1134a3a7d67c",
+                    "type": "message",
+                    "nodeId": "message3",
+                    "positionMeta": {
+                        "left": 750,
+                        "top": 240
+                    }
+                }
+            ],
+            "lname": "welcome task",
+            "isHidden": true,
+            "localeData": {
+                "en": {
+                    "name": "Welcome Task",
+                    "shortDesc": "Welcome Task"
+                }
+            },
+            "groups": [],
+            "isFollowUp": true,
+            "isAbandonment": false,
+            "interruptOptions": {
+                "priority": "bot"
+            },
+            "contextLifeTime": {
+                "options": "close"
+            },
+            "amendConfig": {
+                "priority": "bot"
+            },
+            "sceneRefId": "803919e1-af8d-5247-bdb5-308d37f0686d",
+            "vNameSpace": [
+                "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+            ]
+        }
+    ],
+    "scenes": [
+        {
+            "_id": "sn-4e9da6c4-b8d3-5134-b42b-6aa77a318621",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6956724a5471796245552defbfbd1a"
+                }
+            ],
+            "components": {
+                "snc-dc4871ae-bf1c-5828-abbf-ba9a2248faed": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-dc4871ae-bf1c-5828-abbf-ba9a2248faed": {
+                    "dialogRefId": "83f04e93-fbc8-511e-8056-c74dce398c09"
+                }
+            },
+            "dialogRefId": "83f04e93-fbc8-511e-8056-c74dce398c09",
+            "messageLinks": {},
+            "name": "1244455r44",
+            "refId": "a1981541-a080-5601-9a49-aefd9d41ef3b",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-ea9fb611-219e-534c-89f8-5b1f73845b99",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "454678516f586b6a4f3870efbfbd0cefbfbd"
+                }
+            ],
+            "components": {
+                "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "Fallback Task",
+            "dialogLinks": {
+                "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740": {
+                    "dialogRefId": "53e14338-0441-5e8a-a885-d990b771e80a"
+                }
+            },
+            "dialogRefId": "53e14338-0441-5e8a-a885-d990b771e80a",
+            "messageLinks": {},
+            "name": "Fallback Task",
+            "refId": "4107d373-cc18-55ff-86d3-c6b56b079ede",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "inProgress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-15768eec-226d-5fd4-afc8-cca6a45a87b5",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6c6d513665766376596b3c1cefbfbd"
+                }
+            ],
+            "components": {
+                "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9": {
+                    "dialogRefId": "4442ec9b-23bc-5136-8c46-a9debc947431"
+                }
+            },
+            "dialogRefId": "4442ec9b-23bc-5136-8c46-a9debc947431",
+            "messageLinks": {},
+            "name": "InternetTroubleshooting",
+            "refId": "93b8e0e5-2dfd-5ba1-8700-ff46144cec2f",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-397a122a-d94c-57cc-b022-c28359118e84",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "4e5277554f5141344fefbfbd6fefbfbd"
+                }
+            ],
+            "components": {
+                "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9": {
+                    "dialogRefId": "3e83710e-f873-5944-89d9-e523eae07e53"
+                }
+            },
+            "dialogRefId": "3e83710e-f873-5944-89d9-e523eae07e53",
+            "messageLinks": {},
+            "name": "PayBill",
+            "refId": "4e429496-0f51-52ef-87a9-170fefb229d8",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-39ee83fd-c026-57a1-b7f7-2e902d0369fe",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "47416b6c43374e7350efbfbd6752"
+                }
+            ],
+            "components": {
+                "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "Test Dialog",
+            "dialogLinks": {
+                "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362": {
+                    "dialogRefId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647"
+                }
+            },
+            "dialogRefId": "7078f7ab-3ce1-5abb-8a88-42c85df0b647",
+            "messageLinks": {},
+            "name": "Test",
+            "refId": "4aceed66-dc6f-5a4e-8d9f-b939f48dcf2c",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-6c4f7767-8fd7-5c16-84b8-ad33447608b0",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "636979623776706946efbfbd60efbfbd"
+                }
+            ],
+            "components": {
+                "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9": {
+                    "dialogRefId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3"
+                }
+            },
+            "dialogRefId": "8124fc68-4f7d-58fa-94c5-29c5ec34fbf3",
+            "messageLinks": {},
+            "name": "ViewMyBill",
+            "refId": "bcdf814b-7260-5676-9f64-598faa02087b",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-cab96118-05fe-5fcb-8e91-ad993b36e275",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6d38644c66756150614defbfbdefbfbd3d"
+                }
+            ],
+            "components": {
+                "snc-345ea5ea-d40b-5261-adea-00d24cefb94d": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "",
+            "dialogLinks": {
+                "snc-345ea5ea-d40b-5261-adea-00d24cefb94d": {
+                    "dialogRefId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5"
+                }
+            },
+            "dialogRefId": "aa8d6328-c9a9-598b-8a66-807c3a6015d5",
+            "messageLinks": {},
+            "name": "Voice",
+            "refId": "660053b5-60ec-5e23-ac33-bac0484e204d",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "In Progress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        },
+        {
+            "_id": "sn-f7eaee24-83c6-5dd5-88b3-c8f6a9bb6652",
+            "botstoreInfo": [
+                {
+                    "type": "interactive",
+                    "isSecured": false,
+                    "link": "6e5630714455443945514842102b"
+                }
+            ],
+            "components": {
+                "snc-6a615c73-93d4-52db-b914-628f9fb77eb1": {
+                    "childs": [],
+                    "parentId": null,
+                    "seqId": "Id1"
+                }
+            },
+            "currentSeqId": 1,
+            "description": "Welcome Task",
+            "dialogLinks": {
+                "snc-6a615c73-93d4-52db-b914-628f9fb77eb1": {
+                    "dialogRefId": "0864af19-4355-5c18-888d-fb91555e7fa2"
+                }
+            },
+            "dialogRefId": "0864af19-4355-5c18-888d-fb91555e7fa2",
+            "messageLinks": {},
+            "name": "Welcome Task",
+            "refId": "803919e1-af8d-5247-bdb5-308d37f0686d",
+            "sceneLinkedBy": [],
+            "sceneLinks": {},
+            "sceneType": "dialogScene",
+            "status": "inProgress",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "tags": [],
+            "widgetThemeId": "wth-5e3e0d371dbd0c312e39726d",
+            "resourceid": "scenes"
+        }
+    ],
+    "sceneComponents": [
+        {
+            "_id": "snc-345ea5ea-d40b-5261-adea-00d24cefb94d",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "5d7d8845-0913-505a-9e9e-5eeb6c5ec35b",
+            "comments": [],
+            "sceneId": "sn-cab96118-05fe-5fcb-8e91-ad993b36e275",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-ad559000-132b-55e8-b47c-ae83c2fe07e9",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "806b3eb9-8bb5-58dc-837b-07afa8e38d54",
+            "comments": [],
+            "sceneId": "sn-15768eec-226d-5fd4-afc8-cca6a45a87b5",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-f6ceeebc-ce1c-544e-92f6-85fa78cdd2e9",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "51d76e02-f7c8-5c92-978b-8e6caa4aac0d",
+            "comments": [],
+            "sceneId": "sn-6c4f7767-8fd7-5c16-84b8-ad33447608b0",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-3020f005-0e4a-51aa-bed0-9d4c500b1362",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "f9d1c003-b832-5d7e-8b12-1cec0e13e1e4",
+            "comments": [],
+            "sceneId": "sn-39ee83fd-c026-57a1-b7f7-2e902d0369fe",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-0c0d3707-d7de-521e-ae5b-7210184f82a9",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "1d36f877-1b44-5486-961a-8f7618d20f4d",
+            "comments": [],
+            "sceneId": "sn-397a122a-d94c-57cc-b022-c28359118e84",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-1f9d1081-27df-573c-8bd1-0ca6f5549740",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "f753128f-d625-5668-8f7d-07c522686bdf",
+            "comments": [],
+            "sceneId": "sn-ea9fb611-219e-534c-89f8-5b1f73845b99",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-6a615c73-93d4-52db-b914-628f9fb77eb1",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "b3069907-c543-5582-805c-ea37733699fe",
+            "comments": [],
+            "sceneId": "sn-f7eaee24-83c6-5dd5-88b3-c8f6a9bb6652",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        },
+        {
+            "_id": "snc-dc4871ae-bf1c-5828-abbf-ba9a2248faed",
+            "state": 0,
+            "msg": {
+                "type": "text",
+                "payload": {
+                    "text": "Dialog Conversation Started"
+                }
+            },
+            "type": "note",
+            "refId": "9b65a832-df59-5698-b8a3-fc35f15fa4a0",
+            "comments": [],
+            "sceneId": "sn-4e9da6c4-b8d3-5134-b42b-6aa77a318621",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132"
+        }
+    ],
+    "widgetThemes": [
+        {
+            "_id": "wth-5e3e0d371dbd0c312e39726d",
+            "theme": "Default light theme",
+            "widgetBgColor": "#FFFFFF",
+            "widgetTextColor": "#26344A",
+            "widgetBorderColor": "#EEEEEE",
+            "widgetDividerColor": "#e5e8ec",
+            "userchatBgColor": "#EFF4FF",
+            "userchatTextColor": "#26344A",
+            "botchatBgColor": "#F4F4F4",
+            "botchatTextColor": "#26344A",
+            "buttonActiveBgColor": "#FFFFFF",
+            "buttonActiveTextColor": "#26344A",
+            "buttonInactiveBgColor": "#FFFFFF",
+            "buttonInactiveTextColor": "#26344A",
+            "isdefaultWidget": true
+        }
+    ],
+    "knowledgeTasks": [],
+    "smallTalk": [
+        {
+            "language": "en",
+            "groups": [
+                {
+                    "groupName": "greetings",
+                    "groupId": "smg-181d27a3-4849-5f8f-ac2b-3af1492b6589",
+                    "vNameSpace": [
+                        "045b9bbe-b347-5ba8-98e4-1345111adf3a"
+                    ],
+                    "nodes": [
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~positiveackwords"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could help. ",
+                                    "type": "basic",
+                                    "_id": "mt-8fea62a2-4ad1-5ca8-9161-ce0997bbe93d"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of assistance. ",
+                                    "type": "basic",
+                                    "_id": "mt-0e459823-10f6-54fc-a811-35c1b5a35a2f"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could be of some help.",
+                                    "type": "basic",
+                                    "_id": "mt-bce1228c-9ae8-5143-b118-eb0f948283da"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Always great to be able to help. ",
+                                    "type": "basic",
+                                    "_id": "mt-edbff5ac-3973-54db-8ed1-86a28faeef24"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "ce63f443-82e2-50e3-b3d3-da173b363cf4",
+                            "seq": 4,
+                            "nodeId": "smn-103c5f45-c669-525a-a5f7-8b8ec4bcda8c"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohowzit"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "I'm good. Thank you.",
+                                    "type": "basic",
+                                    "_id": "mt-b4814c7b-163e-58c5-8605-3e52892a7c0d"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "784be822-a951-539f-934b-b94f5e1833be",
+                            "seq": 1,
+                            "nodeId": "smn-22c2be40-5104-5d5d-be86-6fc33de7cfb6"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "!y ~yes"
+                                },
+                                {
+                                    "text": "get_it"
+                                },
+                                {
+                                    "text": "i_understand"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Right, then.",
+                                    "type": "basic",
+                                    "_id": "mt-d7f48545-4fcb-57ea-8874-ab29d4f43df0"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK, great! ",
+                                    "type": "basic",
+                                    "_id": "mt-ddbb4301-0809-5934-819c-fbc1594fc3f0"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Alright. ",
+                                    "type": "basic",
+                                    "_id": "mt-1b288782-7909-5500-b124-beced7d92304"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "367c4f6d-337e-53b2-b333-282a4711401f",
+                            "seq": 9,
+                            "nodeId": "smn-2b074735-ff6b-51fc-b17f-14fa8a12bc69"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emogoodbye"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Have a good one!",
+                                    "type": "basic",
+                                    "_id": "mt-ffce310a-30a1-5f64-ab65-ec2f26a27d33"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK, bye for now! ",
+                                    "type": "basic",
+                                    "_id": "mt-c3bd93b6-e183-5c01-8855-2f1b66cdb489"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "e2226397-0bfb-534e-8c56-4b9715142b58",
+                            "seq": 7,
+                            "nodeId": "smn-32b0dae3-1319-552a-a13c-55631851b8af"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~ibedone"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Alright. ",
+                                    "type": "basic",
+                                    "_id": "mt-6e8ced6d-a745-56de-9f0f-aaaa9e179e6d"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Right, then.",
+                                    "type": "basic",
+                                    "_id": "mt-90d97a94-f970-531f-8801-8261955adf89"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "317b010f-e523-5752-8d5b-0c769f322212",
+                            "seq": 6,
+                            "nodeId": "smn-5859dcef-36d4-5a27-a069-beb1b956faba"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "thanks"
+                                },
+                                {
+                                    "text": "thank ~you"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "You're welcome.",
+                                    "type": "basic",
+                                    "_id": "mt-2b6ee2de-3496-5bb0-ada7-763089253227"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "f70acc59-7c23-5a8a-8cc3-e161fcb97d3c",
+                            "seq": 8,
+                            "nodeId": "smn-7cb53b9b-c680-575b-acf9-5fa4820003d4"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohello"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Hey :)",
+                                    "type": "basic",
+                                    "_id": "mt-ed417c85-6fef-5e62-ab57-f5045fddd24e"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hello ",
+                                    "type": "basic",
+                                    "_id": "mt-96601791-de3c-56fe-aa9a-72cf48a15fce"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi! ",
+                                    "type": "basic",
+                                    "_id": "mt-b51b0d6c-e5e5-5c13-8dce-e5a9c62411b8"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Hi there! ",
+                                    "type": "basic",
+                                    "_id": "mt-1e80c1ae-db42-5835-9985-94826fdb41a9"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "bb5514ae-c7d5-54bb-8aea-aa221f775f91",
+                            "seq": 0,
+                            "nodeId": "smn-7e4accbc-30fc-5432-addb-b632776ff3fb"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "!n ~no"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Alright.",
+                                    "type": "basic",
+                                    "_id": "mt-704f9e2f-eddc-555f-a4cc-b3aa8d1287ff"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "OK. ",
+                                    "type": "basic",
+                                    "_id": "mt-71e955c4-b583-50ab-b79a-08c5f6ba49da"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "a9197369-952d-56e3-a703-b22991853660",
+                            "seq": 5,
+                            "nodeId": "smn-9b6fb8e2-86fb-5d85-8dd3-6efd321c1a8d"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "What ~your name"
+                                },
+                                {
+                                    "text": "what ~you called"
+                                },
+                                {
+                                    "text": "< who be ~you { ? } >"
+                                },
+                                {
+                                    "text": "< tell about yourself >"
+                                },
+                                {
+                                    "text": "< what be [~you ~your] [call name] { ? } >"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "I'm <display-bot-name>.",
+                                    "type": "basic",
+                                    "_id": "mt-77836a69-72d1-5ee1-ba2f-0a242232d9eb"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "8e4f005a-f47d-5928-97ea-5671857bdd5c",
+                            "seq": 2,
+                            "nodeId": "smn-af328923-3c56-51a3-acd5-3dfef400e105"
+                        },
+                        {
+                            "userUtterances": [
+                                {
+                                    "text": "~emohappy"
+                                }
+                            ],
+                            "botUtterances": [
+                                {
+                                    "channel": "default",
+                                    "text": "Glad I could help. ",
+                                    "type": "basic",
+                                    "_id": "mt-9f626ee0-9428-5f8a-9b82-66e07457d627"
+                                },
+                                {
+                                    "channel": "default",
+                                    "text": "Glad you are happy.",
+                                    "type": "basic",
+                                    "_id": "mt-615cef15-f13d-52e5-a569-d7576c95c5a9"
+                                }
+                            ],
+                            "state": "published",
+                            "language": "en",
+                            "refId": "1737e21a-93fc-5082-90cc-80012186034e",
+                            "seq": 3,
+                            "nodeId": "smn-ef840fd0-6421-56d5-a6eb-f1becff30b99"
+                        }
+                    ],
+                    "count": 9
+                }
+            ]
+        }
+    ],
+    "widgets": [],
+    "panels": [],
+    "unexportedTasks": [],
+    "customDashboards": [],
+    "paramMaps": [],
+    "taskDgParamMaps": [],
+    "sentences": [
+        {
+            "_id": "64cd03cbaa0c063027bafa22",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "tag1",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64cd0466312fc044fdd3957d",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "tag2",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64cd055d7e94b80670dd29d1",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "tag3",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64cd1b0a5452433f9158fda5",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "tag4",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64d260f3ad9f60647300a41d",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "tag9",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bb7",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "dtfhgjkdws",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bb8",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "yuwkiulwoep",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bb9",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kxujbhyj",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bba",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "ewrtyhjfgkbj",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bbb",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kjgftrygubnm",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bbc",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "jnhbgvfyctrytvubnl",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bbd",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": ",m njbhvgycftdyulj",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bbe",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "hgvcftdxrestryfugihjo",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bbf",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": ",mknjhbgvftdyui",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc0",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "mlnjbhgvyftdrytjyui",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc1",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "ljnhbgvyujykuijm",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc2",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "mnkjbhgvftrwetrytuio",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc3",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kjytrerwtyuiop",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc4",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "iuytrewrtyuiop",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc5",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "qwertyuiolknjbhvgcdrstdh",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc6",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "wertyuio;l, kjbhvytfcrd",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc7",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "wertyuiop,mnbvcx",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc8",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "wertyuiklmvkd",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bc9",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "gfcxrdserdtfyguhjmv",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bca",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kjygftdzrtyxuixo",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bcb",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "jhgyuhijoskpflev",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bcc",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "jtrertrytuyituyiuo;ip",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bcd",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "hgyftdersrtytui",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bce",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "klmnjhbugytrtewrtyuio",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bcf",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "qwertyuiolkjhgfd",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd0",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "lkjhgfdserdtfyguhjk",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd1",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "jnbhvgcfyxdtycvbnkml,",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd2",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "jhvcrxesasrdtfyuijokp",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd3",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "knjbhvgcrxesasdrftgyuhji",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd4",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kjhftdrewrtyuiol;",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd5",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "2jhgyrtfugyhjikolp",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd6",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "mknjbhvgctfyghjkjkl",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd7",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "kjhgtdrtytuyhijnmil",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd8",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "qwe6yuiykilujkhgfcyxztexcvbjnkm",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bd9",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "gfdsetrytrfghbnnbresdtryftugyihujk",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bda",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "hgfcdxsrwa4sertdryftugyhjmnhbgiyuftdr6yftughbkjnlmk",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bdb",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "ewrtuyiojpk,lmknjbivucyrxtezsrtubhnjmk,lmnjbhgftdrsedrftguhjk",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bdc",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "mjnhbguvyfdtefyguhbnjmknjhbigtfrdtesdrfguhbnjmkmkjnhigufy",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bdd",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "retdyryuio",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231bde",
+            "taskId": "dc-2a56a76c-b6df-56d4-9d21-a3b7b7b58f39",
+            "sentence": "ewrtyuiopkjb",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "6493f59f756f69f89fd19964",
+            "taskId": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
+            "sentence": "welcome to bot",
+            "taskName": "Welcome_Task",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "6515acb03969e42387c4b766",
+            "taskId": "dc-3779cd78-a838-568b-9f15-4a7c0a0b3ee2",
+            "sentence": "septest",
+            "taskName": "Welcome_Task",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "65003f4f96306d23fba006ed",
+            "taskId": "dc-6b635838-a11c-551f-a919-ced4ca696cc8",
+            "sentence": "I am fallback",
+            "taskName": "Fallback_Task",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64b16cf432d767253157312e",
+            "taskId": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+            "sentence": "I want to view my bill",
+            "taskName": "View_Bill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64b5152523e4493e0bf6e7f1",
+            "taskId": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+            "sentence": "ViewMyBill",
+            "taskName": "ViewMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c28ed3acbd675ee89fb9eb",
+            "taskId": "dc-ac4d6485-fc08-54ae-9980-aff16694cfd2",
+            "sentence": "New view my bill",
+            "taskName": "ViewMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64b1447a289c3c0681972df2",
+            "taskId": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+            "sentence": "Test New",
+            "taskName": "Test",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64b1554632d76725314f8b46",
+            "taskId": "dc-ac5b819f-28cd-5f5a-8fb9-b5bbe92553e2",
+            "sentence": "I am voice",
+            "taskName": "Voice",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64b56003235c68160761af8a",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "I want to pay my bill",
+            "taskName": "PayMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c03a104261b77880b0e6a2",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "pay my bill using credit card",
+            "taskName": "PayMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c03c7442ed775348a1dcb2",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "pay my bill please",
+            "taskName": "PayMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c7e6da312fc044fd9eab1a",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "pay my bill using debit card",
+            "taskName": "PayMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c90ce09bc20c3d9ed5d291",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "How to pay my bill?",
+            "taskName": "PayMyBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c98",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wesr",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c99",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "2222",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9a",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "3",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9b",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "4",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9c",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "5",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9d",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "6",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9e",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "7",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231c9f",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "8",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca0",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "khfuljskfevdb",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca1",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "rgfgdtdg",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca2",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "ddgfdfgfnx",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca3",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "sdfghjsk",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca4",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "ertyui",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca5",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "ertyuifghx",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca6",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "fxcgvhjkx",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca7",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "kdqertyuija",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca8",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "ewrthyjud",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231ca9",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qdhfsretyui",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231caa",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "iujhskhjf",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cab",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "yuioop",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cac",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": ",kmkji",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cad",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "hjuki",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cae",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "iuyuu",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231caf",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiodfghjkl",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb0",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wesrdftgyhbnjmk,l",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb1",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "erdtfyvgjbhk",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb2",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "ertfygvbhjnkm",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb3",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "retcyvubijnk",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb4",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "tryuiol;'",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb5",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "6tyuikjhl;,",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb6",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "uyikjilm.",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb7",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wserdtfyguhjnk",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb8",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "4ertyuihjikl",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cb9",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "werdtfyguhjk",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cba",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wertyuiopo[p",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cbb",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiop[,mkjnhbgvf",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cbc",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qawsertyuinomkl",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cbd",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiopo",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cbe",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wertyuiop",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cbf",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiknjbhvgcyfrd",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc0",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiol;,lmknjbyv",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc1",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wertyuioplkmjnbhvgcfxd",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc2",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiop;lkjhgfd",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc3",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuioplkm",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc4",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiolkmnhgf",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc5",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "wertyuiop;l,mnbvfdc",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e36d4790aeca6883231cc6",
+            "taskId": "dc-b175f771-c7a4-591f-9428-2b1c0cb557b4",
+            "sentence": "qwertyuiolkmjhgtr",
+            "taskName": "PayBill",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64c0f5ece230f251c3a1f947",
+            "taskId": "dc-d3eba954-0da6-5977-9eb9-a9ebadfd1564",
+            "sentence": "iiiiii",
+            "taskName": "InternetTroubleshooting",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64ba52d2c948e9080c21e906",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "Agent Transfer Utterance",
+            "taskName": "Agent",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64de10d19de1bc1ec9d11c29",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "Hi I am Agent",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64de39685481c86c48bd49f9",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "new new",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3a6",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "sfhk",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3a7",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "sdjkfg",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3a8",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "jhsdgfsdfsd",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3a9",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "djksfhjksdhfkjsdf",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3aa",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "sdfsdfsd",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3ab",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "asdfsdfsdf",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        },
+        {
+            "_id": "64e5ac5fa52b69156319e3ac",
+            "taskId": "dc-e4cd95c3-860a-5a0b-814b-0b9f1efe84ad",
+            "sentence": "ewrertrtr",
+            "taskName": "AgentT",
+            "type": "DialogIntent",
+            "entities": [],
+            "language": "en"
+        }
+    ],
+    "koraResponses": [],
+    "customTemplates": [],
+    "mlParams": [
+        {
+            "language": "en",
+            "state": "published",
+            "type": 1,
+            "dialogIntents": [],
+            "intentData": {
+                "stopwords": "a about above abst accordance according accordingly across act actually adj  affected affecting affects afterwards again against ah all almost alone along  already also although always am among amongst an and announce another any anybody anyhow  anymore anyone anything anyway anyways anywhere apparently approximately are aren arent  arise around as aside ask asking at auth away awfully  b back be became because become becomes becoming been before beforehand begin beginning  beginnings begins behind being believe below beside besides between beyond biol both brief  briefly but by  c ca came cause causes certain certainly co com come comes contain  containing contains could couldnt  d did didn't different do does doesn't doing done don't down downwards during  e each ed edu effect eg either else elsewhere end ending enough especially  et et-al etc even ever every everybody everyone everything everywhere ex except  f far few ff fix followed following follows for former formerly forth  found from further furthermore  g gave get gets give given gives giving goes gone got gotten  h had happens hardly has hasn't haven't he hed hello hence her here hereafter hereby  herein heres hereupon hers herself hes hi hid him himself his hither home how howbeit however  i ie if i'll im immediate immediately importance important in inc indeed index information  instead into invention inward is isn't it itd it'll its itself i've 'm  j just  k keep keeps kept kg km know known knows  l largely last lately later latter latterly least less lest let lets like liked likely  line little 'll ltd  m made mainly make makes many may maybe me mean means meantime meanwhile merely mg  might miss ml more moreover most mostly mr mrs much mug must my myself  n na namely nay nd near nearly necessarily necessary needs neither never  nevertheless new next no nobody non none nonetheless noone nor normally  nos noted nothing now nowhere  o obtain obtained obviously of off often oh ok okay old omitted on once one ones only onto  or ord other others otherwise ought our ours ourselves over overall owing own  p page pages part particular particularly past per perhaps placed please plus poorly  possible possibly pp present previously primarily probably  promptly proud provides put q que quickly quite qv r ran rather rd re readily really  recent recently ref refs regarding regardless regards related relatively research  respectively resulted resulting results right run  s said same saw say saying says sec section see seeing seem seemed seeming seems seen  self selves sent seven several shall she shed she'll shes should shouldn't show showed  shown showns shows significant significantly similar similarly since slightly so some  somebody somehow someone somethan something sometime sometimes somewhat somewhere soon  sorry specifically specified specify specifying still stop strongly sub substantially  successfully such sufficiently sup sure  t take taken taking tell tends th than thank thanks thanx that that'll thats that've  the their theirs them themselves then thence there thereafter thereby thered therefore  therein there'll thereof therere theres thereto thereupon there've these they theyd they'll  theyre they've think this those thou though thoughh thousand throug through throughout  thru thus til tip to together too took toward towards tried tries truly try trying ts  twice u un under unfortunately unless unlike unlikely until unto up upon ups us use used useful  usefully usefulness uses using usually  v value various 've very via viz vol vols vs  w want wants was wasnt way we wed welcome we'll went were werent we've what whatever  what'll whats when whence whenever where whereafter whereas whereby wherein wheres  whereupon wherever whether which while whim whither who whod whoever whole who'll whom  whomever whos whose why widely willing wish with within without wont words world would  wouldnt www x y yes yet you youd you'll your youre yours yourself yourselves you've  z zero hey hello howdy bro good morning afternoon noon night bye thanks yeah yo no kk"
+            },
+            "intentParams": {
+                "type": "V3",
+                "minngram": 1,
+                "maxngram": 4,
+                "ngram": [
+                    1,
+                    1
+                ],
+                "useSynonyms": false,
+                "f_negation": false,
+                "useStopwords": false,
+                "usePlaceholders": true,
+                "useTestPlaceholders": false,
+                "features": "n_gram",
+                "skip_gram": {
+                    "seqLength": 2,
+                    "maxSkipDistance": 1
+                }
+            },
+            "isDefault": false,
+            "mlConfigurations": {
+                "NoneIntent": true,
+                "ML_Add_FAQS_To_NoneIntent": true,
+                "NoneIntentCustomTraining": false
+            },
+            "nerParams": {
+                "type": "corenlp",
+                "thresholdValue": 0
+            },
+            "utterances": [],
+            "btutterances": []
+        }
+    ],
+    "contentVariables": [],
+    "namespaces": [
+        {
+            "_id": "ns-c9826185-252d-5d02-adf0-5cd778394a41",
+            "status": "published",
+            "streamId": "st-fa3c2d6e-128d-5e18-a60a-eca34e4a9132",
+            "__v": 0,
+            "createdBy": "u-f801f53d-5777-5513-ac0b-11537b6941ea",
+            "createdOn": "2023-06-13T10:27:02.409Z",
+            "name": "default",
+            "refId": "045b9bbe-b347-5ba8-98e4-1345111adf3a",
+            "type": "system"
+        }
+    ],
+    "exportOptions": {
+        "settings": [
+            "botSettings",
+            "botVariables",
+            "ivrSettings"
+        ],
+        "tasks": [
+            "botTask",
+            "knowledgeGraph",
+            "smallTalk"
+        ],
+        "nlpData": [
+            "training_data",
+            "bot_synonyms",
+            "defaultDialog",
+            "nlpSettings",
+            "utterances",
+            "patterns",
+            "standardResponses"
+        ],
+        "subTasks": {
+            "dialogs": [
+                "dg-7c7a8623-2243-5e0a-aa64-3fe2b576a392",
+                "dg-3c0e1947-3392-5f08-9d40-14eebc86ea88",
+                "dg-1cf44aae-8fe5-58cd-86fe-cee40bf637a5",
+                "dg-bd590cd0-0d25-547d-abf9-90eb0a42ca10",
+                "dg-b0c577a0-9aab-50e1-aeb2-fa8cc3e1d973",
+                "dg-20acfa23-9d1c-50ff-864f-2c92a459dc45",
+                "dg-8156e38d-4383-56ed-b3a5-550fc9b44467",
+                "dg-4b8df0b9-8f13-50e6-9072-b00d2acf40c8",
+                "dg-0d90b671-bc11-571d-9a4a-fffc976789f8",
+                "dg-15aa07d9-7c46-5fe2-9073-4b1927f552b2",
+                "dg-a1171528-f533-5dbc-ad6f-4211009450d7",
+                "dg-3b2c6068-9b6a-5246-ba69-9fd1d3e4a5ec",
+                "dg-543c371c-5e16-5592-9a5b-81fe494f2ff0",
+                "dg-b55cf276-c8d7-56e8-ad8f-d6caf1b74c20",
+                "dg-5e361608-f5fa-5458-aa10-945955982ea2",
+                "dg-861fef6c-63fe-5c41-b0f8-9737d027d8f2"
+            ],
+            "alerts": [],
+            "actions": [],
+            "forms": []
+        },
+        "IncludeDependentTasks": true
+    },
+    "feedbackSurveys": [],
+    "environmentVersionInfo": "9.1.7",
+    "traits": [],
+    "encryptedHash": "503a053192695a1487944fc23f50f60c"
+}

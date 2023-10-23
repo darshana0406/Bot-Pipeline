@@ -14,7 +14,7 @@ Demobot1:
    wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
    targetRepoUrl:  https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
    
-TestBot2:
+Testbot2:
    botId: st-668014f0-8f02-5ae3-92d9-a51170545c5d
    exportJwt: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6ImNzLTUwZDA1N2YwLWY2MDUtNTljYS05OGFjLWI5MWJhMGQ3MmVlMiJ9.xmrKV3z7a9yoDlG7geOlCbaxgzWzVvvXM40LhdJya1A
    exportUrl: https://korebots.est.k8s.dev.comm.spctrm.net/api/public/bot/

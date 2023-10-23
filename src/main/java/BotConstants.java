@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class BotConstants {
 
     public static final String BOTID = "botId";
@@ -38,6 +41,13 @@ public class BotConstants {
     public static final String YAML_EXN = ".yaml";
     public static final String NEWBOT = "NewBot";
     public static final String CONFIG = "config";
+    
+    public static final List <String> fileNames = new ArrayList<String>() {{ 
+											add ("botDefinition.json");
+											add("config.json");
+											add("icon.png");
+											add("bot_functions.js");
+											}};
     
 
 	
@@ -187,7 +197,7 @@ public class BotConstants {
             + "        \"botComponents\": [\n"
             + "            \"linkedBots\",\n"
             + "            \"smallTalk\"\n"
-            + "        ],\n"
+            + "        ]\n"
             + "    }\n"
             + "}" ;
 }

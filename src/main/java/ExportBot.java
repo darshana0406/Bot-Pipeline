@@ -64,27 +64,119 @@ public class ExportBot {
 		System.out.println("**************************** Starting Export Bot Process ****************************");
 		
 		try {
-			//Export Bot API call to export the bot from source account
-			exportBotAPICall(botConfigMap);
+		// 	//Export Bot API call to export the bot from source account
+		// 	exportBotAPICall(botConfigMap);
 			
-			//Export Status API call to check the export status
-			String downloadUrl = callExportStatusAPI(botConfigMap);
-			System.out.println("downloadUrl: " + downloadUrl);
+		// 	//Export Status API call to check the export status
+		// 	String downloadUrl = callExportStatusAPI(botConfigMap);
+		// 	System.out.println("downloadUrl: " + downloadUrl);
 
-			//Download the source files using downloadUrl
-			URL downloadUrlObj = new URL(downloadUrl);
-			downloadFile(downloadUrlObj, BotConstants.FULL_EXP_FILE);
-			System.out.println("File Downloaded in current working directory");
-			Thread.sleep(1500);
+		// 	//Download the source files using downloadUrl
+		// 	URL downloadUrlObj = new URL(downloadUrl);
+		// 	downloadFile(downloadUrlObj, BotConstants.FULL_EXP_FILE);
+		// 	System.out.println("File Downloaded in current working directory");
+		// 	Thread.sleep(1500);
 
-			// Unzip the files to local workspace
-			String zipFile = BotConstants.FULL_EXP_FILE;
-			String destDir = BotConstants.EXPORTBOT;
-			unzip(zipFile, destDir);
-			System.out.println("Files unzipped to " + destDir);
+		// 	// Unzip the files to local workspace
+		// 	String zipFile = BotConstants.FULL_EXP_FILE;
+		// 	String destDir = BotConstants.EXPORTBOT;
+		// 	unzip(zipFile, destDir);
+		// 	System.out.println("Files unzipped to " + destDir);
 			
-			//Commit files to target repository
-			commitToTargetRepo(botConfigMap,botName,env,exportType);
+		// 	//Commit files to target repository
+		// 	commitToTargetRepo(botConfigMap,botName,env,exportType);
+
+		// } catch (Exception e) {
+		// 	e.printStackTrace();
+		// }
+		System.out.println("******** Starting EXP_ALL **********");
+
+                  //Export Bot API call to export the bot from source account
+                  exportBotAPICall(botConfigMap, BotConstants.EXP_ALL);
+                  //Export Status API call to check the export status
+                  String expAllDwnUrl = callExportStatusAPI(botConfigMap);
+                  System.out.println("expAllDwnUrl:: " + expAllDwnUrl);
+                  
+                  //Download the source files using downloadUrl
+                  URL downloadAllUrlObj = new URL(expAllDwnUrl);
+                  downloadFile(downloadAllUrlObj, BotConstants.FULL_EXP_FILE);
+                  System.out.println("FullExp File Downloaded in current working directory");
+                  Thread.sleep(1500);
+
+                  // Unzip the files to local workspace
+                  String zipFile = BotConstants.FULL_EXP_FILE;
+                  String fullExpdestDir = BotConstants.EXP_ALL + "/" + BotConstants.EXPORTBOT ;
+                  unzip(zipFile, fullExpdestDir);
+                  System.out.println("Files unzipped to " + fullExpdestDir);
+                  System.out.println("******** EXP_ALL Completed **********");
+                  
+                  System.out.println("******** Starting EXP_NLP **********");
+
+                  //Export Bot API call to export the bot from source account
+                 exportBotAPICall(botConfigMap,BotConstants.EXP_NLP);
+                  //Export Status API call to check the export status
+                  String expNlpDwnUrl = callExportStatusAPI(botConfigMap);
+                  System.out.println("expNlpDwnUrl:: " + expNlpDwnUrl);
+
+                  //Download the source files using downloadUrl
+                  URL downloadUrlNlp = new URL(expNlpDwnUrl);
+                  downloadFile(downloadUrlNlp, BotConstants.FULL_EXP_FILE);
+                  System.out.println("NLP File Downloaded in current working directory");
+                  Thread.sleep(1500);
+
+                  // Unzip the files to local workspace
+                  //String zipFile = BotConstants.FULL_EXP_FILE;
+                  String nlpdestDir = BotConstants.EXP_NLP + "/" + BotConstants.EXPORTBOT;
+                  unzip(zipFile, nlpdestDir);
+                  System.out.println("Files unzipped to " + nlpdestDir);
+                  
+                  System.out.println("******** EXP_NLP Completed **********");
+
+                  System.out.println("******** Starting EXP_BOT_TASKS **********");
+                  //Export Bot API call to export the bot from source account
+            exportBotAPICall(botConfigMap,BotConstants.EXP_BOT_TASKS);
+                  //Export Status API call to check the export status
+                  String botTaskdownloadUrl = callExportStatusAPI(botConfigMap);
+                  System.out.println("downloadUrl: " + botTaskdownloadUrl);
+                  
+                  //Download the source files using downloadUrl
+                  URL botTskdownloadUrlObj = new URL(botTaskdownloadUrl);
+                  downloadFile(botTskdownloadUrlObj, BotConstants.FULL_EXP_FILE);
+                  System.out.println("File Downloaded in current working directory");
+                  Thread.sleep(1500);
+
+                  // Unzip the files to local workspace
+                  //String zipFile = BotConstants.FULL_EXP_FILE;
+                  String expBotdestDir = BotConstants.EXP_BOT_TASKS + "/" + BotConstants.EXPORTBOT;
+                  unzip(zipFile, expBotdestDir);
+                  System.out.println("Files unzipped to " + expBotdestDir);
+                  System.out.println("******** EXP_BOT_TASKS Completed **********");
+
+                  System.out.println("******** Starting EXP_WHT_SETTINGS **********");
+                  //Export Bot API call to export the bot from source account
+            exportBotAPICall(botConfigMap,BotConstants.EXP_WHT_SETTINGS);
+                  
+                  
+                  //Export Status API call to check the export status
+                  String whtStgdownloadUrl = callExportStatusAPI(botConfigMap);
+                  System.out.println("downloadUrl: " + whtStgdownloadUrl);
+
+                  //Download the source files using downloadUrl
+                  URL whtStgdownloadObj= new URL(whtStgdownloadUrl);
+                  downloadFile(whtStgdownloadObj, BotConstants.FULL_EXP_FILE);
+                  System.out.println("File Downloaded in current working directory");
+                  Thread.sleep(1500);
+
+                  // Unzip the files to local workspace
+                  //String zipFile = BotConstants.FULL_EXP_FILE;
+                  String whtStgdestDir = BotConstants.EXP_WHT_SETTINGS + "/" +BotConstants.EXPORTBOT;
+                  unzip(zipFile, whtStgdestDir);
+                  System.out.println("Files unzipped to " + whtStgdestDir);
+                  System.out.println("******** Starting EXP_WHT_SETTINGS **********");
+                  
+                  //Commit files to target repository
+            commitToTargetRepo(botConfigMap,botName,env,exportType);
+
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -94,7 +186,7 @@ public class ExportBot {
 
 	}
 	
-    public static void exportBotAPICall(Map<String, Object> botConfigMap) throws Exception {
+    public static void exportBotAPICall(Map<String, Object> botConfigMap, String exportType) throws Exception {
 		// Access the environment variable
 		String exportJwt = (String)botConfigMap.get(BotConstants.EXPORT_JWT);
 		String exportBody = BotConstants.EMPTY_STRING;
@@ -232,7 +324,7 @@ public class ExportBot {
         }
        try {
             // Set user email
-            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "c-meenakshi.kaeley@charter.com");
+            ProcessBuilder setEmail = new ProcessBuilder("git", "config", "--global", "user.email", "darshanav@gmail.com");
             Process emailProcess = setEmail.start();
             int emailExitCode = emailProcess.waitFor();
             if (emailExitCode == 0) {
@@ -242,7 +334,7 @@ public class ExportBot {
             }
 
             // Set user name
-            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "Meenakshi Kaeley");
+            ProcessBuilder setName = new ProcessBuilder("git", "config", "--global", "user.name", "Darshana V");
             Process nameProcess = setName.start();
             int nameExitCode = nameProcess.waitFor();
             if (nameExitCode == 0) {
