@@ -101,7 +101,8 @@ public class BotConstants {
 	public static final String IMPORT_DIR = "targetImpDir";
 	
 	public static final String CONFIG_FILE = "BotConfig.properties";
-	
+	public static final String ROUTINGBOT = "routingbotId";
+
 	public static final String IMP_NLP_REQ_BODY = "\"importOptions\": {\n"
     //public static final String ImportNLP = "\"importOptions\": {\n"
             + "        \"nlpData\": [\n"

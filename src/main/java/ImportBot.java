@@ -30,7 +30,7 @@ public class ImportBot {
 	
 
 	public static void main(String[] args) throws Exception {
-		String tagName = "Demobot1-dev_nce-export-20231023174529";
+		String tagName = "Demobot1-dev_nce-export-20231023174906";
 		String srcBotName = "Demobot1";
 		String targetBotName = "abcd";
 		if (args.length > 0) {
@@ -95,11 +95,18 @@ public class ImportBot {
 		Git git = Git.open(new File(importPath));
 		git.checkout().setName(tagName).call();
 		
-		uploadAPICall(botConfigMap, srcBotName, newBot);
+		uploadAPICall(botConfigMap, srcBotName, newBot, false);
 		System.out.println("Target botName" + targetBotName);
+
+		// check if routing bot is present then call upload and import NLP
+		String routingbotId = (String)botConfigMap.get(BotConstants.ROUTINGBOT);
+		if(routingbotId!="" && routingbotId!= null){
+			uploadAPICall(botConfigMap, srcBotName, newBot,true);	
+		}
+
 	}
 	
-	public static void uploadAPICall(Map<String, Object> botConfigMap, String botName, String newBot) throws Exception {
+	public static void uploadAPICall(Map<String, Object> botConfigMap, String botName, String newBot, boolean isRoutingBot) throws Exception {
 
 		String uploadApiUrl = (String)botConfigMap.get(BotConstants.UPLOAD_URL);
 		String authToken = (String)botConfigMap.get(BotConstants.UPLOAD_JWT);
@@ -128,7 +135,10 @@ public class ImportBot {
 					exportType = BotConstants.EXP_ALL;
 				}	
 				if(newBot !="" && newBot!= null && newBot.length()>1) {
-					exportType = BotConstants.EXP_ALL;
+					exportType = BotConstants.EXP_ALL;				
+				}
+				if(isRoutingBot){
+					exportType = BotConstants.EXP_NLP;
 				}
 			String[] fileNames = { workspaceDir +  "/" + botName + "/" + env + "/" +  exportType + "/ExportBot/botDefinition.json",
 					workspaceDir + "/" + botName + "/" + env + "/" +  exportType + "/ExportBot/config.json",
@@ -166,6 +176,7 @@ public class ImportBot {
 
 				int responseCode = connection.getResponseCode();
 				System.out.println("Upload Success : : " + responseCode);
+				System.out.println("import API Response Message :: " + connection.getResponseMessage());
 
 				BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 				String inputLine;
@@ -195,9 +206,14 @@ public class ImportBot {
 
 			if(newBot !="" && newBot!= null && newBot.length()>1) {
 				importNewBotAPICall(botConfigMap, botDefinitionId, configInfoId, icon, newBot);
-			} else {
-				importExistingBotAPICall(botConfigMap, botDefinitionId, configInfoId);
+			} 			
+			else if(isRoutingBot){
+				importNLPRouting(botConfigMap, botDefinitionId, configInfoId);		
 			}
+			else{
+				importExistingBotAPICall(botConfigMap, botDefinitionId, configInfoId);	
+			}
+
 
 		} catch (Exception e) {
 			e.getMessage();
@@ -253,6 +269,7 @@ public class ImportBot {
 				impOutStream.flush();
 				impOutStream.close();
 				System.out.println("Import  API Response Code :: " + importConnection.getResponseCode());
+				System.out.println("import API Response Message :: " + importConnection.getResponseMessage());
 				Thread.sleep(1000);
 			}catch(Exception e) {
 				e.getMessage();
@@ -260,7 +277,7 @@ public class ImportBot {
 			}
 	    }
 
-		public static void importNewBotAPICall(Map<String, Object> botConfigMap,String botDefinitionId,String configInfoId,String icon, String newBot) throws Exception {
+	 public static void importNewBotAPICall(Map<String, Object> botConfigMap,String botDefinitionId,String configInfoId,String icon, String newBot) throws Exception {
 			// Access the environment variable
 			String importJwt = (String)botConfigMap.get(BotConstants.IMPORT_JWT);
 									
@@ -292,11 +309,57 @@ public class ImportBot {
 				impOutStream.flush();
 				impOutStream.close();
 				System.out.println("Import  API Response Code :: " + importConnection.getResponseCode());
+				System.out.println("import API Response Message :: " + importConnection.getResponseMessage());
 				Thread.sleep(1000);
 			}catch(Exception e) {
 				e.getMessage();
 				e.printStackTrace();
 			}
 	    }
+		
+	 public static void importNLPRouting(Map<String, Object> botConfigMap,String botDefinitionId,String configInfoId) throws Exception {
+			// Access the environment variable
+
+			try {
+				 String importBody = BotConstants.IMP_NLP_REQ_BODY;
+				 String finalImportBody = "{\n" + " \"botDefinition\": \"" + botDefinitionId + "\",\n"
+						 + "\"configInfo\": \"" + configInfoId + "\",\n" +importBody;
+				System.out.println(finalImportBody);
+
+				// Import API Call
+				String routingbotId = (String)botConfigMap.get(BotConstants.ROUTINGBOT);
+				//String botId = (String)botConfigMap.get(targetBotName.replaceAll("\\s",""));
+				String importJwt = (String)botConfigMap.get(BotConstants.IMPORT_JWT);
+				String importUrl = (String)botConfigMap.get(BotConstants.IMPORT_URL) + routingbotId + "/" + BotConstants.IMPORT;
+
+				System.out.println("routingbotId:: " + routingbotId);
+				System.out.println("importUrl:: " + importUrl);
+
+				URL importUrlObj = new URL(importUrl);
+				HttpURLConnection importConnection = (HttpURLConnection) importUrlObj.openConnection();
+
+				importConnection.setRequestMethod("POST");
+				importConnection.setRequestProperty("auth", importJwt);
+				importConnection.setRequestProperty("content-type", "application/json");
+				importConnection.setDoOutput(true);
+
+
+
+				OutputStream impOutStream = importConnection.getOutputStream();
+
+
+
+				impOutStream.write(finalImportBody.getBytes());
+				impOutStream.flush();
+				impOutStream.close();
+				System.out.println("Import  API Response Code :: " + importConnection.getResponseCode());
+				System.out.println("import API Response Message :: " + importConnection.getResponseMessage());
+				Thread.sleep(1000);
+			}catch(Exception e) {
+				e.getMessage();
+				e.printStackTrace();
+			}		
+
+	}
 }
 

@@ -51,6 +51,7 @@ abcd:
    password: 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
    wsLocation: C:/ProgramData/Jenkins/.jenkins/workspace/Test/
    targetRepoUrl: https://darshana0406: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@github.com/darshana0406/CCT-Bots-Automation.git
+   routingbotId: st-c99808ed-b936-5b7d-a49f-a0fad24a1a00
 
 cct_ivr_conversational_appt_manager:
    botId: st-a9016b85-c2d5-5870-9e5a-25b47427485f
